@@ -1,0 +1,39 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/tmp/hadoop-root/nm-local-dir/filecache/10/spark-assembly-1.6.0-hadoop2.6.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-2.6.0/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+16/08/13 08:47:53 INFO executor.CoarseGrainedExecutorBackend: Registered signal handlers for [TERM, HUP, INT]
+16/08/13 08:47:56 INFO spark.SecurityManager: Changing view acls to: root
+16/08/13 08:47:56 INFO spark.SecurityManager: Changing modify acls to: root
+16/08/13 08:47:56 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/08/13 08:48:00 INFO spark.SecurityManager: Changing view acls to: root
+16/08/13 08:48:00 INFO spark.SecurityManager: Changing modify acls to: root
+16/08/13 08:48:00 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/08/13 08:48:02 INFO slf4j.Slf4jLogger: Slf4jLogger started
+16/08/13 08:48:02 INFO Remoting: Starting remoting
+16/08/13 08:48:03 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkExecutorActorSystem@sandbox:51939]
+16/08/13 08:48:03 INFO util.Utils: Successfully started service 'sparkExecutorActorSystem' on port 51939.
+16/08/13 08:48:03 INFO storage.DiskBlockManager: Created local directory at /tmp/hadoop-root/nm-local-dir/usercache/root/appcache/application_1471092392707_0002/blockmgr-2d005000-8f0e-4dcf-8a29-72947a4c6e8b
+16/08/13 08:48:03 INFO storage.MemoryStore: MemoryStore started with capacity 517.4 MB
+16/08/13 08:48:05 INFO executor.CoarseGrainedExecutorBackend: Connecting to driver: spark://CoarseGrainedScheduler@172.17.0.2:56498
+16/08/13 08:48:05 INFO executor.CoarseGrainedExecutorBackend: Successfully registered with driver
+16/08/13 08:48:05 INFO executor.Executor: Starting executor ID 1 on host sandbox
+16/08/13 08:48:06 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 45656.
+16/08/13 08:48:06 INFO netty.NettyBlockTransferService: Server created on 45656
+16/08/13 08:48:06 INFO storage.BlockManagerMaster: Trying to register BlockManager
+16/08/13 08:48:06 INFO storage.BlockManagerMaster: Registered BlockManager
+16/08/13 08:48:08 INFO executor.CoarseGrainedExecutorBackend: Got assigned task 0
+16/08/13 08:48:08 INFO executor.Executor: Running task 0.0 in stage 0.0 (TID 0)
+16/08/13 08:48:08 INFO broadcast.TorrentBroadcast: Started reading broadcast variable 0
+16/08/13 08:48:09 INFO storage.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 1202.0 B, free 1202.0 B)
+16/08/13 08:48:09 INFO broadcast.TorrentBroadcast: Reading broadcast variable 0 took 761 ms
+16/08/13 08:48:09 INFO storage.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 1888.0 B, free 3.0 KB)
+16/08/13 08:48:09 INFO executor.Executor: Finished task 0.0 in stage 0.0 (TID 0). 1029 bytes result sent to driver
+16/08/13 08:48:10 INFO executor.CoarseGrainedExecutorBackend: Driver commanded a shutdown
+16/08/13 08:48:10 INFO storage.MemoryStore: MemoryStore cleared
+16/08/13 08:48:10 INFO storage.BlockManager: BlockManager stopped
+16/08/13 08:48:10 WARN executor.CoarseGrainedExecutorBackend: An unknown (sandbox:56498) driver disconnected.
+16/08/13 08:48:10 ERROR executor.CoarseGrainedExecutorBackend: Driver 172.17.0.2:56498 disassociated! Shutting down.
+16/08/13 08:48:10 INFO remote.RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/08/13 08:48:10 INFO util.ShutdownHookManager: Shutdown hook called
