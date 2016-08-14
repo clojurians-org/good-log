@@ -1,0 +1,525 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/tmp/hadoop-root/nm-local-dir/filecache/10/spark-assembly-1.6.0-hadoop2.6.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/local/hadoop-2.6.0/share/hadoop/common/lib/slf4j-log4j12-1.7.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+16/08/14 00:37:08 INFO ApplicationMaster: Registered signal handlers for [TERM, HUP, INT]
+16/08/14 00:37:08 DEBUG Shell: setsid exited with exit code 0
+16/08/14 00:37:09 DEBUG MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[Rate of successful kerberos logins and latency (milliseconds)], about=, type=DEFAULT, always=false, sampleName=Ops)
+16/08/14 00:37:09 DEBUG MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[Rate of failed kerberos logins and latency (milliseconds)], about=, type=DEFAULT, always=false, sampleName=Ops)
+16/08/14 00:37:09 DEBUG MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(valueName=Time, value=[GetGroups], about=, type=DEFAULT, always=false, sampleName=Ops)
+16/08/14 00:37:09 DEBUG MetricsSystemImpl: UgiMetrics, User and group related metrics
+16/08/14 00:37:09 DEBUG Groups:  Creating new Groups object
+16/08/14 00:37:09 DEBUG NativeCodeLoader: Trying to load the custom-built native-hadoop library...
+16/08/14 00:37:09 DEBUG NativeCodeLoader: Loaded the native-hadoop library
+16/08/14 00:37:09 DEBUG JniBasedUnixGroupsMapping: Using JniBasedUnixGroupsMapping for Group resolution
+16/08/14 00:37:09 DEBUG JniBasedUnixGroupsMappingWithFallback: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMapping
+16/08/14 00:37:10 DEBUG Groups: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+16/08/14 00:37:10 DEBUG YarnSparkHadoopUtil: running as user: root
+16/08/14 00:37:10 DEBUG UserGroupInformation: hadoop login
+16/08/14 00:37:10 DEBUG UserGroupInformation: hadoop login commit
+16/08/14 00:37:10 DEBUG UserGroupInformation: using local user:UnixPrincipal: root
+16/08/14 00:37:10 DEBUG UserGroupInformation: Using user: "UnixPrincipal: root" with name root
+16/08/14 00:37:10 DEBUG UserGroupInformation: User entry: "root"
+16/08/14 00:37:10 DEBUG UserGroupInformation: UGI loginUser:root (auth:SIMPLE)
+16/08/14 00:37:10 DEBUG UserGroupInformation: PrivilegedAction as:root (auth:SIMPLE) from:org.apache.spark.deploy.SparkHadoopUtil.runAsSparkUser(SparkHadoopUtil.scala:68)
+16/08/14 00:37:10 INFO ApplicationMaster: ApplicationAttemptId: appattempt_1471142426616_0002_000001
+16/08/14 00:37:11 DEBUG : address: sandbox/172.17.0.2 isLoopbackAddress: false, with host 172.17.0.2 sandbox
+16/08/14 00:37:11 DEBUG InternalLoggerFactory: Using SLF4J as the default logging framework
+16/08/14 00:37:11 DEBUG PlatformDependent0: java.nio.Buffer.address: available
+16/08/14 00:37:11 DEBUG PlatformDependent0: sun.misc.Unsafe.theUnsafe: available
+16/08/14 00:37:11 DEBUG PlatformDependent0: sun.misc.Unsafe.copyMemory: available
+16/08/14 00:37:11 DEBUG PlatformDependent0: java.nio.Bits.unaligned: true
+16/08/14 00:37:11 DEBUG PlatformDependent: Java version: 7
+16/08/14 00:37:11 DEBUG PlatformDependent: -Dio.netty.noUnsafe: false
+16/08/14 00:37:11 DEBUG PlatformDependent: sun.misc.Unsafe: available
+16/08/14 00:37:11 DEBUG PlatformDependent: -Dio.netty.noJavassist: false
+16/08/14 00:37:11 DEBUG PlatformDependent: Javassist: unavailable
+16/08/14 00:37:11 DEBUG PlatformDependent: You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+16/08/14 00:37:11 DEBUG PlatformDependent: -Dio.netty.tmpdir: /tmp/hadoop-root/nm-local-dir/usercache/root/appcache/application_1471142426616_0002/container_1471142426616_0002_01_000001/tmp (java.io.tmpdir)
+16/08/14 00:37:11 DEBUG PlatformDependent: -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16/08/14 00:37:11 DEBUG PlatformDependent: -Dio.netty.noPreferDirect: false
+16/08/14 00:37:11 DEBUG NativeLibraryLoader: -Dio.netty.tmpdir: /tmp/hadoop-root/nm-local-dir/usercache/root/appcache/application_1471142426616_0002/container_1471142426616_0002_01_000001/tmp (java.io.tmpdir)
+16/08/14 00:37:11 DEBUG NativeLibraryLoader: -Dio.netty.netty.workdir: /tmp/hadoop-root/nm-local-dir/usercache/root/appcache/application_1471142426616_0002/container_1471142426616_0002_01_000001/tmp (io.netty.tmpdir)
+16/08/14 00:37:11 DEBUG NetUtil: Loopback interface: lo (lo, 0:0:0:0:0:0:0:1%1)
+16/08/14 00:37:11 DEBUG NetUtil: /proc/sys/net/core/somaxconn: 128
+16/08/14 00:37:11 DEBUG BlockReaderLocal: dfs.client.use.legacy.blockreader.local = false
+16/08/14 00:37:11 DEBUG BlockReaderLocal: dfs.client.read.shortcircuit = false
+16/08/14 00:37:11 DEBUG BlockReaderLocal: dfs.client.domain.socket.data.traffic = false
+16/08/14 00:37:11 DEBUG BlockReaderLocal: dfs.domain.socket.path = 
+16/08/14 00:37:11 DEBUG DFSClient: No KeyProvider found.
+16/08/14 00:37:11 DEBUG RetryUtils: multipleLinearRandomRetry = null
+16/08/14 00:37:11 DEBUG Server: rpcKind=RPC_PROTOCOL_BUFFER, rpcRequestWrapperClass=class org.apache.hadoop.ipc.ProtobufRpcEngine$RpcRequestWrapper, rpcInvoker=org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker@9376005
+16/08/14 00:37:11 DEBUG Client: getting client out of cache: org.apache.hadoop.ipc.Client@4a0f8b2e
+16/08/14 00:37:13 DEBUG DomainSocketWatcher: org.apache.hadoop.net.unix.DomainSocketWatcher$1@707ffa54: starting with interruptCheckPeriodMs = 60000
+16/08/14 00:37:13 DEBUG PerformanceAdvisory: Both short-circuit local reads and UNIX domain socket are disabled.
+16/08/14 00:37:13 DEBUG DataTransferSaslUtil: DataTransferProtocol not using SaslPropertiesResolver, no QOP found in configuration for dfs.data.transfer.protection
+16/08/14 00:37:13 INFO SecurityManager: Changing view acls to: root
+16/08/14 00:37:13 INFO SecurityManager: Changing modify acls to: root
+16/08/14 00:37:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/08/14 00:37:13 DEBUG SSLOptions: No SSL protocol specified
+16/08/14 00:37:13 DEBUG SSLOptions: No SSL protocol specified
+16/08/14 00:37:13 DEBUG SSLOptions: No SSL protocol specified
+16/08/14 00:37:13 DEBUG SecurityManager: SSLConfiguration for file server: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()}
+16/08/14 00:37:13 DEBUG SecurityManager: SSLConfiguration for Akka: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()}
+16/08/14 00:37:13 INFO ApplicationMaster: Starting the user application in a separate Thread
+16/08/14 00:37:13 INFO ApplicationMaster: Waiting for spark context initialization
+16/08/14 00:37:13 INFO ApplicationMaster: Waiting for spark context initialization ... 
+16/08/14 00:37:13 INFO SparkContext: Running Spark version 1.6.0
+16/08/14 00:37:13 INFO SecurityManager: Changing view acls to: root
+16/08/14 00:37:13 INFO SecurityManager: Changing modify acls to: root
+16/08/14 00:37:13 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/08/14 00:37:13 DEBUG SSLOptions: No SSL protocol specified
+16/08/14 00:37:13 DEBUG SSLOptions: No SSL protocol specified
+16/08/14 00:37:13 DEBUG SSLOptions: No SSL protocol specified
+16/08/14 00:37:13 DEBUG SecurityManager: SSLConfiguration for file server: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()}
+16/08/14 00:37:13 DEBUG SecurityManager: SSLConfiguration for Akka: SSLOptions{enabled=false, keyStore=None, keyStorePassword=None, trustStore=None, trustStorePassword=None, protocol=None, enabledAlgorithms=Set()}
+16/08/14 00:37:13 DEBUG MultithreadEventLoopGroup: -Dio.netty.eventLoopThreads: 2
+16/08/14 00:37:13 DEBUG NioEventLoop: -Dio.netty.noKeySetOptimization: false
+16/08/14 00:37:13 DEBUG NioEventLoop: -Dio.netty.selectorAutoRebuildThreshold: 512
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.numHeapArenas: 2
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.numDirectArenas: 2
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.pageSize: 8192
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.maxOrder: 11
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.chunkSize: 16777216
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.tinyCacheSize: 512
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.smallCacheSize: 256
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.normalCacheSize: 64
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+16/08/14 00:37:14 DEBUG PooledByteBufAllocator: -Dio.netty.allocator.cacheTrimInterval: 8192
+16/08/14 00:37:14 DEBUG ThreadLocalRandom: -Dio.netty.initialSeedUniquifier: 0x0b04707af84dde04 (took 0 ms)
+16/08/14 00:37:14 DEBUG ByteBufUtil: -Dio.netty.allocator.type: unpooled
+16/08/14 00:37:14 DEBUG ByteBufUtil: -Dio.netty.threadLocalDirectBufferSize: 65536
+16/08/14 00:37:14 DEBUG TransportServer: Shuffle server started on port :41578
+16/08/14 00:37:14 INFO Utils: Successfully started service 'sparkDriver' on port 41578.
+16/08/14 00:37:14 DEBUG AkkaUtils: In createActorSystem, requireCookie is: off
+16/08/14 00:37:14 INFO Slf4jLogger: Slf4jLogger started
+16/08/14 00:37:14 INFO Remoting: Starting remoting
+16/08/14 00:37:15 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@172.17.0.2:39704]
+16/08/14 00:37:15 INFO Utils: Successfully started service 'sparkDriverActorSystem' on port 39704.
+16/08/14 00:37:15 DEBUG SparkEnv: Using serializer: class org.apache.spark.serializer.JavaSerializer
+16/08/14 00:37:15 INFO SparkEnv: Registering MapOutputTracker
+16/08/14 00:37:15 INFO SparkEnv: Registering BlockManagerMaster
+16/08/14 00:37:15 INFO DiskBlockManager: Created local directory at /tmp/hadoop-root/nm-local-dir/usercache/root/appcache/application_1471142426616_0002/blockmgr-3b7e165e-d837-4ebd-844d-8cff3ef7fb8e
+16/08/14 00:37:15 INFO MemoryStore: MemoryStore started with capacity 517.4 MB
+16/08/14 00:37:15 INFO SparkEnv: Registering OutputCommitCoordinator
+16/08/14 00:37:15 INFO JettyUtils: Adding filter: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+16/08/14 00:37:16 INFO Utils: Successfully started service 'SparkUI' on port 54395.
+16/08/14 00:37:16 INFO SparkUI: Started SparkUI at http://172.17.0.2:54395
+16/08/14 00:37:16 INFO YarnClusterScheduler: Created YarnClusterScheduler
+16/08/14 00:37:16 DEBUG TransportServer: Shuffle server started on port :60086
+16/08/14 00:37:16 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 60086.
+16/08/14 00:37:16 INFO NettyBlockTransferService: Server created on 60086
+16/08/14 00:37:16 INFO BlockManagerMaster: Trying to register BlockManager
+16/08/14 00:37:16 INFO BlockManagerMasterEndpoint: Registering block manager 172.17.0.2:60086 with 517.4 MB RAM, BlockManagerId(driver, 172.17.0.2, 60086)
+16/08/14 00:37:16 INFO BlockManagerMaster: Registered BlockManager
+16/08/14 00:37:16 DEBUG YarnClusterSchedulerBackend: Base URL for logs: http://sandbox:8042/node/containerlogs/container_1471142426616_0002_01_000001/root
+16/08/14 00:37:16 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark://YarnAM@172.17.0.2:41578)
+16/08/14 00:37:16 DEBUG AbstractService: Service: org.apache.hadoop.yarn.client.api.impl.AMRMClientImpl entered state INITED
+16/08/14 00:37:16 INFO RMProxy: Connecting to ResourceManager at /0.0.0.0:8030
+16/08/14 00:37:16 DEBUG UserGroupInformation: PrivilegedAction as:root (auth:SIMPLE) from:org.apache.hadoop.yarn.client.RMProxy.getProxy(RMProxy.java:136)
+16/08/14 00:37:16 DEBUG YarnRPC: Creating YarnRPC for org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC
+16/08/14 00:37:16 DEBUG HadoopYarnProtoRPC: Creating a HadoopYarnProtoRpc proxy for protocol interface org.apache.hadoop.yarn.api.ApplicationMasterProtocol
+16/08/14 00:37:16 DEBUG Client: getting client out of cache: org.apache.hadoop.ipc.Client@4a0f8b2e
+16/08/14 00:37:16 DEBUG AbstractService: Service org.apache.hadoop.yarn.client.api.impl.AMRMClientImpl is started
+16/08/14 00:37:16 INFO YarnRMClient: Registering the ApplicationMaster
+16/08/14 00:37:16 DEBUG Client: The ping interval is 60000 ms.
+16/08/14 00:37:16 DEBUG Client: Connecting to /0.0.0.0:8030
+16/08/14 00:37:16 DEBUG UserGroupInformation: PrivilegedAction as:root (auth:SIMPLE) from:org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:717)
+16/08/14 00:37:16 DEBUG SaslRpcClient: Sending sasl message state: NEGOTIATE
+
+16/08/14 00:37:16 DEBUG SaslRpcClient: Received SASL message state: NEGOTIATE
+auths {
+  method: "TOKEN"
+  mechanism: "DIGEST-MD5"
+  protocol: ""
+  serverId: "default"
+  challenge: "realm=\"default\",nonce=\"c3+ED+CVOgaATymBhe+xcvCCJTcwbyKXyOFGAbA4\",qop=\"auth\",charset=utf-8,algorithm=md5-sess"
+}
+
+16/08/14 00:37:16 DEBUG SaslRpcClient: Get token info proto:interface org.apache.hadoop.yarn.api.ApplicationMasterProtocolPB info:org.apache.hadoop.yarn.security.SchedulerSecurityInfo$1@74aead4b
+16/08/14 00:37:16 DEBUG AMRMTokenSelector: Looking for a token with service 0.0.0.0:8030
+16/08/14 00:37:16 DEBUG AMRMTokenSelector: Token kind is YARN_AM_RM_TOKEN and the token's service name is 0.0.0.0:8030
+16/08/14 00:37:16 DEBUG SaslRpcClient: Creating SASL DIGEST-MD5(TOKEN)  client to authenticate to service at default
+16/08/14 00:37:16 DEBUG SaslRpcClient: Use TOKEN authentication for protocol ApplicationMasterProtocolPB
+16/08/14 00:37:16 DEBUG SaslRpcClient: SASL client callback: setting username: Cg0KCQgCEPjvr7foKhABEMuE2uX5/////wE=
+16/08/14 00:37:16 DEBUG SaslRpcClient: SASL client callback: setting userPassword
+16/08/14 00:37:16 DEBUG SaslRpcClient: SASL client callback: setting realm: default
+16/08/14 00:37:16 DEBUG SaslRpcClient: Sending sasl message state: INITIATE
+token: "charset=utf-8,username=\"Cg0KCQgCEPjvr7foKhABEMuE2uX5/////wE=\",realm=\"default\",nonce=\"c3+ED+CVOgaATymBhe+xcvCCJTcwbyKXyOFGAbA4\",nc=00000001,cnonce=\"XM6hzVpk79SCQuCH9+YwtRNfjt2oAmv0iChyHTAb\",digest-uri=\"/default\",maxbuf=65536,response=cb82224af2d526300ab135f7bf80d0a9,qop=auth"
+auths {
+  method: "TOKEN"
+  mechanism: "DIGEST-MD5"
+  protocol: ""
+  serverId: "default"
+}
+
+16/08/14 00:37:16 DEBUG SaslRpcClient: Received SASL message state: SUCCESS
+token: "rspauth=e1f51163b70a7296610ccbfa3c2ab04d"
+
+16/08/14 00:37:16 DEBUG Client: Negotiated QOP is :auth
+16/08/14 00:37:16 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root: starting, having connections 1
+16/08/14 00:37:16 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #0
+16/08/14 00:37:16 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #0
+16/08/14 00:37:16 DEBUG ProtobufRpcEngine: Call: registerApplicationMaster took 169ms
+16/08/14 00:37:17 INFO YarnAllocator: Will request 2 executor containers, each with 1 cores and 1408 MB memory including 384 MB overhead
+16/08/14 00:37:17 DEBUG AMRMClientImpl: Added priority=1
+16/08/14 00:37:17 DEBUG AMRMClientImpl: addResourceRequest: applicationId= priority=1 resourceName=* numContainers=1 #asks=1
+16/08/14 00:37:17 INFO YarnAllocator: Container request (host: Any, capability: <memory:1408, vCores:1>)
+16/08/14 00:37:17 DEBUG AMRMClientImpl: addResourceRequest: applicationId= priority=1 resourceName=* numContainers=2 #asks=1
+16/08/14 00:37:17 INFO YarnAllocator: Container request (host: Any, capability: <memory:1408, vCores:1>)
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #1
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #1
+16/08/14 00:37:17 DEBUG ProtobufRpcEngine: Call: allocate took 2ms
+16/08/14 00:37:17 INFO ApplicationMaster: Started progress reporter thread with (heartbeat : 3000, initial allocation : 200) intervals
+16/08/14 00:37:17 DEBUG ApplicationMaster: Sending progress
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #2
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #2
+16/08/14 00:37:17 DEBUG ProtobufRpcEngine: Call: allocate took 2ms
+16/08/14 00:37:17 DEBUG ApplicationMaster: Number of pending allocations is 2. Sleeping for 200.
+16/08/14 00:37:17 DEBUG ApplicationMaster: Sending progress
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #3
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #3
+16/08/14 00:37:17 DEBUG ProtobufRpcEngine: Call: allocate took 1ms
+16/08/14 00:37:17 DEBUG ApplicationMaster: Number of pending allocations is 2. Sleeping for 400.
+16/08/14 00:37:17 DEBUG ApplicationMaster: Sending progress
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #4
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #4
+16/08/14 00:37:17 DEBUG ProtobufRpcEngine: Call: allocate took 5ms
+16/08/14 00:37:17 INFO AMRMClientImpl: Received new token for : sandbox:49909
+16/08/14 00:37:17 DEBUG YarnAllocator: Allocated containers: 1. Current executor count: 0. Cluster resources: <memory:4096, vCores:-1>.
+16/08/14 00:37:17 DEBUG AMRMClientImpl: BEFORE decResourceRequest: applicationId= priority=1 resourceName=* numContainers=2 #asks=0
+16/08/14 00:37:17 INFO AMRMClientImpl: AFTER decResourceRequest: applicationId= priority=1 resourceName=* numContainers=1 #asks=1
+16/08/14 00:37:17 INFO YarnAllocator: Launching container container_1471142426616_0002_01_000002 for on host sandbox
+16/08/14 00:37:17 DEBUG YarnRPC: Creating YarnRPC for org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC
+16/08/14 00:37:17 INFO YarnAllocator: Launching ExecutorRunnable. driverUrl: spark://CoarseGrainedScheduler@172.17.0.2:41578,  executorHostname: sandbox
+16/08/14 00:37:17 INFO YarnAllocator: Received 1 containers from YARN, launching executors on 1 of them.
+16/08/14 00:37:17 DEBUG ApplicationMaster: Number of pending allocations is 1. Sleeping for 800.
+16/08/14 00:37:17 INFO ExecutorRunnable: Starting Executor Container
+16/08/14 00:37:17 DEBUG AbstractService: Service: org.apache.hadoop.yarn.client.api.impl.NMClientImpl entered state INITED
+16/08/14 00:37:17 INFO ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+16/08/14 00:37:17 DEBUG YarnRPC: Creating YarnRPC for org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC
+16/08/14 00:37:17 DEBUG AbstractService: Service org.apache.hadoop.yarn.client.api.impl.NMClientImpl is started
+16/08/14 00:37:17 INFO ExecutorRunnable: Setting up ContainerLaunchContext
+16/08/14 00:37:17 INFO ExecutorRunnable: Preparing Local resources
+16/08/14 00:37:17 INFO ExecutorRunnable: Prepared Local resources Map(__app__.jar -> resource { scheme: "hdfs" host: "sandbox" port: 9000 file: "/user/root/.sparkStaging/application_1471142426616_0002/spark-examples-1.6.0-hadoop2.6.0.jar" } size: 118922054 timestamp: 1471149424779 type: FILE visibility: PRIVATE, __spark__.jar -> resource { scheme: "hdfs" host: "sandbox" port: 9000 file: "/spark/spark-assembly-1.6.0-hadoop2.6.0.jar" } size: 187548272 timestamp: 1452328076584 type: FILE visibility: PUBLIC, metrics.properties -> resource { scheme: "hdfs" host: "sandbox" port: 9000 file: "/user/root/.sparkStaging/application_1471142426616_0002/metrics.properties" } size: 6671 timestamp: 1471149424975 type: FILE visibility: PRIVATE)
+16/08/14 00:37:17 DEBUG Client: Using the default MR application classpath: $HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*,$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*
+16/08/14 00:37:17 INFO ExecutorRunnable: 
+===============================================================================
+YARN executor launch context:
+  env:
+    CLASSPATH -> {{PWD}}<CPS>{{PWD}}/__spark__.jar<CPS>/usr/local/hadoop/etc/hadoop<CPS>/usr/local/hadoop/share/hadoop/common/*<CPS>/usr/local/hadoop/share/hadoop/common/lib/*<CPS>/usr/local/hadoop/share/hadoop/hdfs/*<CPS>/usr/local/hadoop/share/hadoop/hdfs/lib/*<CPS>/usr/local/hadoop/share/hadoop/mapreduce/*<CPS>/usr/local/hadoop/share/hadoop/mapreduce/lib/*<CPS>/usr/local/hadoop/share/hadoop/yarn/*<CPS>/usr/local/hadoop/share/hadoop/yarn/lib/*<CPS>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*<CPS>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*
+    SPARK_LOG_URL_STDERR -> http://sandbox:8042/node/containerlogs/container_1471142426616_0002_01_000002/root/stderr?start=-4096
+    SPARK_YARN_STAGING_DIR -> .sparkStaging/application_1471142426616_0002
+    SPARK_YARN_CACHE_FILES_FILE_SIZES -> 187548272,118922054,6671
+    SPARK_USER -> root
+    SPARK_YARN_CACHE_FILES_VISIBILITIES -> PUBLIC,PRIVATE,PRIVATE
+    SPARK_YARN_MODE -> true
+    SPARK_YARN_CACHE_FILES_TIME_STAMPS -> 1452328076584,1471149424779,1471149424975
+    SPARK_LOG_URL_STDOUT -> http://sandbox:8042/node/containerlogs/container_1471142426616_0002_01_000002/root/stdout?start=-4096
+    SPARK_YARN_CACHE_FILES -> hdfs://sandbox:9000/spark/spark-assembly-1.6.0-hadoop2.6.0.jar#__spark__.jar,hdfs://sandbox:9000/user/root/.sparkStaging/application_1471142426616_0002/spark-examples-1.6.0-hadoop2.6.0.jar#__app__.jar,hdfs://sandbox:9000/user/root/.sparkStaging/application_1471142426616_0002/metrics.properties#metrics.properties
+
+  command:
+    {{JAVA_HOME}}/bin/java -server -XX:OnOutOfMemoryError='kill %p' -Xms1024m -Xmx1024m -Djava.io.tmpdir={{PWD}}/tmp '-Dspark.driver.port=41578' '-Dspark.ui.port=0' -Dspark.yarn.app.container.log.dir=<LOG_DIR> -XX:MaxPermSize=256m org.apache.spark.executor.CoarseGrainedExecutorBackend --driver-url spark://CoarseGrainedScheduler@172.17.0.2:41578 --executor-id 1 --hostname sandbox --cores 1 --app-id application_1471142426616_0002 --user-class-path file:$PWD/__app__.jar 1> <LOG_DIR>/stdout 2> <LOG_DIR>/stderr
+===============================================================================
+      
+16/08/14 00:37:17 INFO ContainerManagementProtocolProxy: Opening proxy : sandbox:49909
+16/08/14 00:37:17 DEBUG SecurityUtil: Acquired token Kind: NMToken, Service: 172.17.0.2:49909, Ident: (appAttemptId { application_id { id: 2 cluster_timestamp: 1471142426616 } attemptId: 1 } nodeId { host: "sandbox" port: 49909 } appSubmitter: "root" keyId: -1622284743)
+16/08/14 00:37:17 DEBUG UserGroupInformation: PrivilegedAction as:appattempt_1471142426616_0002_000001 (auth:SIMPLE) from:org.apache.hadoop.yarn.client.ServerProxy.createRetriableProxy(ServerProxy.java:88)
+16/08/14 00:37:17 DEBUG HadoopYarnProtoRPC: Creating a HadoopYarnProtoRpc proxy for protocol interface org.apache.hadoop.yarn.api.ContainerManagementProtocol
+16/08/14 00:37:17 DEBUG Client: getting client out of cache: org.apache.hadoop.ipc.Client@4a0f8b2e
+16/08/14 00:37:17 DEBUG Client: The ping interval is 60000 ms.
+16/08/14 00:37:17 DEBUG Client: Connecting to sandbox/172.17.0.2:49909
+16/08/14 00:37:17 DEBUG UserGroupInformation: PrivilegedAction as:appattempt_1471142426616_0002_000001 (auth:SIMPLE) from:org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:717)
+16/08/14 00:37:17 DEBUG SaslRpcClient: Sending sasl message state: NEGOTIATE
+
+16/08/14 00:37:17 DEBUG SaslRpcClient: Received SASL message state: NEGOTIATE
+auths {
+  method: "TOKEN"
+  mechanism: "DIGEST-MD5"
+  protocol: ""
+  serverId: "default"
+  challenge: "realm=\"default\",nonce=\"Bba6XIosxpJFpwRXbF0WRl05V9tSj1SeidY1DNKN\",qop=\"auth\",charset=utf-8,algorithm=md5-sess"
+}
+
+16/08/14 00:37:17 DEBUG SaslRpcClient: Get token info proto:interface org.apache.hadoop.yarn.api.ContainerManagementProtocolPB info:org.apache.hadoop.yarn.security.ContainerManagerSecurityInfo$1@43154672
+16/08/14 00:37:17 INFO NMTokenSelector: Looking for service: 172.17.0.2:49909. Current token is Kind: NMToken, Service: 172.17.0.2:49909, Ident: (appAttemptId { application_id { id: 2 cluster_timestamp: 1471142426616 } attemptId: 1 } nodeId { host: "sandbox" port: 49909 } appSubmitter: "root" keyId: -1622284743)
+16/08/14 00:37:17 DEBUG SaslRpcClient: Creating SASL DIGEST-MD5(TOKEN)  client to authenticate to service at default
+16/08/14 00:37:17 DEBUG SaslRpcClient: Use TOKEN authentication for protocol ContainerManagementProtocolPB
+16/08/14 00:37:17 DEBUG SaslRpcClient: SASL client callback: setting username: Cg0KCQgCEPjvr7foKhABEg0KB3NhbmRib3gQ9YUDGgRyb290ILnMt/r5/////wE=
+16/08/14 00:37:17 DEBUG SaslRpcClient: SASL client callback: setting userPassword
+16/08/14 00:37:17 DEBUG SaslRpcClient: SASL client callback: setting realm: default
+16/08/14 00:37:17 DEBUG SaslRpcClient: Sending sasl message state: INITIATE
+token: "charset=utf-8,username=\"Cg0KCQgCEPjvr7foKhABEg0KB3NhbmRib3gQ9YUDGgRyb290ILnMt/r5/////wE=\",realm=\"default\",nonce=\"Bba6XIosxpJFpwRXbF0WRl05V9tSj1SeidY1DNKN\",nc=00000001,cnonce=\"tzWHcOyuxC4P62vQt0OjJPdFQpyBfvgb18aBut55\",digest-uri=\"/default\",maxbuf=65536,response=c29a728f7128269a2e9b8792043939b0,qop=auth"
+auths {
+  method: "TOKEN"
+  mechanism: "DIGEST-MD5"
+  protocol: ""
+  serverId: "default"
+}
+
+16/08/14 00:37:17 DEBUG SaslRpcClient: Received SASL message state: SUCCESS
+token: "rspauth=94edc2abcbe468a13141cb44f0b18050"
+
+16/08/14 00:37:17 DEBUG Client: Negotiated QOP is :auth
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001 sending #5
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001: starting, having connections 2
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001 got value #5
+16/08/14 00:37:17 DEBUG ProtobufRpcEngine: Call: startContainers took 21ms
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001: closed
+16/08/14 00:37:17 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001: stopped, remaining connections 1
+16/08/14 00:37:18 DEBUG ApplicationMaster: Sending progress
+16/08/14 00:37:18 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #6
+16/08/14 00:37:18 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #6
+16/08/14 00:37:18 DEBUG ProtobufRpcEngine: Call: allocate took 4ms
+16/08/14 00:37:18 DEBUG ApplicationMaster: Number of pending allocations is 1. Sleeping for 1600.
+16/08/14 00:37:20 DEBUG ApplicationMaster: Sending progress
+16/08/14 00:37:20 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #7
+16/08/14 00:37:20 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #7
+16/08/14 00:37:20 DEBUG ProtobufRpcEngine: Call: allocate took 3ms
+16/08/14 00:37:20 DEBUG YarnAllocator: Allocated containers: 1. Current executor count: 1. Cluster resources: <memory:2048, vCores:-2>.
+16/08/14 00:37:20 DEBUG AMRMClientImpl: BEFORE decResourceRequest: applicationId= priority=1 resourceName=* numContainers=1 #asks=0
+16/08/14 00:37:20 INFO AMRMClientImpl: AFTER decResourceRequest: applicationId= priority=1 resourceName=* numContainers=0 #asks=1
+16/08/14 00:37:20 INFO YarnAllocator: Launching container container_1471142426616_0002_01_000003 for on host sandbox
+16/08/14 00:37:20 DEBUG YarnRPC: Creating YarnRPC for org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC
+16/08/14 00:37:20 INFO YarnAllocator: Launching ExecutorRunnable. driverUrl: spark://CoarseGrainedScheduler@172.17.0.2:41578,  executorHostname: sandbox
+16/08/14 00:37:20 INFO YarnAllocator: Received 1 containers from YARN, launching executors on 1 of them.
+16/08/14 00:37:20 DEBUG ApplicationMaster: Number of pending allocations is 0. Sleeping for 3000.
+16/08/14 00:37:20 INFO ExecutorRunnable: Starting Executor Container
+16/08/14 00:37:20 DEBUG AbstractService: Service: org.apache.hadoop.yarn.client.api.impl.NMClientImpl entered state INITED
+16/08/14 00:37:20 INFO ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+16/08/14 00:37:20 DEBUG YarnRPC: Creating YarnRPC for org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC
+16/08/14 00:37:20 DEBUG AbstractService: Service org.apache.hadoop.yarn.client.api.impl.NMClientImpl is started
+16/08/14 00:37:20 INFO ExecutorRunnable: Setting up ContainerLaunchContext
+16/08/14 00:37:20 INFO ExecutorRunnable: Preparing Local resources
+16/08/14 00:37:20 INFO ExecutorRunnable: Prepared Local resources Map(__app__.jar -> resource { scheme: "hdfs" host: "sandbox" port: 9000 file: "/user/root/.sparkStaging/application_1471142426616_0002/spark-examples-1.6.0-hadoop2.6.0.jar" } size: 118922054 timestamp: 1471149424779 type: FILE visibility: PRIVATE, __spark__.jar -> resource { scheme: "hdfs" host: "sandbox" port: 9000 file: "/spark/spark-assembly-1.6.0-hadoop2.6.0.jar" } size: 187548272 timestamp: 1452328076584 type: FILE visibility: PUBLIC, metrics.properties -> resource { scheme: "hdfs" host: "sandbox" port: 9000 file: "/user/root/.sparkStaging/application_1471142426616_0002/metrics.properties" } size: 6671 timestamp: 1471149424975 type: FILE visibility: PRIVATE)
+16/08/14 00:37:20 DEBUG Client: Using the default MR application classpath: $HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*,$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*
+16/08/14 00:37:20 INFO ExecutorRunnable: 
+===============================================================================
+YARN executor launch context:
+  env:
+    CLASSPATH -> {{PWD}}<CPS>{{PWD}}/__spark__.jar<CPS>/usr/local/hadoop/etc/hadoop<CPS>/usr/local/hadoop/share/hadoop/common/*<CPS>/usr/local/hadoop/share/hadoop/common/lib/*<CPS>/usr/local/hadoop/share/hadoop/hdfs/*<CPS>/usr/local/hadoop/share/hadoop/hdfs/lib/*<CPS>/usr/local/hadoop/share/hadoop/mapreduce/*<CPS>/usr/local/hadoop/share/hadoop/mapreduce/lib/*<CPS>/usr/local/hadoop/share/hadoop/yarn/*<CPS>/usr/local/hadoop/share/hadoop/yarn/lib/*<CPS>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*<CPS>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*
+    SPARK_LOG_URL_STDERR -> http://sandbox:8042/node/containerlogs/container_1471142426616_0002_01_000003/root/stderr?start=-4096
+    SPARK_YARN_STAGING_DIR -> .sparkStaging/application_1471142426616_0002
+    SPARK_YARN_CACHE_FILES_FILE_SIZES -> 187548272,118922054,6671
+    SPARK_USER -> root
+    SPARK_YARN_CACHE_FILES_VISIBILITIES -> PUBLIC,PRIVATE,PRIVATE
+    SPARK_YARN_MODE -> true
+    SPARK_YARN_CACHE_FILES_TIME_STAMPS -> 1452328076584,1471149424779,1471149424975
+    SPARK_LOG_URL_STDOUT -> http://sandbox:8042/node/containerlogs/container_1471142426616_0002_01_000003/root/stdout?start=-4096
+    SPARK_YARN_CACHE_FILES -> hdfs://sandbox:9000/spark/spark-assembly-1.6.0-hadoop2.6.0.jar#__spark__.jar,hdfs://sandbox:9000/user/root/.sparkStaging/application_1471142426616_0002/spark-examples-1.6.0-hadoop2.6.0.jar#__app__.jar,hdfs://sandbox:9000/user/root/.sparkStaging/application_1471142426616_0002/metrics.properties#metrics.properties
+
+  command:
+    {{JAVA_HOME}}/bin/java -server -XX:OnOutOfMemoryError='kill %p' -Xms1024m -Xmx1024m -Djava.io.tmpdir={{PWD}}/tmp '-Dspark.driver.port=41578' '-Dspark.ui.port=0' -Dspark.yarn.app.container.log.dir=<LOG_DIR> -XX:MaxPermSize=256m org.apache.spark.executor.CoarseGrainedExecutorBackend --driver-url spark://CoarseGrainedScheduler@172.17.0.2:41578 --executor-id 2 --hostname sandbox --cores 1 --app-id application_1471142426616_0002 --user-class-path file:$PWD/__app__.jar 1> <LOG_DIR>/stdout 2> <LOG_DIR>/stderr
+===============================================================================
+      
+16/08/14 00:37:20 INFO ContainerManagementProtocolProxy: Opening proxy : sandbox:49909
+16/08/14 00:37:20 DEBUG SecurityUtil: Acquired token Kind: NMToken, Service: 172.17.0.2:49909, Ident: (appAttemptId { application_id { id: 2 cluster_timestamp: 1471142426616 } attemptId: 1 } nodeId { host: "sandbox" port: 49909 } appSubmitter: "root" keyId: -1622284743)
+16/08/14 00:37:20 DEBUG UserGroupInformation: PrivilegedAction as:appattempt_1471142426616_0002_000001 (auth:SIMPLE) from:org.apache.hadoop.yarn.client.ServerProxy.createRetriableProxy(ServerProxy.java:88)
+16/08/14 00:37:20 DEBUG HadoopYarnProtoRPC: Creating a HadoopYarnProtoRpc proxy for protocol interface org.apache.hadoop.yarn.api.ContainerManagementProtocol
+16/08/14 00:37:20 DEBUG Client: getting client out of cache: org.apache.hadoop.ipc.Client@4a0f8b2e
+16/08/14 00:37:20 DEBUG Client: The ping interval is 60000 ms.
+16/08/14 00:37:20 DEBUG Client: Connecting to sandbox/172.17.0.2:49909
+16/08/14 00:37:20 DEBUG UserGroupInformation: PrivilegedAction as:appattempt_1471142426616_0002_000001 (auth:SIMPLE) from:org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:717)
+16/08/14 00:37:20 DEBUG SaslRpcClient: Sending sasl message state: NEGOTIATE
+
+16/08/14 00:37:20 DEBUG SaslRpcClient: Received SASL message state: NEGOTIATE
+auths {
+  method: "TOKEN"
+  mechanism: "DIGEST-MD5"
+  protocol: ""
+  serverId: "default"
+  challenge: "realm=\"default\",nonce=\"3Dhai9cXMXv1Ydl9FflBBwwvY/+OMy8js7g+rRHF\",qop=\"auth\",charset=utf-8,algorithm=md5-sess"
+}
+
+16/08/14 00:37:20 DEBUG SaslRpcClient: Get token info proto:interface org.apache.hadoop.yarn.api.ContainerManagementProtocolPB info:org.apache.hadoop.yarn.security.ContainerManagerSecurityInfo$1@38598a6f
+16/08/14 00:37:20 INFO NMTokenSelector: Looking for service: 172.17.0.2:49909. Current token is Kind: NMToken, Service: 172.17.0.2:49909, Ident: (appAttemptId { application_id { id: 2 cluster_timestamp: 1471142426616 } attemptId: 1 } nodeId { host: "sandbox" port: 49909 } appSubmitter: "root" keyId: -1622284743)
+16/08/14 00:37:20 DEBUG SaslRpcClient: Creating SASL DIGEST-MD5(TOKEN)  client to authenticate to service at default
+16/08/14 00:37:20 DEBUG SaslRpcClient: Use TOKEN authentication for protocol ContainerManagementProtocolPB
+16/08/14 00:37:20 DEBUG SaslRpcClient: SASL client callback: setting username: Cg0KCQgCEPjvr7foKhABEg0KB3NhbmRib3gQ9YUDGgRyb290ILnMt/r5/////wE=
+16/08/14 00:37:20 DEBUG SaslRpcClient: SASL client callback: setting userPassword
+16/08/14 00:37:20 DEBUG SaslRpcClient: SASL client callback: setting realm: default
+16/08/14 00:37:20 DEBUG SaslRpcClient: Sending sasl message state: INITIATE
+token: "charset=utf-8,username=\"Cg0KCQgCEPjvr7foKhABEg0KB3NhbmRib3gQ9YUDGgRyb290ILnMt/r5/////wE=\",realm=\"default\",nonce=\"3Dhai9cXMXv1Ydl9FflBBwwvY/+OMy8js7g+rRHF\",nc=00000001,cnonce=\"3t8u5D525jBI51SHZPkEApbxiXT1uoo8GmScQyDr\",digest-uri=\"/default\",maxbuf=65536,response=06078674e18409625c1ee15d8292e75c,qop=auth"
+auths {
+  method: "TOKEN"
+  mechanism: "DIGEST-MD5"
+  protocol: ""
+  serverId: "default"
+}
+
+16/08/14 00:37:20 DEBUG SaslRpcClient: Received SASL message state: SUCCESS
+token: "rspauth=355fc36b25bb8638e91ad83477aec4c4"
+
+16/08/14 00:37:20 DEBUG Client: Negotiated QOP is :auth
+16/08/14 00:37:20 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001 sending #8
+16/08/14 00:37:20 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001: starting, having connections 2
+16/08/14 00:37:20 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001 got value #8
+16/08/14 00:37:20 DEBUG ProtobufRpcEngine: Call: startContainers took 33ms
+16/08/14 00:37:20 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001: closed
+16/08/14 00:37:20 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:49909 from appattempt_1471142426616_0002_000001: stopped, remaining connections 1
+16/08/14 00:37:21 DEBUG ResourceLeakDetector: -Dio.netty.leakDetectionLevel: simple
+16/08/14 00:37:21 DEBUG Recycler: -Dio.netty.recycler.maxCapacity.default: 262144
+16/08/14 00:37:23 DEBUG ApplicationMaster: Sending progress
+16/08/14 00:37:23 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #9
+16/08/14 00:37:23 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #9
+16/08/14 00:37:23 DEBUG ProtobufRpcEngine: Call: allocate took 2ms
+16/08/14 00:37:23 DEBUG ApplicationMaster: Number of pending allocations is 0. Sleeping for 3000.
+16/08/14 00:37:25 INFO YarnClusterSchedulerBackend: Registered executor NettyRpcEndpointRef(null) (sandbox:59489) with ID 1
+16/08/14 00:37:25 INFO BlockManagerMasterEndpoint: Registering block manager sandbox:35545 with 517.4 MB RAM, BlockManagerId(1, sandbox, 35545)
+16/08/14 00:37:26 DEBUG ApplicationMaster: Sending progress
+16/08/14 00:37:26 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #10
+16/08/14 00:37:26 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #10
+16/08/14 00:37:26 DEBUG ProtobufRpcEngine: Call: allocate took 3ms
+16/08/14 00:37:26 DEBUG ApplicationMaster: Number of pending allocations is 0. Sleeping for 3000.
+16/08/14 00:37:27 INFO YarnClusterSchedulerBackend: Registered executor NettyRpcEndpointRef(null) (sandbox:59491) with ID 2
+16/08/14 00:37:27 INFO BlockManagerMasterEndpoint: Registering block manager sandbox:46849 with 517.4 MB RAM, BlockManagerId(2, sandbox, 46849)
+16/08/14 00:37:27 INFO YarnClusterSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+16/08/14 00:37:27 INFO YarnClusterScheduler: YarnClusterScheduler.postStartHook done
+16/08/14 00:37:28 DEBUG ClosureCleaner: +++ Cleaning closure <function1> (org.apache.spark.examples.SparkPi$$anonfun$1) +++
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + declared fields: 1
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public static final long org.apache.spark.examples.SparkPi$$anonfun$1.serialVersionUID
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + declared methods: 3
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.examples.SparkPi$$anonfun$1.apply(java.lang.Object)
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public final int org.apache.spark.examples.SparkPi$$anonfun$1.apply(int)
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public int org.apache.spark.examples.SparkPi$$anonfun$1.apply$mcII$sp(int)
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + inner classes: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + outer classes: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + outer objects: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + populating accessed fields because this is the starting closure
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + fields accessed by starting closure: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + there are no enclosing objects!
+16/08/14 00:37:28 DEBUG ClosureCleaner:  +++ closure <function1> (org.apache.spark.examples.SparkPi$$anonfun$1) is now cleaned +++
+16/08/14 00:37:28 DEBUG ClosureCleaner: +++ Cleaning closure <function2> (org.apache.spark.examples.SparkPi$$anonfun$2) +++
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + declared fields: 1
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public static final long org.apache.spark.examples.SparkPi$$anonfun$2.serialVersionUID
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + declared methods: 3
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.examples.SparkPi$$anonfun$2.apply(java.lang.Object,java.lang.Object)
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public final int org.apache.spark.examples.SparkPi$$anonfun$2.apply(int,int)
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public int org.apache.spark.examples.SparkPi$$anonfun$2.apply$mcIII$sp(int,int)
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + inner classes: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + outer classes: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + outer objects: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + populating accessed fields because this is the starting closure
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + fields accessed by starting closure: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + there are no enclosing objects!
+16/08/14 00:37:28 DEBUG ClosureCleaner:  +++ closure <function2> (org.apache.spark.examples.SparkPi$$anonfun$2) is now cleaned +++
+16/08/14 00:37:28 DEBUG ClosureCleaner: +++ Cleaning closure <function2> (org.apache.spark.SparkContext$$anonfun$36) +++
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + declared fields: 2
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public static final long org.apache.spark.SparkContext$$anonfun$36.serialVersionUID
+16/08/14 00:37:28 DEBUG ClosureCleaner:      private final scala.Function1 org.apache.spark.SparkContext$$anonfun$36.processPartition$1
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + declared methods: 2
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.SparkContext$$anonfun$36.apply(org.apache.spark.TaskContext,scala.collection.Iterator)
+16/08/14 00:37:28 DEBUG ClosureCleaner:      public final java.lang.Object org.apache.spark.SparkContext$$anonfun$36.apply(java.lang.Object,java.lang.Object)
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + inner classes: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + outer classes: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + outer objects: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + populating accessed fields because this is the starting closure
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + fields accessed by starting closure: 0
+16/08/14 00:37:28 DEBUG ClosureCleaner:  + there are no enclosing objects!
+16/08/14 00:37:28 DEBUG ClosureCleaner:  +++ closure <function2> (org.apache.spark.SparkContext$$anonfun$36) is now cleaned +++
+16/08/14 00:37:28 INFO SparkContext: Starting job: reduce at SparkPi.scala:36
+16/08/14 00:37:28 INFO DAGScheduler: Got job 0 (reduce at SparkPi.scala:36) with 2 output partitions
+16/08/14 00:37:28 INFO DAGScheduler: Final stage: ResultStage 0 (reduce at SparkPi.scala:36)
+16/08/14 00:37:28 INFO DAGScheduler: Parents of final stage: List()
+16/08/14 00:37:28 INFO DAGScheduler: Missing parents: List()
+16/08/14 00:37:28 DEBUG DAGScheduler: submitStage(ResultStage 0)
+16/08/14 00:37:28 DEBUG DAGScheduler: missing: List()
+16/08/14 00:37:28 INFO DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at map at SparkPi.scala:32), which has no missing parents
+16/08/14 00:37:28 DEBUG DAGScheduler: submitMissingTasks(ResultStage 0)
+16/08/14 00:37:28 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 1888.0 B, free 1888.0 B)
+16/08/14 00:37:28 DEBUG BlockManager: Put block broadcast_0 locally took  155 ms
+16/08/14 00:37:28 DEBUG BlockManager: Putting block broadcast_0 without replication took  155 ms
+16/08/14 00:37:28 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 1202.0 B, free 3.0 KB)
+16/08/14 00:37:28 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.17.0.2:60086 (size: 1202.0 B, free: 517.4 MB)
+16/08/14 00:37:28 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+16/08/14 00:37:28 DEBUG BlockManager: Told master about block broadcast_0_piece0
+16/08/14 00:37:28 DEBUG BlockManager: Put block broadcast_0_piece0 locally took  8 ms
+16/08/14 00:37:28 DEBUG BlockManager: Putting block broadcast_0_piece0 without replication took  8 ms
+16/08/14 00:37:28 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+16/08/14 00:37:28 INFO DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at map at SparkPi.scala:32)
+16/08/14 00:37:28 DEBUG DAGScheduler: New pending partitions: Set(0, 1)
+16/08/14 00:37:28 INFO YarnClusterScheduler: Adding task set 0.0 with 2 tasks
+16/08/14 00:37:28 DEBUG TaskSetManager: Epoch for TaskSet 0.0: 0
+16/08/14 00:37:28 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+16/08/14 00:37:28 DEBUG YarnClusterScheduler: parentName: , name: TaskSet_0, runningTasks: 0
+16/08/14 00:37:28 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, sandbox, partition 0,PROCESS_LOCAL, 2078 bytes)
+16/08/14 00:37:28 INFO TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, sandbox, partition 1,PROCESS_LOCAL, 2078 bytes)
+16/08/14 00:37:28 DEBUG BlockManager: Level for block broadcast_0_piece0 is StorageLevel(true, true, false, false, 1)
+16/08/14 00:37:28 DEBUG BlockManager: Getting block broadcast_0_piece0 from memory
+16/08/14 00:37:28 DEBUG BlockManager: Level for block broadcast_0_piece0 is StorageLevel(true, true, false, false, 1)
+16/08/14 00:37:28 DEBUG BlockManager: Getting block broadcast_0_piece0 from memory
+16/08/14 00:37:29 DEBUG ApplicationMaster: Sending progress
+16/08/14 00:37:29 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #11
+16/08/14 00:37:29 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #11
+16/08/14 00:37:29 DEBUG ProtobufRpcEngine: Call: allocate took 2ms
+16/08/14 00:37:29 DEBUG ApplicationMaster: Number of pending allocations is 0. Sleeping for 3000.
+16/08/14 00:37:29 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on sandbox:46849 (size: 1202.0 B, free: 517.4 MB)
+16/08/14 00:37:29 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on sandbox:35545 (size: 1202.0 B, free: 517.4 MB)
+16/08/14 00:37:29 DEBUG YarnClusterScheduler: parentName: , name: TaskSet_0, runningTasks: 2
+16/08/14 00:37:29 DEBUG YarnClusterScheduler: parentName: , name: TaskSet_0, runningTasks: 1
+16/08/14 00:37:29 DEBUG TaskSetManager: No tasks for locality level NO_PREF, so moving to locality level ANY
+16/08/14 00:37:29 INFO TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 1360 ms on sandbox (1/2)
+16/08/14 00:37:29 DEBUG YarnClusterScheduler: parentName: , name: TaskSet_0, runningTasks: 0
+16/08/14 00:37:29 INFO DAGScheduler: ResultStage 0 (reduce at SparkPi.scala:36) finished in 1.414 s
+16/08/14 00:37:29 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1413 ms on sandbox (2/2)
+16/08/14 00:37:29 DEBUG DAGScheduler: After removal of stage 0, remaining stages = 0
+16/08/14 00:37:29 INFO DAGScheduler: Job 0 finished: reduce at SparkPi.scala:36, took 1.742304 s
+16/08/14 00:37:29 INFO YarnClusterScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/08/14 00:37:29 INFO SparkUI: Stopped Spark web UI at http://172.17.0.2:54395
+16/08/14 00:37:29 INFO YarnClusterSchedulerBackend: Shutting down all executors
+16/08/14 00:37:29 INFO YarnClusterSchedulerBackend: Asking each executor to shut down
+16/08/14 00:37:30 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/08/14 00:37:30 INFO MemoryStore: MemoryStore cleared
+16/08/14 00:37:30 INFO BlockManager: BlockManager stopped
+16/08/14 00:37:30 INFO BlockManagerMaster: BlockManagerMaster stopped
+16/08/14 00:37:30 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/08/14 00:37:30 INFO SparkContext: Successfully stopped SparkContext
+16/08/14 00:37:30 INFO RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/08/14 00:37:30 INFO RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/08/14 00:37:30 INFO ApplicationMaster: Final app status: SUCCEEDED, exitCode: 0
+16/08/14 00:37:30 DEBUG ApplicationMaster: shutting down reporter thread
+16/08/14 00:37:30 DEBUG ApplicationMaster: Done running users class
+16/08/14 00:37:30 INFO ApplicationMaster: Unregistering ApplicationMaster with SUCCEEDED
+16/08/14 00:37:30 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #12
+16/08/14 00:37:30 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #12
+16/08/14 00:37:30 DEBUG ProtobufRpcEngine: Call: finishApplicationMaster took 4ms
+16/08/14 00:37:30 INFO AMRMClientImpl: Waiting for application to be successfully unregistered.
+16/08/14 00:37:30 INFO RemoteActorRefProvider$RemotingTerminator: Remoting shut down.
+16/08/14 00:37:30 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root sending #13
+16/08/14 00:37:30 DEBUG Client: IPC Client (2119760949) connection to /0.0.0.0:8030 from root got value #13
+16/08/14 00:37:30 DEBUG ProtobufRpcEngine: Call: finishApplicationMaster took 2ms
+16/08/14 00:37:30 INFO ApplicationMaster: Deleting staging directory .sparkStaging/application_1471142426616_0002
+16/08/14 00:37:30 DEBUG Client: The ping interval is 60000 ms.
+16/08/14 00:37:30 DEBUG Client: Connecting to sandbox/172.17.0.2:9000
+16/08/14 00:37:30 DEBUG UserGroupInformation: PrivilegedAction as:root (auth:SIMPLE) from:org.apache.hadoop.ipc.Client$Connection.setupIOstreams(Client.java:717)
+16/08/14 00:37:30 DEBUG SaslRpcClient: Sending sasl message state: NEGOTIATE
+
+16/08/14 00:37:30 DEBUG SaslRpcClient: Received SASL message state: NEGOTIATE
+auths {
+  method: "TOKEN"
+  mechanism: "DIGEST-MD5"
+  protocol: ""
+  serverId: "default"
+  challenge: "realm=\"default\",nonce=\"AQ5ibEy9/gEd/3IHKax82+PdqCZkk8/bJb770GEs\",qop=\"auth\",charset=utf-8,algorithm=md5-sess"
+}
+auths {
+  method: "SIMPLE"
+  mechanism: ""
+}
+
+16/08/14 00:37:30 DEBUG SaslRpcClient: Get token info proto:interface org.apache.hadoop.hdfs.protocolPB.ClientNamenodeProtocolPB info:@org.apache.hadoop.security.token.TokenInfo(value=class org.apache.hadoop.hdfs.security.token.delegation.DelegationTokenSelector)
+16/08/14 00:37:30 DEBUG SaslRpcClient: Use SIMPLE authentication for protocol ClientNamenodeProtocolPB
+16/08/14 00:37:30 DEBUG SaslRpcClient: Sending sasl message state: INITIATE
+auths {
+  method: "SIMPLE"
+  mechanism: ""
+}
+
+16/08/14 00:37:30 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:9000 from root sending #14
+16/08/14 00:37:30 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:9000 from root: starting, having connections 2
+16/08/14 00:37:30 DEBUG Client: IPC Client (2119760949) connection to sandbox/172.17.0.2:9000 from root got value #14
+16/08/14 00:37:30 DEBUG ProtobufRpcEngine: Call: delete took 10ms
+16/08/14 00:37:30 INFO ShutdownHookManager: Shutdown hook called
+16/08/14 00:37:30 INFO ShutdownHookManager: Deleting directory /tmp/hadoop-root/nm-local-dir/usercache/root/appcache/application_1471142426616_0002/spark-a498524d-1784-4838-a511-a8478628e277
+16/08/14 00:37:30 DEBUG Client: stopping client from cache: org.apache.hadoop.ipc.Client@4a0f8b2e
