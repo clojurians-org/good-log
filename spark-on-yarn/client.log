@@ -1,0 +1,155 @@
+spark-submit \
+> --class org.apache.spark.examples.SparkPi \
+> --master yarn-client \
+> --driver-memory 1g \
+> --executor-memory 1g \
+> --executor-cores 1 \
+> $SPARK_HOME/lib/spark-examples-1.6.0-hadoop2.6.0.jar
+16/08/13 22:41:14 INFO spark.SparkContext: Running Spark version 1.6.0
+16/08/13 22:41:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+16/08/13 22:41:15 INFO spark.SecurityManager: Changing view acls to: root
+16/08/13 22:41:15 INFO spark.SecurityManager: Changing modify acls to: root
+16/08/13 22:41:15 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/08/13 22:41:16 INFO util.Utils: Successfully started service 'sparkDriver' on port 33630.
+16/08/13 22:41:17 INFO slf4j.Slf4jLogger: Slf4jLogger started
+16/08/13 22:41:17 INFO Remoting: Starting remoting
+16/08/13 22:41:17 INFO Remoting: Remoting started; listening on addresses :[akka.tcp://sparkDriverActorSystem@172.17.0.2:49028]
+16/08/13 22:41:17 INFO util.Utils: Successfully started service 'sparkDriverActorSystem' on port 49028.
+16/08/13 22:41:17 INFO spark.SparkEnv: Registering MapOutputTracker
+16/08/13 22:41:17 INFO spark.SparkEnv: Registering BlockManagerMaster
+16/08/13 22:41:17 INFO storage.DiskBlockManager: Created local directory at /tmp/blockmgr-094fbb0d-7f93-4b9d-bc62-69c9f015a956
+16/08/13 22:41:17 INFO storage.MemoryStore: MemoryStore started with capacity 517.4 MB
+16/08/13 22:41:18 INFO spark.SparkEnv: Registering OutputCommitCoordinator
+16/08/13 22:41:18 INFO server.Server: jetty-8.y.z-SNAPSHOT
+16/08/13 22:41:18 INFO server.AbstractConnector: Started SelectChannelConnector@0.0.0.0:4040
+16/08/13 22:41:18 INFO util.Utils: Successfully started service 'SparkUI' on port 4040.
+16/08/13 22:41:18 INFO ui.SparkUI: Started SparkUI at http://172.17.0.2:4040
+16/08/13 22:41:18 INFO spark.HttpFileServer: HTTP File server directory is /tmp/spark-0025eae8-b728-4350-b23d-16db0b171321/httpd-05961d3d-effa-4296-9641-97ec6c6979d7
+16/08/13 22:41:18 INFO spark.HttpServer: Starting HTTP Server
+16/08/13 22:41:18 INFO server.Server: jetty-8.y.z-SNAPSHOT
+16/08/13 22:41:18 INFO server.AbstractConnector: Started SocketConnector@0.0.0.0:34870
+16/08/13 22:41:18 INFO util.Utils: Successfully started service 'HTTP file server' on port 34870.
+16/08/13 22:41:20 INFO spark.SparkContext: Added JAR file:/usr/local/spark/lib/spark-examples-1.6.0-hadoop2.6.0.jar at http://172.17.0.2:34870/jars/spark-examples-1.6.0-hadoop2.6.0.jar with timestamp 1471142480161
+16/08/13 22:41:20 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+16/08/13 22:41:20 INFO yarn.Client: Requesting a new application from cluster with 1 NodeManagers
+16/08/13 22:41:20 INFO yarn.Client: Verifying our application has not requested more than the maximum memory capability of the cluster (8192 MB per container)
+16/08/13 22:41:20 INFO yarn.Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+16/08/13 22:41:20 INFO yarn.Client: Setting up container launch context for our AM
+16/08/13 22:41:20 INFO yarn.Client: Setting up the launch environment for our AM container
+16/08/13 22:41:20 INFO yarn.Client: Preparing resources for our AM container
+16/08/13 22:41:22 INFO yarn.Client: Source and destination file systems are the same. Not copying hdfs:/spark/spark-assembly-1.6.0-hadoop2.6.0.jar
+16/08/13 22:41:22 INFO yarn.Client: Uploading resource file:/tmp/spark-0025eae8-b728-4350-b23d-16db0b171321/__spark_conf__5943213161347346179.zip -> hdfs://sandbox:9000/user/root/.sparkStaging/application_1471142426616_0001/__spark_conf__5943213161347346179.zip
+16/08/13 22:41:23 INFO spark.SecurityManager: Changing view acls to: root
+16/08/13 22:41:23 INFO spark.SecurityManager: Changing modify acls to: root
+16/08/13 22:41:23 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root); users with modify permissions: Set(root)
+16/08/13 22:41:23 INFO yarn.Client: Submitting application 1 to ResourceManager
+16/08/13 22:41:24 INFO impl.YarnClientImpl: Submitted application application_1471142426616_0001
+16/08/13 22:41:25 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:25 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1471142483909
+	 final status: UNDEFINED
+	 tracking URL: http://sandbox:8088/proxy/application_1471142426616_0001/
+	 user: root
+16/08/13 22:41:26 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:27 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:28 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:29 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:30 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:31 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:32 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:33 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:34 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:35 INFO cluster.YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(null)
+16/08/13 22:41:35 INFO cluster.YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> sandbox, PROXY_URI_BASES -> http://sandbox:8088/proxy/application_1471142426616_0001), /proxy/application_1471142426616_0001
+16/08/13 22:41:35 INFO ui.JettyUtils: Adding filter: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+16/08/13 22:41:35 INFO yarn.Client: Application report for application_1471142426616_0001 (state: ACCEPTED)
+16/08/13 22:41:36 INFO yarn.Client: Application report for application_1471142426616_0001 (state: RUNNING)
+16/08/13 22:41:36 INFO yarn.Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 172.17.0.2
+	 ApplicationMaster RPC port: 0
+	 queue: default
+	 start time: 1471142483909
+	 final status: UNDEFINED
+	 tracking URL: http://sandbox:8088/proxy/application_1471142426616_0001/
+	 user: root
+16/08/13 22:41:36 INFO cluster.YarnClientSchedulerBackend: Application application_1471142426616_0001 has started running.
+16/08/13 22:41:36 INFO util.Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 59531.
+16/08/13 22:41:36 INFO netty.NettyBlockTransferService: Server created on 59531
+16/08/13 22:41:36 INFO storage.BlockManagerMaster: Trying to register BlockManager
+16/08/13 22:41:36 INFO storage.BlockManagerMasterEndpoint: Registering block manager 172.17.0.2:59531 with 517.4 MB RAM, BlockManagerId(driver, 172.17.0.2, 59531)
+16/08/13 22:41:36 INFO storage.BlockManagerMaster: Registered BlockManager
+16/08/13 22:41:45 INFO cluster.YarnClientSchedulerBackend: Registered executor NettyRpcEndpointRef(null) (sandbox:38185) with ID 1
+16/08/13 22:41:46 INFO storage.BlockManagerMasterEndpoint: Registering block manager sandbox:40287 with 517.4 MB RAM, BlockManagerId(1, sandbox, 40287)
+16/08/13 22:41:47 INFO cluster.YarnClientSchedulerBackend: Registered executor NettyRpcEndpointRef(null) (sandbox:38186) with ID 2
+16/08/13 22:41:47 INFO cluster.YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.8
+16/08/13 22:41:47 INFO storage.BlockManagerMasterEndpoint: Registering block manager sandbox:33097 with 517.4 MB RAM, BlockManagerId(2, sandbox, 33097)
+16/08/13 22:41:48 INFO spark.SparkContext: Starting job: reduce at SparkPi.scala:36
+16/08/13 22:41:48 INFO scheduler.DAGScheduler: Got job 0 (reduce at SparkPi.scala:36) with 2 output partitions
+16/08/13 22:41:48 INFO scheduler.DAGScheduler: Final stage: ResultStage 0 (reduce at SparkPi.scala:36)
+16/08/13 22:41:48 INFO scheduler.DAGScheduler: Parents of final stage: List()
+16/08/13 22:41:48 INFO scheduler.DAGScheduler: Missing parents: List()
+16/08/13 22:41:48 INFO scheduler.DAGScheduler: Submitting ResultStage 0 (MapPartitionsRDD[1] at map at SparkPi.scala:32), which has no missing parents
+16/08/13 22:41:48 INFO storage.MemoryStore: Block broadcast_0 stored as values in memory (estimated size 1888.0 B, free 1888.0 B)
+16/08/13 22:41:48 INFO storage.MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 1202.0 B, free 3.0 KB)
+16/08/13 22:41:48 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.17.0.2:59531 (size: 1202.0 B, free: 517.4 MB)
+16/08/13 22:41:48 INFO spark.SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1006
+16/08/13 22:41:48 INFO scheduler.DAGScheduler: Submitting 2 missing tasks from ResultStage 0 (MapPartitionsRDD[1] at map at SparkPi.scala:32)
+16/08/13 22:41:48 INFO cluster.YarnScheduler: Adding task set 0.0 with 2 tasks
+16/08/13 22:41:48 INFO scheduler.TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0, sandbox, partition 0,PROCESS_LOCAL, 2153 bytes)
+16/08/13 22:41:48 INFO scheduler.TaskSetManager: Starting task 1.0 in stage 0.0 (TID 1, sandbox, partition 1,PROCESS_LOCAL, 2153 bytes)
+16/08/13 22:41:53 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on sandbox:33097 (size: 1202.0 B, free: 517.4 MB)
+16/08/13 22:41:53 INFO storage.BlockManagerInfo: Added broadcast_0_piece0 in memory on sandbox:40287 (size: 1202.0 B, free: 517.4 MB)
+16/08/13 22:41:53 INFO scheduler.TaskSetManager: Finished task 1.0 in stage 0.0 (TID 1) in 5134 ms on sandbox (1/2)
+16/08/13 22:41:53 INFO scheduler.TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 5297 ms on sandbox (2/2)
+16/08/13 22:41:53 INFO cluster.YarnScheduler: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+16/08/13 22:41:53 INFO scheduler.DAGScheduler: ResultStage 0 (reduce at SparkPi.scala:36) finished in 5.303 s
+16/08/13 22:41:53 INFO scheduler.DAGScheduler: Job 0 finished: reduce at SparkPi.scala:36, took 5.629732 s
+Pi is roughly 3.14044
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/metrics/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/stage/kill,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/api,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/static,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/executors/threadDump/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/executors/threadDump,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/executors/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/executors,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/environment/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/environment,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/storage/rdd/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/storage/rdd,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/storage/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/storage,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/pool/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/pool,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/stage/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/stage,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/stages,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/jobs/job/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/jobs/job,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/jobs/json,null}
+16/08/13 22:41:53 INFO handler.ContextHandler: stopped o.s.j.s.ServletContextHandler{/jobs,null}
+16/08/13 22:41:53 INFO ui.SparkUI: Stopped Spark web UI at http://172.17.0.2:4040
+16/08/13 22:41:53 INFO cluster.YarnClientSchedulerBackend: Interrupting monitor thread
+16/08/13 22:41:53 INFO cluster.YarnClientSchedulerBackend: Shutting down all executors
+16/08/13 22:41:53 INFO cluster.YarnClientSchedulerBackend: Asking each executor to shut down
+16/08/13 22:41:53 INFO cluster.YarnClientSchedulerBackend: Stopped
+16/08/13 22:41:53 INFO spark.MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+16/08/13 22:41:53 INFO storage.MemoryStore: MemoryStore cleared
+16/08/13 22:41:54 INFO storage.BlockManager: BlockManager stopped
+16/08/13 22:41:54 INFO storage.BlockManagerMaster: BlockManagerMaster stopped
+16/08/13 22:41:54 INFO scheduler.OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+16/08/13 22:41:54 INFO spark.SparkContext: Successfully stopped SparkContext
+16/08/13 22:41:54 INFO remote.RemoteActorRefProvider$RemotingTerminator: Shutting down remote daemon.
+16/08/13 22:41:54 INFO remote.RemoteActorRefProvider$RemotingTerminator: Remote daemon shut down; proceeding with flushing remote transports.
+16/08/13 22:41:54 INFO util.ShutdownHookManager: Shutdown hook called
+16/08/13 22:41:54 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-0025eae8-b728-4350-b23d-16db0b171321
+16/08/13 22:41:54 INFO util.ShutdownHookManager: Deleting directory /tmp/spark-0025eae8-b728-4350-b23d-16db0b171321/httpd-05961d3d-effa-4296-9641-97ec6c6979d7
