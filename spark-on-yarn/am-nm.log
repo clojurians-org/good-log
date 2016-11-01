@@ -1,109 +1,109 @@
-16/11/01 06:00:23 INFO resourcemanager.ClientRMService: Allocated new applicationId: 504
-16/11/01 06:00:34 WARN rmapp.RMAppImpl: The specific max attempts: 0 for application: 504 is invalid, because it is out of the range [1, 2]. Use the global max attempts instead.
-16/11/01 06:00:34 INFO resourcemanager.ClientRMService: Application with id 504 submitted by user spiderdt
-16/11/01 06:00:34 INFO resourcemanager.RMAuditLogger: USER=spiderdt	IP=192.168.1.2	OPERATION=Submit Application Request	TARGET=ClientRMService	RESULT=SUCCESS	APPID=application_1473739536361_0504
-16/11/01 06:00:34 INFO rmapp.RMAppImpl: Storing application with id application_1473739536361_0504
-16/11/01 06:00:34 INFO rmapp.RMAppImpl: application_1473739536361_0504 State change from NEW to NEW_SAVING
-16/11/01 06:00:34 INFO recovery.RMStateStore: Storing info for app: application_1473739536361_0504
-16/11/01 06:00:34 INFO rmapp.RMAppImpl: application_1473739536361_0504 State change from NEW_SAVING to SUBMITTED
-16/11/01 06:00:34 INFO capacity.ParentQueue: Application added - appId: application_1473739536361_0504 user: spiderdt leaf-queue of parent: root #applications: 2
-16/11/01 06:00:34 INFO capacity.CapacityScheduler: Accepted application application_1473739536361_0504 from user: spiderdt, in queue: default
-16/11/01 06:00:34 INFO rmapp.RMAppImpl: application_1473739536361_0504 State change from SUBMITTED to ACCEPTED
-16/11/01 06:00:34 INFO resourcemanager.ApplicationMasterService: Registering app attempt : appattempt_1473739536361_0504_000001
-16/11/01 06:00:34 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000001 State change from NEW to SUBMITTED
-16/11/01 06:00:34 INFO capacity.LeafQueue: Application application_1473739536361_0504 from user: spiderdt activated in queue: default
-16/11/01 06:00:34 INFO capacity.LeafQueue: Application added - appId: application_1473739536361_0504 user: org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue$User@ec50d7c, leaf-queue: default #user-pending-applications: 0 #user-active-applications: 2 #queue-pending-applications: 0 #queue-active-applications: 2
-16/11/01 06:00:34 INFO capacity.CapacityScheduler: Added Application Attempt appattempt_1473739536361_0504_000001 to scheduler from user spiderdt in queue default
-16/11/01 06:00:34 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000001 State change from SUBMITTED to SCHEDULED
-16/11/01 06:00:34 INFO rmcontainer.RMContainerImpl: container_1473739536361_0504_01_000001 Container Transitioned from NEW to ALLOCATED
-16/11/01 06:00:34 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Allocated Container	TARGET=SchedulerApp	RESULT=SUCCESS	APPID=application_1473739536361_0504	CONTAINERID=container_1473739536361_0504_01_000001
-16/11/01 06:00:34 INFO scheduler.SchedulerNode: Assigned container container_1473739536361_0504_01_000001 of capacity <memory:2048, vCores:1> on host node5:37049, which has 2 containers, <memory:6144, vCores:2> used and <memory:10240, vCores:6> available after allocation
-16/11/01 06:00:34 INFO capacity.LeafQueue: assignedContainer application attempt=appattempt_1473739536361_0504_000001 container=Container: [ContainerId: container_1473739536361_0504_01_000001, NodeId: node5:37049, NodeHttpAddress: node5:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: null, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2 clusterResource=<memory:65536, vCores:32>
-16/11/01 06:00:34 INFO capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:8192, vCores:3>, usedCapacity=0.125, absoluteUsedCapacity=0.125, numApps=2, numContainers=3
-16/11/01 06:00:34 INFO capacity.ParentQueue: assignedContainer queue=root usedCapacity=0.125 absoluteUsedCapacity=0.125 used=<memory:8192, vCores:3> cluster=<memory:65536, vCores:32>
-16/11/01 06:00:34 INFO security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : node5:37049 for container : container_1473739536361_0504_01_000001
-16/11/01 06:00:34 INFO rmcontainer.RMContainerImpl: container_1473739536361_0504_01_000001 Container Transitioned from ALLOCATED to ACQUIRED
-16/11/01 06:00:34 INFO security.NMTokenSecretManagerInRM: Clear node set for appattempt_1473739536361_0504_000001
-16/11/01 06:00:34 INFO attempt.RMAppAttemptImpl: Storing attempt: AppId: application_1473739536361_0504 AttemptId: appattempt_1473739536361_0504_000001 MasterContainer: Container: [ContainerId: container_1473739536361_0504_01_000001, NodeId: node5:37049, NodeHttpAddress: node5:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.5:37049 }, ]
-16/11/01 06:00:34 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000001 State change from SCHEDULED to ALLOCATED_SAVING
-16/11/01 06:00:34 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000001 State change from ALLOCATED_SAVING to ALLOCATED
-16/11/01 06:00:34 INFO amlauncher.AMLauncher: Launching masterappattempt_1473739536361_0504_000001
-16/11/01 06:00:34 INFO amlauncher.AMLauncher: Setting up container Container: [ContainerId: container_1473739536361_0504_01_000001, NodeId: node5:37049, NodeHttpAddress: node5:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.5:37049 }, ] for AM appattempt_1473739536361_0504_000001
-16/11/01 06:00:34 INFO amlauncher.AMLauncher: Command to launch container container_1473739536361_0504_01_000001 : echo,hello world
-16/11/01 06:00:34 INFO security.AMRMTokenSecretManager: Create AMRMToken for ApplicationAttempt: appattempt_1473739536361_0504_000001
-16/11/01 06:00:34 INFO security.AMRMTokenSecretManager: Creating password for appattempt_1473739536361_0504_000001
-16/11/01 06:00:34 INFO amlauncher.AMLauncher: Done launching container Container: [ContainerId: container_1473739536361_0504_01_000001, NodeId: node5:37049, NodeHttpAddress: node5:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.5:37049 }, ] for AM appattempt_1473739536361_0504_000001
-16/11/01 06:00:34 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000001 State change from ALLOCATED to LAUNCHED
-16/11/01 06:00:35 INFO rmcontainer.RMContainerImpl: container_1473739536361_0504_01_000001 Container Transitioned from ACQUIRED to COMPLETED
-16/11/01 06:00:35 INFO fica.FiCaSchedulerApp: Completed container: container_1473739536361_0504_01_000001 in state: COMPLETED event:FINISHED
-16/11/01 06:00:35 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Released Container	TARGET=SchedulerApp	RESULT=SUCCESS	APPID=application_1473739536361_0504	CONTAINERID=container_1473739536361_0504_01_000001
-16/11/01 06:00:35 INFO scheduler.SchedulerNode: Released container container_1473739536361_0504_01_000001 of capacity <memory:2048, vCores:1> on host node5:37049, which currently has 1 containers, <memory:4096, vCores:1> used and <memory:12288, vCores:7> available, release resources=true
-16/11/01 06:00:35 INFO capacity.LeafQueue: default used=<memory:6144, vCores:2> numContainers=2 user=spiderdt user-resources=<memory:6144, vCores:2>
-16/11/01 06:00:35 INFO attempt.RMAppAttemptImpl: Updating application attempt appattempt_1473739536361_0504_000001 with final state: FAILED, and exit status: 0
-16/11/01 06:00:35 INFO capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1473739536361_0504_01_000001, NodeId: node5:37049, NodeHttpAddress: node5:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.5:37049 }, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2 cluster=<memory:65536, vCores:32>
-16/11/01 06:00:35 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000001 State change from LAUNCHED to FINAL_SAVING
-16/11/01 06:00:35 INFO capacity.ParentQueue: completedContainer queue=root usedCapacity=0.09375 absoluteUsedCapacity=0.09375 used=<memory:6144, vCores:2> cluster=<memory:65536, vCores:32>
-16/11/01 06:00:35 INFO capacity.ParentQueue: Re-sorting completed queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2
-16/11/01 06:00:35 INFO resourcemanager.ApplicationMasterService: Unregistering app attempt : appattempt_1473739536361_0504_000001
-16/11/01 06:00:35 INFO capacity.CapacityScheduler: Application attempt appattempt_1473739536361_0504_000001 released container container_1473739536361_0504_01_000001 on node: host: node5:37049 #containers=1 available=<memory:12288, vCores:7> used=<memory:4096, vCores:1> with event: FINISHED
-16/11/01 06:00:35 INFO security.AMRMTokenSecretManager: Application finished, removing password for appattempt_1473739536361_0504_000001
-16/11/01 06:00:35 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000001 State change from FINAL_SAVING to FAILED
-16/11/01 06:00:35 INFO rmapp.RMAppImpl: The number of failed attempts is 1. The max attempts is 2
-16/11/01 06:00:35 INFO resourcemanager.ApplicationMasterService: Registering app attempt : appattempt_1473739536361_0504_000002
-16/11/01 06:00:35 INFO capacity.CapacityScheduler: Application Attempt appattempt_1473739536361_0504_000001 is done. finalState=FAILED
-16/11/01 06:00:35 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000002 State change from NEW to SUBMITTED
-16/11/01 06:00:35 INFO scheduler.AppSchedulingInfo: Application application_1473739536361_0504 requests cleared
-16/11/01 06:00:35 INFO capacity.LeafQueue: Application removed - appId: application_1473739536361_0504 user: spiderdt queue: default #user-pending-applications: 0 #user-active-applications: 1 #queue-pending-applications: 0 #queue-active-applications: 1
-16/11/01 06:00:35 INFO capacity.LeafQueue: Application application_1473739536361_0504 from user: spiderdt activated in queue: default
-16/11/01 06:00:35 INFO capacity.LeafQueue: Application added - appId: application_1473739536361_0504 user: org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue$User@ec50d7c, leaf-queue: default #user-pending-applications: 0 #user-active-applications: 2 #queue-pending-applications: 0 #queue-active-applications: 2
-16/11/01 06:00:35 INFO capacity.CapacityScheduler: Added Application Attempt appattempt_1473739536361_0504_000002 to scheduler from user spiderdt in queue default
-16/11/01 06:00:35 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000002 State change from SUBMITTED to SCHEDULED
-16/11/01 06:00:36 INFO rmcontainer.RMContainerImpl: container_1473739536361_0504_02_000001 Container Transitioned from NEW to ALLOCATED
-16/11/01 06:00:36 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Allocated Container	TARGET=SchedulerApp	RESULT=SUCCESS	APPID=application_1473739536361_0504	CONTAINERID=container_1473739536361_0504_02_000001
-16/11/01 06:00:36 INFO scheduler.SchedulerNode: Assigned container container_1473739536361_0504_02_000001 of capacity <memory:2048, vCores:1> on host node7:32982, which has 1 containers, <memory:2048, vCores:1> used and <memory:14336, vCores:7> available after allocation
-16/11/01 06:00:36 INFO capacity.LeafQueue: assignedContainer application attempt=appattempt_1473739536361_0504_000002 container=Container: [ContainerId: container_1473739536361_0504_02_000001, NodeId: node7:32982, NodeHttpAddress: node7:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: null, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2 clusterResource=<memory:65536, vCores:32>
-16/11/01 06:00:36 INFO capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:8192, vCores:3>, usedCapacity=0.125, absoluteUsedCapacity=0.125, numApps=2, numContainers=3
-16/11/01 06:00:36 INFO capacity.ParentQueue: assignedContainer queue=root usedCapacity=0.125 absoluteUsedCapacity=0.125 used=<memory:8192, vCores:3> cluster=<memory:65536, vCores:32>
-16/11/01 06:00:36 INFO security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : node7:32982 for container : container_1473739536361_0504_02_000001
-16/11/01 06:00:36 INFO rmcontainer.RMContainerImpl: container_1473739536361_0504_02_000001 Container Transitioned from ALLOCATED to ACQUIRED
-16/11/01 06:00:36 INFO security.NMTokenSecretManagerInRM: Clear node set for appattempt_1473739536361_0504_000002
-16/11/01 06:00:36 INFO attempt.RMAppAttemptImpl: Storing attempt: AppId: application_1473739536361_0504 AttemptId: appattempt_1473739536361_0504_000002 MasterContainer: Container: [ContainerId: container_1473739536361_0504_02_000001, NodeId: node7:32982, NodeHttpAddress: node7:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.7:32982 }, ]
-16/11/01 06:00:36 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000002 State change from SCHEDULED to ALLOCATED_SAVING
-16/11/01 06:00:36 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000002 State change from ALLOCATED_SAVING to ALLOCATED
-16/11/01 06:00:36 INFO amlauncher.AMLauncher: Launching masterappattempt_1473739536361_0504_000002
-16/11/01 06:00:36 INFO amlauncher.AMLauncher: Setting up container Container: [ContainerId: container_1473739536361_0504_02_000001, NodeId: node7:32982, NodeHttpAddress: node7:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.7:32982 }, ] for AM appattempt_1473739536361_0504_000002
-16/11/01 06:00:36 INFO amlauncher.AMLauncher: Command to launch container container_1473739536361_0504_02_000001 : echo,hello world
-16/11/01 06:00:36 INFO security.AMRMTokenSecretManager: Create AMRMToken for ApplicationAttempt: appattempt_1473739536361_0504_000002
-16/11/01 06:00:36 INFO security.AMRMTokenSecretManager: Creating password for appattempt_1473739536361_0504_000002
-16/11/01 06:00:36 INFO amlauncher.AMLauncher: Done launching container Container: [ContainerId: container_1473739536361_0504_02_000001, NodeId: node7:32982, NodeHttpAddress: node7:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.7:32982 }, ] for AM appattempt_1473739536361_0504_000002
-16/11/01 06:00:36 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000002 State change from ALLOCATED to LAUNCHED
-16/11/01 06:00:37 INFO rmcontainer.RMContainerImpl: container_1473739536361_0504_02_000001 Container Transitioned from ACQUIRED to COMPLETED
-16/11/01 06:00:37 INFO fica.FiCaSchedulerApp: Completed container: container_1473739536361_0504_02_000001 in state: COMPLETED event:FINISHED
-16/11/01 06:00:37 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Released Container	TARGET=SchedulerApp	RESULT=SUCCESS	APPID=application_1473739536361_0504	CONTAINERID=container_1473739536361_0504_02_000001
-16/11/01 06:00:37 INFO scheduler.SchedulerNode: Released container container_1473739536361_0504_02_000001 of capacity <memory:2048, vCores:1> on host node7:32982, which currently has 0 containers, <memory:0, vCores:0> used and <memory:16384, vCores:8> available, release resources=true
-16/11/01 06:00:37 INFO attempt.RMAppAttemptImpl: Updating application attempt appattempt_1473739536361_0504_000002 with final state: FAILED, and exit status: 0
-16/11/01 06:00:37 INFO capacity.LeafQueue: default used=<memory:6144, vCores:2> numContainers=2 user=spiderdt user-resources=<memory:6144, vCores:2>
-16/11/01 06:00:37 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000002 State change from LAUNCHED to FINAL_SAVING
-16/11/01 06:00:37 INFO capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1473739536361_0504_02_000001, NodeId: node7:32982, NodeHttpAddress: node7:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.7:32982 }, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2 cluster=<memory:65536, vCores:32>
-16/11/01 06:00:37 INFO resourcemanager.ApplicationMasterService: Unregistering app attempt : appattempt_1473739536361_0504_000002
-16/11/01 06:00:37 INFO capacity.ParentQueue: completedContainer queue=root usedCapacity=0.09375 absoluteUsedCapacity=0.09375 used=<memory:6144, vCores:2> cluster=<memory:65536, vCores:32>
-16/11/01 06:00:37 INFO security.AMRMTokenSecretManager: Application finished, removing password for appattempt_1473739536361_0504_000002
-16/11/01 06:00:37 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0504_000002 State change from FINAL_SAVING to FAILED
-16/11/01 06:00:37 INFO capacity.ParentQueue: Re-sorting completed queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2
-16/11/01 06:00:37 INFO rmapp.RMAppImpl: The number of failed attempts is 2. The max attempts is 2
-16/11/01 06:00:37 INFO capacity.CapacityScheduler: Application attempt appattempt_1473739536361_0504_000002 released container container_1473739536361_0504_02_000001 on node: host: node7:32982 #containers=0 available=<memory:16384, vCores:8> used=<memory:0, vCores:0> with event: FINISHED
-16/11/01 06:00:37 INFO rmapp.RMAppImpl: Updating application application_1473739536361_0504 with final state: FAILED
-16/11/01 06:00:37 INFO rmapp.RMAppImpl: application_1473739536361_0504 State change from ACCEPTED to FINAL_SAVING
-16/11/01 06:00:37 INFO recovery.RMStateStore: Updating info for app: application_1473739536361_0504
-16/11/01 06:00:37 INFO capacity.CapacityScheduler: Application Attempt appattempt_1473739536361_0504_000002 is done. finalState=FAILED
-16/11/01 06:00:37 INFO rmapp.RMAppImpl: Application application_1473739536361_0504 failed 2 times due to AM Container for appattempt_1473739536361_0504_000002 exited with  exitCode: 0
-For more detailed output, check application tracking page:http://node3:8088/cluster/app/application_1473739536361_0504Then, click on links to logs of each attempt.
-Diagnostics: Failing this attempt. Failing the application.
-16/11/01 06:00:37 INFO scheduler.AppSchedulingInfo: Application application_1473739536361_0504 requests cleared
-16/11/01 06:00:37 INFO rmapp.RMAppImpl: application_1473739536361_0504 State change from FINAL_SAVING to FAILED
-16/11/01 06:00:37 INFO capacity.LeafQueue: Application removed - appId: application_1473739536361_0504 user: spiderdt queue: default #user-pending-applications: 0 #user-active-applications: 1 #queue-pending-applications: 0 #queue-active-applications: 1
-16/11/01 06:00:37 WARN resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=Application Finished - Failed	TARGET=RMAppManager	RESULT=FAILURE	DESCRIPTION=App failed with state: FAILED	PERMISSIONS=Application application_1473739536361_0504 failed 2 times due to AM Container for appattempt_1473739536361_0504_000002 exited with  exitCode: 0
-For more detailed output, check application tracking page:http://node3:8088/cluster/app/application_1473739536361_0504Then, click on links to logs of each attempt.
-Diagnostics: Failing this attempt. Failing the application.	APPID=application_1473739536361_0504
-16/11/01 06:00:37 INFO capacity.ParentQueue: Application removed - appId: application_1473739536361_0504 user: spiderdt leaf-queue of parent: root #applications: 1
-16/11/01 06:00:37 INFO resourcemanager.RMAppManager$ApplicationSummary: appId=application_1473739536361_0504,name=larluo,user=spiderdt,queue=default,state=FAILED,trackingUrl=http://node3:8088/cluster/app/application_1473739536361_0504,appMasterHost=N/A,startTime=1477980034750,finishTime=1477980037688,finalStatus=FAILED,memorySeconds=4104,vcoreSeconds=2,preemptedAMContainers=0,preemptedNonAMContainers=0,preemptedResources=<memory:0\, vCores:0>,applicationType=larluo-app
+16/11/01 16:03:29 INFO resourcemanager.ClientRMService: Allocated new applicationId: 505
+16/11/01 16:03:33 WARN rmapp.RMAppImpl: The specific max attempts: 0 for application: 505 is invalid, because it is out of the range [1, 2]. Use the global max attempts instead.
+16/11/01 16:03:33 INFO resourcemanager.ClientRMService: Application with id 505 submitted by user spiderdt
+16/11/01 16:03:33 INFO resourcemanager.RMAuditLogger: USER=spiderdt	IP=192.168.1.2	OPERATION=Submit Application Request	TARGET=ClientRMServiceRESULT=SUCCESS	APPID=application_1473739536361_0505
+16/11/01 16:03:33 INFO rmapp.RMAppImpl: Storing application with id application_1473739536361_0505
+16/11/01 16:03:33 INFO rmapp.RMAppImpl: application_1473739536361_0505 State change from NEW to NEW_SAVING
+16/11/01 16:03:33 INFO recovery.RMStateStore: Storing info for app: application_1473739536361_0505
+16/11/01 16:03:33 INFO rmapp.RMAppImpl: application_1473739536361_0505 State change from NEW_SAVING to SUBMITTED
+16/11/01 16:03:33 INFO capacity.ParentQueue: Application added - appId: application_1473739536361_0505 user: spiderdt leaf-queue of parent: root #applications: 2
+16/11/01 16:03:33 INFO capacity.CapacityScheduler: Accepted application application_1473739536361_0505 from user: spiderdt, in queue: default
+16/11/01 16:03:33 INFO rmapp.RMAppImpl: application_1473739536361_0505 State change from SUBMITTED to ACCEPTED
+16/11/01 16:03:33 INFO resourcemanager.ApplicationMasterService: Registering app attempt : appattempt_1473739536361_0505_000001
+16/11/01 16:03:33 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from NEW to SUBMITTED
+16/11/01 16:03:33 INFO capacity.LeafQueue: Application application_1473739536361_0505 from user: spiderdt activated in queue: default
+16/11/01 16:03:33 INFO capacity.LeafQueue: Application added - appId: application_1473739536361_0505 user: org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.LeafQueue$User@ec50d7c, leaf-queue: default #user-pending-applications: 0 #user-active-applications: 2 #queue-pending-applications: 0 #queue-active-applications: 2
+16/11/01 16:03:33 INFO capacity.CapacityScheduler: Added Application Attempt appattempt_1473739536361_0505_000001 to scheduler from user spiderdt in queue default
+16/11/01 16:03:33 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from SUBMITTED to SCHEDULED
+16/11/01 16:03:33 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000001 Container Transitioned from NEW to ALLOCATED
+16/11/01 16:03:33 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Allocated Container	TARGET=SchedulerApp	RESULT=SUCCESSAPPID=application_1473739536361_0505	CONTAINERID=container_1473739536361_0505_01_000001
+16/11/01 16:03:33 INFO scheduler.SchedulerNode: Assigned container container_1473739536361_0505_01_000001 of capacity <memory:2048, vCores:1> on host node4:41551, which has 1 containers, <memory:2048, vCores:1> used and <memory:14336, vCores:7> available after allocation
+16/11/01 16:03:33 INFO capacity.LeafQueue: assignedContainer application attempt=appattempt_1473739536361_0505_000001 container=Container: [ContainerId: container_1473739536361_0505_01_000001, NodeId: node4:41551, NodeHttpAddress: node4:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: null, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2 clusterResource=<memory:65536, vCores:32>
+16/11/01 16:03:33 INFO capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:8192, vCores:3>, usedCapacity=0.125, absoluteUsedCapacity=0.125, numApps=2, numContainers=3
+16/11/01 16:03:33 INFO capacity.ParentQueue: assignedContainer queue=root usedCapacity=0.125 absoluteUsedCapacity=0.125 used=<memory:8192, vCores:3> cluster=<memory:65536, vCores:32>
+16/11/01 16:03:33 INFO security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : node4:41551 for container : container_1473739536361_0505_01_000001
+16/11/01 16:03:33 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000001 Container Transitioned from ALLOCATED to ACQUIRED
+16/11/01 16:03:33 INFO security.NMTokenSecretManagerInRM: Clear node set for appattempt_1473739536361_0505_000001
+16/11/01 16:03:33 INFO attempt.RMAppAttemptImpl: Storing attempt: AppId: application_1473739536361_0505 AttemptId: appattempt_1473739536361_0505_000001 MasterContainer: Container: [ContainerId: container_1473739536361_0505_01_000001, NodeId: node4:41551, NodeHttpAddress: node4:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.4:41551 }, ]
+16/11/01 16:03:33 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from SCHEDULED to ALLOCATED_SAVING
+16/11/01 16:03:33 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from ALLOCATED_SAVING to ALLOCATED
+16/11/01 16:03:33 INFO amlauncher.AMLauncher: Launching masterappattempt_1473739536361_0505_000001
+16/11/01 16:03:33 INFO amlauncher.AMLauncher: Setting up container Container: [ContainerId: container_1473739536361_0505_01_000001, NodeId: node4:41551, NodeHttpAddress: node4:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.4:41551 }, ] for AM appattempt_1473739536361_0505_000001
+16/11/01 16:03:33 INFO amlauncher.AMLauncher: Command to launch container container_1473739536361_0505_01_000001 : {{JAVA_HOME}}/bin/java,-server,-Xmx512m,-Djava.io.tmpdir={{PWD}}/tmp,-Dspark.yarn.app.container.log.dir=<LOG_DIR>,org.apache.spark.deploy.yarn.ExecutorLauncher,--arg,'192.168.1.2:42601',--properties-file,{{PWD}}/__spark_conf__/__spark_conf__.properties,1>,<LOG_DIR>/stdout,2>,<LOG_DIR>/stderr
+16/11/01 16:03:33 INFO security.AMRMTokenSecretManager: Create AMRMToken for ApplicationAttempt: appattempt_1473739536361_0505_000001
+16/11/01 16:03:33 INFO security.AMRMTokenSecretManager: Creating password for appattempt_1473739536361_0505_000001
+16/11/01 16:03:33 INFO amlauncher.AMLauncher: Done launching container Container: [ContainerId: container_1473739536361_0505_01_000001, NodeId: node4:41551, NodeHttpAddress: node4:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.4:41551 }, ] for AM appattempt_1473739536361_0505_000001
+16/11/01 16:03:33 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from ALLOCATED to LAUNCHED
+16/11/01 16:03:34 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000001 Container Transitioned from ACQUIRED to RUNNING
+16/11/01 16:03:35 INFO ipc.Server: Auth successful for appattempt_1473739536361_0505_000001 (auth:SIMPLE)
+16/11/01 16:03:35 INFO resourcemanager.ApplicationMasterService: AM registration appattempt_1473739536361_0505_000001
+16/11/01 16:03:35 INFO resourcemanager.RMAuditLogger: USER=spiderdt	IP=192.168.1.4	OPERATION=Register App Master	TARGET=ApplicationMasterServicRESULT=SUCCESS	APPID=application_1473739536361_0505	APPATTEMPTID=appattempt_1473739536361_0505_000001
+16/11/01 16:03:35 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from LAUNCHED to RUNNING
+16/11/01 16:03:35 INFO rmapp.RMAppImpl: application_1473739536361_0505 State change from ACCEPTED to RUNNING
+16/11/01 16:03:36 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000002 Container Transitioned from NEW to ALLOCATED
+16/11/01 16:03:36 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Allocated Container	TARGET=SchedulerApp	RESULT=SUCCESSAPPID=application_1473739536361_0505	CONTAINERID=container_1473739536361_0505_01_000002
+16/11/01 16:03:36 INFO scheduler.SchedulerNode: Assigned container container_1473739536361_0505_01_000002 of capacity <memory:6144, vCores:1> on host node7:32982, which has 1 containers, <memory:6144, vCores:1> used and <memory:10240, vCores:7> available after allocation
+16/11/01 16:03:36 INFO capacity.LeafQueue: assignedContainer application attempt=appattempt_1473739536361_0505_000001 container=Container: [ContainerId: container_1473739536361_0505_01_000002, NodeId: node7:32982, NodeHttpAddress: node7:8042, Resource: <memory:6144, vCores:1>, Priority: 1, Token: null, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:8192, vCores:3>, usedCapacity=0.125, absoluteUsedCapacity=0.125, numApps=2, numContainers=3 clusterResource=<memory:65536, vCores:32>
+16/11/01 16:03:36 INFO capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:14336, vCores:4>, usedCapacity=0.21875, absoluteUsedCapacity=0.21875, numApps=2, numContainers=4
+16/11/01 16:03:36 INFO capacity.ParentQueue: assignedContainer queue=root usedCapacity=0.21875 absoluteUsedCapacity=0.21875 used=<memory:14336, vCores:4> cluster=<memory:65536, vCores:32>
+16/11/01 16:03:36 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000003 Container Transitioned from NEW to ALLOCATED
+16/11/01 16:03:36 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Allocated Container	TARGET=SchedulerApp	RESULT=SUCCESSAPPID=application_1473739536361_0505	CONTAINERID=container_1473739536361_0505_01_000003
+16/11/01 16:03:36 INFO scheduler.SchedulerNode: Assigned container container_1473739536361_0505_01_000003 of capacity <memory:6144, vCores:1> on host node5:37049, which has 2 containers, <memory:10240, vCores:2> used and <memory:6144, vCores:6> available after allocation
+16/11/01 16:03:36 INFO capacity.LeafQueue: assignedContainer application attempt=appattempt_1473739536361_0505_000001 container=Container: [ContainerId: container_1473739536361_0505_01_000003, NodeId: node5:37049, NodeHttpAddress: node5:8042, Resource: <memory:6144, vCores:1>, Priority: 1, Token: null, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:14336, vCores:4>, usedCapacity=0.21875, absoluteUsedCapacity=0.21875, numApps=2, numContainers=4 clusterResource=<memory:65536, vCores:32>
+16/11/01 16:03:36 INFO capacity.ParentQueue: Re-sorting assigned queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:20480, vCores:5>, usedCapacity=0.3125, absoluteUsedCapacity=0.3125, numApps=2, numContainers=5
+16/11/01 16:03:36 INFO capacity.ParentQueue: assignedContainer queue=root usedCapacity=0.3125 absoluteUsedCapacity=0.3125 used=<memory:20480, vCores:5> cluster=<memory:65536, vCores:32>
+16/11/01 16:03:36 INFO security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : node7:32982 for container : container_1473739536361_0505_01_000002
+16/11/01 16:03:36 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000002 Container Transitioned from ALLOCATED to ACQUIRED
+16/11/01 16:03:36 INFO security.NMTokenSecretManagerInRM: Sending NMToken for nodeId : node5:37049 for container : container_1473739536361_0505_01_000003
+16/11/01 16:03:36 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000003 Container Transitioned from ALLOCATED to ACQUIRED
+16/11/01 16:03:37 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000002 Container Transitioned from ACQUIRED to RUNNING
+16/11/01 16:03:37 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000003 Container Transitioned from ACQUIRED to RUNNING
+16/11/01 16:03:39 INFO scheduler.AppSchedulingInfo: checking for deactivate of application :application_1473739536361_0505
+16/11/01 16:05:36 INFO attempt.RMAppAttemptImpl: Updating application attempt appattempt_1473739536361_0505_000001 with final state: FINISHING, and exit status: -1000
+16/11/01 16:05:36 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from RUNNING to FINAL_SAVING
+16/11/01 16:05:36 INFO rmapp.RMAppImpl: Updating application application_1473739536361_0505 with final state: FINISHING
+16/11/01 16:05:36 INFO rmapp.RMAppImpl: application_1473739536361_0505 State change from RUNNING to FINAL_SAVING
+16/11/01 16:05:36 INFO recovery.RMStateStore: Updating info for app: application_1473739536361_0505
+16/11/01 16:05:36 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from FINAL_SAVING to FINISHING
+16/11/01 16:05:36 INFO rmapp.RMAppImpl: application_1473739536361_0505 State change from FINAL_SAVING to FINISHING
+16/11/01 16:05:36 INFO resourcemanager.ApplicationMasterService: application_1473739536361_0505 unregistered successfully. 
+16/11/01 16:05:37 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000002 Container Transitioned from RUNNING to COMPLETED
+16/11/01 16:05:37 INFO fica.FiCaSchedulerApp: Completed container: container_1473739536361_0505_01_000002 in state: COMPLETED event:FINISHED
+16/11/01 16:05:37 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Released Container	TARGET=SchedulerApp	RESULT=SUCCESS	APPID=application_1473739536361_0505	CONTAINERID=container_1473739536361_0505_01_000002
+16/11/01 16:05:37 INFO scheduler.SchedulerNode: Released container container_1473739536361_0505_01_000002 of capacity <memory:6144, vCores:1> on host node7:32982, which currently has 0 containers, <memory:0, vCores:0> used and <memory:16384, vCores:8> available, release resources=true
+16/11/01 16:05:37 INFO capacity.LeafQueue: default used=<memory:14336, vCores:4> numContainers=4 user=spiderdt user-resources=<memory:14336, vCores:4>
+16/11/01 16:05:37 INFO capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1473739536361_0505_01_000002, NodeId: node7:32982, NodeHttpAddress: node7:8042, Resource: <memory:6144, vCores:1>, Priority: 1, Token: Token { kind: ContainerToken, service: 192.168.1.7:32982 }, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:14336, vCores:4>, usedCapacity=0.21875, absoluteUsedCapacity=0.21875, numApps=2, numContainers=4 cluster=<memory:65536, vCores:32>
+16/11/01 16:05:37 INFO capacity.ParentQueue: completedContainer queue=root usedCapacity=0.21875 absoluteUsedCapacity=0.21875 used=<memory:14336, vCores:4> cluster=<memory:65536, vCores:32>
+16/11/01 16:05:37 INFO capacity.ParentQueue: Re-sorting completed queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:14336, vCores:4>, usedCapacity=0.21875, absoluteUsedCapacity=0.21875, numApps=2, numContainers=4
+16/11/01 16:05:37 INFO capacity.CapacityScheduler: Application attempt appattempt_1473739536361_0505_000001 released container container_1473739536361_0505_01_000002 on node: host: node7:32982 #containers=0 available=<memory:16384, vCores:8> used=<memory:0, vCores:0> with event: FINISHED
+16/11/01 16:05:37 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000003 Container Transitioned from RUNNING to COMPLETED
+16/11/01 16:05:37 INFO fica.FiCaSchedulerApp: Completed container: container_1473739536361_0505_01_000003 in state: COMPLETED event:FINISHED
+16/11/01 16:05:37 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Released Container	TARGET=SchedulerApp	RESULT=SUCCESS	APPID=application_1473739536361_0505	CONTAINERID=container_1473739536361_0505_01_000003
+16/11/01 16:05:37 INFO scheduler.SchedulerNode: Released container container_1473739536361_0505_01_000003 of capacity <memory:6144, vCores:1> on host node5:37049, which currently has 1 containers, <memory:4096, vCores:1> used and <memory:12288, vCores:7> available, release resources=true
+16/11/01 16:05:37 INFO capacity.LeafQueue: default used=<memory:8192, vCores:3> numContainers=3 user=spiderdt user-resources=<memory:8192, vCores:3>
+16/11/01 16:05:37 INFO capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1473739536361_0505_01_000003, NodeId: node5:37049, NodeHttpAddress: node5:8042, Resource: <memory:6144, vCores:1>, Priority: 1, Token: Token { kind: ContainerToken, service: 192.168.1.5:37049 }, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:8192, vCores:3>, usedCapacity=0.125, absoluteUsedCapacity=0.125, numApps=2, numContainers=3 cluster=<memory:65536, vCores:32>
+16/11/01 16:05:37 INFO capacity.ParentQueue: completedContainer queue=root usedCapacity=0.125 absoluteUsedCapacity=0.125 used=<memory:8192, vCores:3> cluster=<memory:65536, vCores:32>
+16/11/01 16:05:37 INFO capacity.ParentQueue: Re-sorting completed queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:8192, vCores:3>, usedCapacity=0.125, absoluteUsedCapacity=0.125, numApps=2, numContainers=3
+16/11/01 16:05:37 INFO capacity.CapacityScheduler: Application attempt appattempt_1473739536361_0505_000001 released container container_1473739536361_0505_01_000003 on node: host: node5:37049 #containers=1 available=<memory:12288, vCores:7> used=<memory:4096, vCores:1> with event: FINISHED
+16/11/01 16:05:37 INFO rmcontainer.RMContainerImpl: container_1473739536361_0505_01_000001 Container Transitioned from RUNNING to COMPLETED
+16/11/01 16:05:37 INFO resourcemanager.ApplicationMasterService: Unregistering app attempt : appattempt_1473739536361_0505_000001
+16/11/01 16:05:37 INFO security.AMRMTokenSecretManager: Application finished, removing password for appattempt_1473739536361_0505_000001
+16/11/01 16:05:37 INFO fica.FiCaSchedulerApp: Completed container: container_1473739536361_0505_01_000001 in state: COMPLETED event:FINISHED
+16/11/01 16:05:37 INFO attempt.RMAppAttemptImpl: appattempt_1473739536361_0505_000001 State change from FINISHING to FINISHED
+16/11/01 16:05:37 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=AM Released Container	TARGET=SchedulerApp	RESULT=SUCCESS	APPID=application_1473739536361_0505	CONTAINERID=container_1473739536361_0505_01_000001
+16/11/01 16:05:37 INFO rmapp.RMAppImpl: application_1473739536361_0505 State change from FINISHING to FINISHED
+16/11/01 16:05:37 INFO scheduler.SchedulerNode: Released container container_1473739536361_0505_01_000001 of capacity <memory:2048, vCores:1> on host node4:41551, which currently has 0 containers, <memory:0, vCores:0> used and <memory:16384, vCores:8> available, release resources=true
+16/11/01 16:05:37 INFO capacity.LeafQueue: default used=<memory:6144, vCores:2> numContainers=2 user=spiderdt user-resources=<memory:6144, vCores:2>
+16/11/01 16:05:37 INFO resourcemanager.RMAuditLogger: USER=spiderdt	OPERATION=Application Finished - Succeeded	TARGET=RMAppManager	RESULT=SUCCESS	APPID=application_1473739536361_0505
+16/11/01 16:05:37 INFO amlauncher.AMLauncher: Cleaning master appattempt_1473739536361_0505_000001
+16/11/01 16:05:37 INFO capacity.LeafQueue: completedContainer container=Container: [ContainerId: container_1473739536361_0505_01_000001, NodeId: node4:41551, NodeHttpAddress: node4:8042, Resource: <memory:2048, vCores:1>, Priority: 0, Token: Token { kind: ContainerToken, service: 192.168.1.4:41551 }, ] queue=default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2 cluster=<memory:65536, vCores:32>
+16/11/01 16:05:37 INFO capacity.ParentQueue: completedContainer queue=root usedCapacity=0.09375 absoluteUsedCapacity=0.09375 used=<memory:6144, vCores:2> cluster=<memory:65536, vCores:32>
+16/11/01 16:05:37 INFO resourcemanager.RMAppManager$ApplicationSummary: appId=application_1473739536361_0505,name=spark-etl.expr,user=spiderdt,queue=default,state=FINISHED,trackingUrl=http://node3:8088/proxy/application_1473739536361_0505/,appMasterHost=192.168.1.4,startTime=1478016213689,finishTime=1478016336660,finalStatus=SUCCEEDED,memorySeconds=1742487,vcoreSeconds=366,preemptedAMContainers=0,preemptedNonAMContainers=0,preemptedResources=<memory:0\, vCores:0>,applicationType=SPARK
+16/11/01 16:05:37 INFO capacity.ParentQueue: Re-sorting completed queue: root.default stats: default: capacity=1.0, absoluteCapacity=1.0, usedResources=<memory:6144, vCores:2>, usedCapacity=0.09375, absoluteUsedCapacity=0.09375, numApps=2, numContainers=2
+16/11/01 16:05:37 INFO capacity.CapacityScheduler: Application attempt appattempt_1473739536361_0505_000001 released container container_1473739536361_0505_01_000001 on node: host: node4:41551 #containers=0 available=<memory:16384, vCores:8> used=<memory:0, vCores:0> with event: FINISHED
+16/11/01 16:05:37 INFO capacity.CapacityScheduler: Application Attempt appattempt_1473739536361_0505_000001 is done. finalState=FINISHED
+16/11/01 16:05:37 INFO scheduler.AppSchedulingInfo: Application application_1473739536361_0505 requests cleared
+16/11/01 16:05:37 INFO capacity.LeafQueue: Application removed - appId: application_1473739536361_0505 user: spiderdt queue: default #user-pending-applications: 0 #user-active-applications: 1 #queue-pending-applications: 0 #queue-active-applications: 1
+16/11/01 16:05:37 INFO capacity.ParentQueue: Application removed - appId: application_1473739536361_0505 user: spiderdt leaf-queue of parent: root #applications: 1
+16/11/01 16:05:39 INFO capacity.CapacityScheduler: Null container completed...
+16/11/01 16:05:39 INFO capacity.CapacityScheduler: Null container completed...
