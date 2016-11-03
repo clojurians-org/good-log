@@ -1,0 +1,42 @@
+2016-11-03 14:05:52,940 INFO  [main] yarn.ApplicationMaster: Registered signal handlers for [TERM, HUP, INT]
+2016-11-03 14:05:53,416 INFO  [main] yarn.ApplicationMaster: ApplicationAttemptId: appattempt_1473739536361_0531_000001
+2016-11-03 14:05:53,759 INFO  [main] spark.SecurityManager: Changing view acls to: root,spiderdt
+2016-11-03 14:05:53,759 INFO  [main] spark.SecurityManager: Changing modify acls to: root,spiderdt
+2016-11-03 14:05:53,760 INFO  [main] spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(root, spiderdt); users with modify permissions: Set(root, spiderdt)
+2016-11-03 14:05:53,995 INFO  [main] yarn.ApplicationMaster: Waiting for Spark driver to be reachable.
+2016-11-03 14:05:53,998 INFO  [main] yarn.ApplicationMaster: Driver now available: 192.168.1.2:35048
+2016-11-03 14:05:54,128 INFO  [dispatcher-event-loop-1] yarn.ApplicationMaster$AMEndpoint: Add WebUI Filter. AddWebUIFilter(org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter,Map(PROXY_HOSTS -> node3, PROXY_URI_BASES -> http://node3:8088/proxy/application_1473739536361_0531),/proxy/application_1473739536361_0531)
+2016-11-03 14:05:54,140 INFO  [main] client.RMProxy: Connecting to ResourceManager at /192.168.1.3:8030
+2016-11-03 14:05:54,156 INFO  [main] yarn.YarnRMClient: Registering the ApplicationMaster
+2016-11-03 14:05:54,227 INFO  [main] yarn.YarnAllocator: Will request 1 executor containers, each with 1 cores and 2432 MB memory including 384 MB overhead
+2016-11-03 14:05:54,237 INFO  [main] yarn.YarnAllocator: Container request (host: Any, capability: <memory:2432, vCores:1>)
+2016-11-03 14:05:54,256 INFO  [main] yarn.ApplicationMaster: Started progress reporter thread with (heartbeat : 3000, initial allocation : 200) intervals
+2016-11-03 14:05:54,466 INFO  [Reporter] impl.AMRMClientImpl: Received new token for : node5:37049
+2016-11-03 14:05:54,470 INFO  [Reporter] yarn.YarnAllocator: Launching container container_1473739536361_0531_01_000002 for on host node5
+2016-11-03 14:05:54,472 INFO  [Reporter] yarn.YarnAllocator: Launching ExecutorRunnable. driverUrl: spark://CoarseGrainedScheduler@192.168.1.2:35048,  executorHostname: node5
+2016-11-03 14:05:54,475 INFO  [ContainerLauncher-0] yarn.ExecutorRunnable: Starting Executor Container
+2016-11-03 14:05:54,475 INFO  [Reporter] yarn.YarnAllocator: Received 1 containers from YARN, launching executors on 1 of them.
+2016-11-03 14:05:54,477 INFO  [ContainerLauncher-0] impl.ContainerManagementProtocolProxy: yarn.client.max-cached-nodemanagers-proxies : 0
+2016-11-03 14:05:54,478 INFO  [ContainerLauncher-0] yarn.ExecutorRunnable: Setting up ContainerLaunchContext
+2016-11-03 14:05:54,483 INFO  [ContainerLauncher-0] yarn.ExecutorRunnable: Preparing Local resources
+2016-11-03 14:05:54,551 INFO  [ContainerLauncher-0] yarn.ExecutorRunnable: Prepared Local resources Map(__spark__.jar -> resource { scheme: "hdfs" host: "192.168.1.3" port: 9000 file: "/user/spiderdt/.sparkStaging/application_1473739536361_0531/spark-assembly-1.6.2-hadoop2.6.0.jar" } size: 107074892 timestamp: 1478182000581 type: FILE visibility: PRIVATE)
+2016-11-03 14:05:54,575 INFO  [ContainerLauncher-0] yarn.ExecutorRunnable: 
+===============================================================================
+YARN executor launch context:
+  env:
+    CLASSPATH -> {{PWD}}<CPS>{{PWD}}/__spark__.jar<CPS>$HADOOP_CONF_DIR<CPS>$HADOOP_COMMON_HOME/share/hadoop/common/*<CPS>$HADOOP_COMMON_HOME/share/hadoop/common/lib/*<CPS>$HADOOP_HDFS_HOME/share/hadoop/hdfs/*<CPS>$HADOOP_HDFS_HOME/share/hadoop/hdfs/lib/*<CPS>$HADOOP_YARN_HOME/share/hadoop/yarn/*<CPS>$HADOOP_YARN_HOME/share/hadoop/yarn/lib/*<CPS>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/*<CPS>$HADOOP_MAPRED_HOME/share/hadoop/mapreduce/lib/*
+    SPARK_LOG_URL_STDERR -> http://node5:8042/node/containerlogs/container_1473739536361_0531_01_000002/spiderdt/stderr?start=-4096
+    SPARK_YARN_STAGING_DIR -> .sparkStaging/application_1473739536361_0531
+    SPARK_YARN_CACHE_FILES_FILE_SIZES -> 107074892
+    SPARK_USER -> spiderdt
+    SPARK_YARN_CACHE_FILES_VISIBILITIES -> PRIVATE
+    SPARK_YARN_MODE -> true
+    SPARK_YARN_CACHE_FILES_TIME_STAMPS -> 1478182000581
+    SPARK_LOG_URL_STDOUT -> http://node5:8042/node/containerlogs/container_1473739536361_0531_01_000002/spiderdt/stdout?start=-4096
+    SPARK_YARN_CACHE_FILES -> hdfs://192.168.1.3:9000/user/spiderdt/.sparkStaging/application_1473739536361_0531/spark-assembly-1.6.2-hadoop2.6.0.jar#__spark__.jar
+
+  command:
+    {{JAVA_HOME}}/bin/java -server -XX:OnOutOfMemoryError='kill %p' -Xms2048m -Xmx2048m '-Dhive.spark.log.dir=./target/' -Djava.io.tmpdir={{PWD}}/tmp '-Dspark.hadoop.hbase.master.port=16000' '-Dspark.hadoop.hbase.regionserver.info.port=16030' '-Dspark.hadoop.hbase.master.info.port=16010' '-Dspark.driver.port=35048' '-Dspark.hadoop.hbase.regionserver.port=16020' '-Dspark.hadoop.hbase.rest.port=8080' '-Dspark.hadoop.hbase.status.multicast.address.port=16100' -Dspark.yarn.app.container.log.dir=<LOG_DIR> org.apache.spark.executor.CoarseGrainedExecutorBackend --driver-url spark://CoarseGrainedScheduler@192.168.1.2:35048 --executor-id 1 --hostname node5 --cores 1 --app-id application_1473739536361_0531 --user-class-path file:$PWD/__app__.jar 1> <LOG_DIR>/stdout 2> <LOG_DIR>/stderr
+===============================================================================
+      
+2016-11-03 14:05:54,578 INFO  [ContainerLauncher-0] impl.ContainerManagementProtocolProxy: Opening proxy : node5:37049
