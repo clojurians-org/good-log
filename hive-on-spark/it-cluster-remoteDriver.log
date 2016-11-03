@@ -1,0 +1,25 @@
+Warning: Ignoring non-spark config property: hive.spark.client.server.connect.timeout=90000
+Warning: Ignoring non-spark config property: hive.spark.client.rpc.threads=8
+Warning: Ignoring non-spark config property: hive.spark.client.connect.timeout=1000
+Warning: Ignoring non-spark config property: hive.spark.client.secret.bits=256
+Warning: Ignoring non-spark config property: hive.spark.client.rpc.max.size=52428800
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball/hadoop-2.7.1/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+01:00:49.048 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /192.168.1.3:8032
+01:00:49.249 [main] INFO  org.apache.spark.deploy.yarn.Client - Requesting a new application from cluster with 4 NodeManagers
+01:00:49.259 [main] INFO  org.apache.spark.deploy.yarn.Client - Verifying our application has not requested more than the maximum memory capability of the cluster (16384 MB per container)
+01:00:49.259 [main] INFO  org.apache.spark.deploy.yarn.Client - Will allocate AM container, with 2432 MB memory including 384 MB overhead
+01:00:49.260 [main] INFO  org.apache.spark.deploy.yarn.Client - Setting up container launch context for our AM
+01:00:49.260 [main] INFO  org.apache.spark.deploy.yarn.Client - Setting up the launch environment for our AM container
+01:00:49.271 [main] INFO  org.apache.spark.deploy.yarn.Client - Preparing resources for our AM container
+01:00:49.724 [main] INFO  org.apache.spark.deploy.yarn.Client - Uploading resource file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/spark-assembly-1.6.2-hadoop2.6.0.jar -> hdfs://192.168.1.3:9000/user/spiderdt/.sparkStaging/application_1473739536361_0541/spark-assembly-1.6.2-hadoop2.6.0.jar
+01:00:50.939 [main] INFO  org.apache.spark.deploy.yarn.Client - Uploading resource file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-exec-2.1.0.jar -> hdfs://192.168.1.3:9000/user/spiderdt/.sparkStaging/application_1473739536361_0541/hive-exec-2.1.0.jar
+01:00:51.297 [main] INFO  org.apache.spark.deploy.yarn.Client - Uploading resource file:/tmp/spark-17e3ad64-be6b-4848-8ff9-28b56233be13/__spark_conf__392121692056599617.zip -> hdfs://192.168.1.3:9000/user/spiderdt/.sparkStaging/application_1473739536361_0541/__spark_conf__392121692056599617.zip
+01:00:51.375 [main] INFO  org.apache.spark.SecurityManager - Changing view acls to: spiderdt
+01:00:51.375 [main] INFO  org.apache.spark.SecurityManager - Changing modify acls to: spiderdt
+01:00:51.375 [main] INFO  org.apache.spark.SecurityManager - SecurityManager: authentication disabled; ui acls disabled; users with view permissions: Set(spiderdt); users with modify permissions: Set(spiderdt)
+01:00:51.500 [main] INFO  org.apache.spark.deploy.yarn.Client - Submitting application 541 to ResourceManager
+01:00:51.525 [main] INFO  org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1473739536361_0541
