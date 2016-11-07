@@ -1,0 +1,399 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball/hadoop-2.7.1/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+16/11/07 12:48:40 [main]: INFO metastore.HiveMetaStore: 0: Opening raw store with implementation class:org.apache.hadoop.hive.metastore.ObjectStore
+16/11/07 12:48:40 [main]: INFO metastore.ObjectStore: ObjectStore, initialize called
+Mon Nov 07 12:48:40 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:48:40 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:48:40 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:48:40 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+16/11/07 12:48:40 [main]: INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+Mon Nov 07 12:48:41 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:48:41 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:48:41 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:48:41 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+16/11/07 12:48:41 [main]: INFO metastore.MetaStoreDirectSql: Using direct SQL, underlying DB is MYSQL
+16/11/07 12:48:41 [main]: INFO metastore.ObjectStore: Initialized ObjectStore
+16/11/07 12:48:41 [main]: INFO metastore.HiveMetaStore: Added admin role in metastore
+16/11/07 12:48:41 [main]: INFO metastore.HiveMetaStore: Added public role in metastore
+16/11/07 12:48:41 [main]: INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+16/11/07 12:48:42 [main]: INFO metastore.HiveMetaStore: 0: get_all_functions
+16/11/07 12:48:42 [main]: INFO HiveMetaStore.audit: ugi=spiderdt	ip=unknown-ip-addr	cmd=get_all_functions	
+16/11/07 12:48:42 [main]: INFO session.SessionState: Created HDFS directory: /tmp/hive/spiderdt/cdfe8a41-4d8f-409f-b636-580516f15edc
+16/11/07 12:48:42 [main]: INFO session.SessionState: Created local directory: /tmp/spiderdt/cdfe8a41-4d8f-409f-b636-580516f15edc
+16/11/07 12:48:42 [main]: INFO session.SessionState: Created HDFS directory: /tmp/hive/spiderdt/cdfe8a41-4d8f-409f-b636-580516f15edc/_tmp_space.db
+16/11/07 12:48:42 [main]: INFO sqlstd.SQLStdHiveAccessController: Created SQLStdHiveAccessController for session context : HiveAuthzSessionContext [sessionString=cdfe8a41-4d8f-409f-b636-580516f15edc, clientType=HIVESERVER2]
+16/11/07 12:48:42 [main]: WARN session.SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+16/11/07 12:48:42 [main]: INFO hive.metastore: Mestastore configuration hive.metastore.filter.hook changed from org.apache.hadoop.hive.metastore.DefaultMetaStoreFilterHookImpl to org.apache.hadoop.hive.ql.security.authorization.plugin.AuthorizationMetaStoreFilterHook
+16/11/07 12:48:42 [main]: INFO metastore.HiveMetaStore: 0: Metastore shutdown started...
+16/11/07 12:48:42 [main]: INFO HiveMetaStore.audit: ugi=spiderdt	ip=unknown-ip-addr	cmd=Metastore shutdown started...	
+16/11/07 12:48:42 [main]: INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+16/11/07 12:48:42 [main]: INFO HiveMetaStore.audit: ugi=spiderdt	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+16/11/07 12:48:42 [main]: INFO service.CompositeService: Operation log root directory is created: /tmp/spiderdt/operation_logs
+16/11/07 12:48:42 [main]: INFO service.CompositeService: HiveServer2: Background operation thread pool size: 100
+16/11/07 12:48:42 [main]: INFO service.CompositeService: HiveServer2: Background operation thread wait queue size: 100
+16/11/07 12:48:42 [main]: INFO service.CompositeService: HiveServer2: Background operation thread keepalive time: 10 seconds
+16/11/07 12:48:42 [main]: INFO server.Server: jetty-7.6.0.v20120127
+16/11/07 12:48:42 [main]: INFO webapp.WebInfConfiguration: Extract jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2/ to /tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp
+16/11/07 12:48:42 [Thread-11]: INFO thrift.ThriftCLIService: Starting ThriftBinaryCLIService on port 10000 with 5...500 worker threads
+16/11/07 12:48:42 [main]: INFO handler.ContextHandler: started o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2
+16/11/07 12:48:42 [main]: INFO handler.ContextHandler: started o.e.j.s.ServletContextHandler{/static,jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/static}
+16/11/07 12:48:42 [main]: INFO server.AbstractConnector: Started SelectChannelConnector@0.0.0.0:10002
+16/11/07 12:48:42 [main]: INFO http.HttpServer: Started HttpServer[hiveserver2] on port 10002
+16/11/07 12:48:42 [main]: INFO session.SparkSessionManagerImpl: Setting up the session manager.
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.admin.acl -> *).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.job.committer.cancel-timeout -> 60000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.hfilecleaner.plugins -> org.apache.hadoop.hbase.master.cleaner.TimeToLiveHFileCleaner).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.process-kill-wait.ms -> 2000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.regionSplitLimit -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.scanner.timeout.period -> 60000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rootdir -> /tmp/hbase-spiderdt/hbase).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.majorcompaction -> 604800000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.admin.address -> 192.168.1.3:8033).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.logroll.period -> 3600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.compactionThreshold -> 3).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client.job.max-retries -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.bytes.per.checksum -> 16384).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.recovery.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.delete.thread-count -> 4).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.admin-env -> MALLOC_ARENA_MAX=$MALLOC_ARENA_MAX).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.client.fallback-to-simple-auth-allowed -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.checksum.algo.impl -> org.apache.hadoop.yarn.sharedcache.ChecksumSHA256Impl).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.log.retain-seconds -> 10800).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.max.perregion.tasks -> 1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.max.filesize -> 10737418240).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.region.split.policy -> org.apache.hadoop.hbase.regionserver.IncreasingToUpperBoundRegionSplitPolicy).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.nonsecure-mode.limit-users -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.server.thread.wakefrequency -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.majorcompaction.jitter -> 0.50).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.coprocessor.abortonerror -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.logcleaner.ttl -> 600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.ha.automatic-failover.embedded -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.keytab -> /etc/krb5.keytab).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.max-cached-nodemanagers-proxies -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.app-checker.class -> org.apache.hadoop.yarn.server.sharedcachemanager.RemoteAppChecker).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.master -> yarn-cluster).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (zookeeper.znode.parent -> /hbase).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.am.max-attempts -> 2).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.server.callqueue.scan.ratio -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.rpc.threads -> 8).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.thrift.framed.max_frame_size_in_mb -> 2).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.serializer -> org.apache.spark.serializer.KryoSerializer).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.nodemanager-client-async.thread-pool-max-size -> 500).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.keytab -> /etc/krb5.keytab).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.filter.classes -> org.apache.hadoop.hbase.rest.filter.GzipFilter).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.port -> 16000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.connect.timeout -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.dynamic.jars.dir -> /tmp/hbase-spiderdt/hbase/lib).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.catalog.timeout -> 600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.blockingStoreFiles -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.client.retry-interval-ms -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.fs.state-store.uri -> /tmp/hadoop-spiderdt/yarn/system/rmstore).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.checksum.algorithm -> CRC32).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.container.log.limit.kb -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.resourcemanager.minimum.version -> NONE).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.nodemanager-connect.retry-interval-ms -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.read-cache-size -> 104857600).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.pmem-check-enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.optionalcacheflushinterval -> 3600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rpc.timeout -> 60000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.clientPort -> 2181).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.amlauncher.thread-count -> 50).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.nm.uploader.replication.factor -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.syncLimit -> 5).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.catalog.timeout -> 600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.write.buffer -> 2097152).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.snapshot.restore.take.failsafe.snapshot -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.handler-thread-count -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.connect.max-wait.ms -> 900000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.fetch.thread-count -> 4).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.bulkload.staging.dir -> /user/spiderdt/hbase-staging).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (zookeeper.znode.rootserver -> root-region-server).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.system-metrics-publisher.dispatcher.pool-size -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.port -> 8080).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.hostname -> 192.168.1.3).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.failover-retries-on-socket-timeouts -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rootdir.perms -> 700).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.windows-container.cpu-limit.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.vmem-pmem-ratio -> 2.1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.containerlauncher.threadpool-initial-size -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.localityCheck.threadPoolSize -> 2).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.ttl-interval-ms -> 300000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.auth.token.max.lifetime -> 604800000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.dns.nameserver -> default).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.container-manager.thread-count -> 20).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.snapshot.enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.fs.state-store.retry-policy-spec -> 2000, 500).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.delete.debug-delay-sec -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.cells.scanned.per.heartbeat.check -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.container.liveness-monitor.interval-ms -> 600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.acl.enable -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.nonsecure-mode.user-pattern -> ^[_.A-Za-z0-9][-@_.A-Za-z0-9]{0,255}?[$]?$).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-timeout-ms -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.max-completed-applications -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regions.slop -> 0.2).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.job.task.listener.thread-count -> 30).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.useMulti -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.connect.retry-interval.ms -> 30000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.webapp.address -> 0.0.0.0:8188).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.cleaner.resource-sleep-ms -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.http.staticuser.user -> dr.stack).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.table.max.rowsize -> 1073741824).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.blockingWaitTime -> 90000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.bin.path -> /home/spiderdt/work/git/spiderdt-env/cluster/tarball/hadoop-2.7.1/bin/yarn).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.application-client-protocol.poll-interval-ms -> 200).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.quorum -> localhost).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rpc.shortoperation.timeout -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.admin.thread-count -> 1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.log-aggregation.retain-check-interval-seconds -> -1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.thrift.framed -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.executor.instances -> 1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.admin.client.thread-count -> 1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.tmp.dir -> /tmp/hbase-spiderdt).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.ttl-ms -> 604800000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.recovery.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.initLimit -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.driver.memory -> 2g).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.thrift.compact -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.fs.state-store.retry-interval-ms -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.info.bindAddress -> 0.0.0.0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.lease.recovery.timeout -> 900000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.maxClientCnxns -> 300).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.online.schema.update.enable -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.store.in-memory.initial-delay-mins -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.security.exec.permission.checks -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.peerport -> 2888).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.webapp.address -> 0.0.0.0:8788).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.resource.mb -> 1536).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.container-monitor.interval-ms -> 3000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client-am.ipc.max-retries-on-timeouts -> 3).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.scheduler.maximum-allocation-vcores -> 32).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.dfs.client.read.shortcircuit.buffer.size -> 131072).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.http.policy -> HTTP_ONLY).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.region.replica.replication.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.readonly -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.config.read.zookeeper.config -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.snapshot.restore.failsafe.name -> hbase-failsafe-{snapshot.name}-{restore.timestamp}).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.scanner.max.result.size -> 2097152).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.metrics.showTableName -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.nm.uploader.thread-count -> 20).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client.job.retry-interval -> 2000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.store.class -> org.apache.hadoop.yarn.server.resourcemanager.recovery.FileSystemRMStateStore).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.container-executor.class -> org.apache.hadoop.yarn.server.nodemanager.DefaultContainerExecutor).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.shuffle.log.separate -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.http.filter.initializers -> org.apache.hadoop.hbase.http.lib.StaticUserWebFilter).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.max.perserver.tasks -> 5).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.threads.min -> 2).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-retry-interval-ms -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.keyvalue.maxsize -> 10485760).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.remote-app-log-dir -> /tmp/logs).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.storescanner.parallel.seek.enable -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.webapp.address -> 192.168.1.3:8088).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.store.in-memory.check-period-mins -> 720).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.hostname -> 0.0.0.0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.secret.bits -> 256).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.column.max.version -> 1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.resource-tracker.address -> 192.168.1.3:8031).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.disk-health-checker.min-healthy-disks -> 0.25).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.dns.interface -> default).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.loadbalancer.class -> org.apache.hadoop.hbase.master.balancer.StochasticLoadBalancer).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.delayed.delegation-token.removal-interval-ms -> 30000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.handler.count -> 30).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.defaults.for.version.skip -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.server.compactchecker.interval.multiplier -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.distributed.log.replay -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.info.port -> 16030).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.storefile.refresh.period -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.uploader.server.address -> 0.0.0.0:8046).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.threads.max -> 100).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.balancer.period -> 300000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.disk-health-checker.min-free-space-per-disk-mb -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.info.bindAddress -> 0.0.0.0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.leveldb-state-store.path -> /tmp/hadoop-spiderdt/yarn/system/rmstore).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.logcleaner.plugins -> org.apache.hadoop.hbase.master.cleaner.TimeToLiveLogCleaner).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.container-tokens.master-key-rolling-interval-secs -> 86400).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.windows-container.memory-limit.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.security.authentication -> simple).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.cache.cleanup.interval-ms -> 600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.start-time-read-cache-size -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.auth.key.update.interval -> 86400000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-num-retries -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.support.proxyuser -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.env-whitelist -> JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,HADOOP_YARN_HOME).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.cgroups.hierarchy -> /hadoop-yarn).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.container.log.backups -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.disk-health-checker.interval-ms -> 120000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.resource-tracker.client.thread-count -> 50).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.proxy-user-privileges.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.cleaner.initial-delay-mins -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.admin.address -> 0.0.0.0:8047).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.cluster.distributed -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.cgroups.mount -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.fs.tmp.dir -> /user/spiderdt/hbase-staging).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.log-aggregation-enable -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.nodemanager.minimum.version -> NONE).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.local-cache.max-files-per-directory -> 8192).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.server.scanner.max.result.size -> 104857600).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.scheduler.maximum-allocation-mb -> 8192).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.thrift.maxQueuedRequests -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.nonsecure-mode.local-user -> nobody).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.am-rm-tokens.master-key-rolling-interval-secs -> 86400).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.max.total.tasks -> 100).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.info.port.auto -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.client.best-effort -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.webapp.delegation-token-auth-filter.enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.server.connect.timeout -> 90000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.memstore.mslab.enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-state-store.parent-path -> /rmstore).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.failover-retries -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.port -> 16020).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.nodemanagers.heartbeat-interval-ms -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.dns.interface -> default).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.staging-dir -> /tmp/hadoop-yarn/staging).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.lease.recovery.dfs.timeout -> 64000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nm.liveness-monitor.expiry-interval-ms -> 600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.table.lock.enable -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.local-dirs -> /tmp/hadoop-spiderdt/nm-local-dir).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.recovery.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.percolumnfamilyflush.size.lower.bound -> 16777216).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.disk-health-checker.max-disk-utilization-per-disk-percentage -> 90.0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.container-monitor.procfs-tree.smaps-based-rss.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.server.callqueue.read.ratio -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.health-checker.interval-ms -> 600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.logroll.errors.tolerated -> 2).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.task.container.log.backups -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.http.max.threads -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.log-aggregation.compression-type -> none).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.work-preserving-recovery.scheduling-wait-ms -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.log-dirs -> ${yarn.log.dir}/userlogs).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.address -> 0.0.0.0:0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.address -> 0.0.0.0:10200).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.configuration.provider-class -> org.apache.hadoop.yarn.LocalConfigurationProvider).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.multicast.address.ip -> 226.1.1.3).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.dns.nameserver -> default).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.multicast.address.port -> 16100).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.http-authentication.type -> simple).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.log-aggregation.retain-seconds -> -1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.scheduler.minimum-allocation-vcores -> 1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.executor.memory -> 2g).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.client.max-retries -> 30).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.publisher.class -> org.apache.hadoop.hbase.master.ClusterStatusPublisher$MulticastPublisher).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.address -> 192.168.1.3:8032).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.nodemanager-connect-retries -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.client-server.address -> 0.0.0.0:8045).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.published -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.retries.number -> 35).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.resources-handler.class -> org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.work-preserving-recovery.enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.client.thread-count -> 50).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.listener.class -> org.apache.hadoop.hbase.client.ClusterStatusListener$MulticastListener).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.scanner.caching -> 2147483647).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.webapp.https.address -> 0.0.0.0:8190).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.command-opts -> -Xmx1024m).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.dataDir -> /tmp/hbase-spiderdt/zookeeper).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.failover-proxy-provider -> org.apache.hadoop.yarn.client.ConfiguredRMFailoverProxyProvider).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.remote-app-log-dir-suffix -> logs).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.local.dir -> /tmp/hbase-spiderdt/local/).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.client.thread-count -> 5).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.uploader.server.thread-count -> 50).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.security.visibility.mutations.checkauths -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client.max-retries -> 3).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.class -> org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.msginterval -> 3000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.address -> 192.168.1.3:8030).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.start-time-write-cache-size -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (zookeeper.znode.acl.parent -> acl).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.ha.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.state-store.max-completed-applications -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.shuffle.log.limit.kb -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.log-aggregation.roll-monitoring-interval-seconds -> -1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.pause -> 100).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.state-store-class -> org.apache.hadoop.yarn.server.timeline.recovery.LeveldbTimelineStateStore).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.store.class -> org.apache.hadoop.yarn.server.sharedcachemanager.store.InMemorySCMStore).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.monitor.policies -> org.apache.hadoop.yarn.server.resourcemanager.monitor.capacity.ProportionalCapacityPreemptionPolicy).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rs.cacheblocksonwrite -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.ipc.rpc.class -> org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.coprocessor.enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.data.umask.enable -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.checksum.verify -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.keytab -> /etc/krb5.keytab).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.ttl-enable -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.server.callqueue.handler.factor -> 0.1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.memstore.block.multiplier -> 4).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.hostname -> 0.0.0.0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.time.to.purge.deletes -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.client.thread-count -> 50).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.thrift.htablepool.size.max -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.cleaner.period-mins -> 1440).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.resource.cpu-vcores -> 1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.root-dir -> /sharedcache).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.replication.rpc.codec -> org.apache.hadoop.hbase.codec.KeyValueCodecWithTags).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.compaction.kv.max -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.scheduler.minimum-allocation-mb -> 1024).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.vmem-check-enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.address -> 0.0.0.0:8040).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.compaction.max -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.resource.cpu-vcores -> 8).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.thrift.maxWorkerThreads -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.data.umask -> 000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.coprocessor.user.enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-acl -> world:anyone:rwcda).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.flusher.count -> 2).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.nodemanager-connect.max-wait-ms -> 180000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client-am.ipc.max-retries -> 3).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.cgroups.strict-resource-usage -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.metrics.exposeOperationTimes -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.client.tcpnodelay -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.cache.target-size-mb -> 10240).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.store-class -> org.apache.hadoop.yarn.server.timeline.LeveldbTimelineStore).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.recovery.dir -> /tmp/hadoop-spiderdt/yarn-nm-recovery).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.scheduler.heartbeat.interval-ms -> 1000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.rpc.max.size -> 52428800).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.docker-container-executor.exec-name -> /usr/bin/docker).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.store.in-memory.staleness-period-mins -> 10080).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.webapp.address -> 0.0.0.0:8042).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.job.committer.commit-window -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.memstore.flush.size -> 134217728).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.bulkload.retries.number -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.hlog.reader.impl -> org.apache.hadoop.hbase.regionserver.wal.ProtobufLogReader).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.sleep-delay-before-sigkill.ms -> 250).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.handler.abort.on.error.percent -> 0.5).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.shuffle.log.backups -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.coordinated.state.manager.class -> org.apache.hadoop.hbase.coordination.ZkCoordinatedStateManager).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.monitor.enable -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.server.versionfile.writeattempts -> 3).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.defaults.for.version -> 1.1.1).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.am.liveness-monitor.expiry-interval-ms -> 600000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.path -> /tmp/hadoop-spiderdt/yarn/timeline).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.ha.automatic-failover.enabled -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-state-store.path -> /tmp/hadoop-spiderdt/yarn/timeline).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.hlog.writer.impl -> org.apache.hadoop.hbase.regionserver.wal.ProtobufLogWriter).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.leaderport -> 3888).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.thrift.minWorkerThreads -> 16).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.storescanner.parallel.seek.threads -> 10).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.preclose.flush.size -> 5242880).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.resource.percentage-physical-cpu-limit -> 100).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.hard-kill-timeout-ms -> 10000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.http-authentication.simple.anonymous.allowed -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.client-server.thread-count -> 50).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.resource.memory-mb -> 8192).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.system-metrics-publisher.enabled -> false).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.nested-level -> 3).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.health-checker.script.timeout-ms -> 1200000).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.fs.state-store.num-retries -> 0).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.ha.automatic-failover.zk-base-path -> /yarn-leader-election).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.info.port -> 16010).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.aux-services.mapreduce_shuffle.class -> org.apache.hadoop.mapred.ShuffleHandler).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.infoserver.redirect -> true).
+16/11/07 12:48:43 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.webapp.https.address -> 192.168.1.3:8090).
+
+^C16/11/07 12:49:10 [Thread-9]: INFO thrift.ThriftCLIService: Thrift server has stopped
+16/11/07 12:49:10 [Thread-22]: INFO session.SparkSessionManagerImpl: Closing the session manager.
+16/11/07 12:49:20 [Thread-9]: INFO handler.ContextHandler: stopped o.e.j.s.ServletContextHandler{/static,jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/static}
+16/11/07 12:49:20 [Thread-9]: INFO listener.ELContextCleaner: javax.el.BeanELResolver purged
+16/11/07 12:49:20 [Thread-9]: INFO handler.ContextHandler: stopped o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2
+16/11/07 12:49:20 [Thread-9]: INFO session.SparkSessionManagerImpl: Closing the session manager.

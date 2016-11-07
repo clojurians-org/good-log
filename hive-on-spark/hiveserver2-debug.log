@@ -1,0 +1,1259 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball/hadoop-2.7.1/share/hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+16/11/07 12:47:16 [main]: DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginSuccess with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, valueName=Time, value=[Rate of successful kerberos logins and latency (milliseconds)])
+16/11/07 12:47:16 [main]: DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.loginFailure with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, valueName=Time, value=[Rate of failed kerberos logins and latency (milliseconds)])
+16/11/07 12:47:16 [main]: DEBUG lib.MutableMetricsFactory: field org.apache.hadoop.metrics2.lib.MutableRate org.apache.hadoop.security.UserGroupInformation$UgiMetrics.getGroups with annotation @org.apache.hadoop.metrics2.annotation.Metric(about=, sampleName=Ops, always=false, type=DEFAULT, valueName=Time, value=[GetGroups])
+16/11/07 12:47:16 [main]: DEBUG impl.MetricsSystemImpl: UgiMetrics, User and group related metrics
+16/11/07 12:47:16 [main]: DEBUG util.KerberosName: Kerberos krb5 configuration not found, setting default realm to empty
+16/11/07 12:47:16 [main]: DEBUG security.Groups:  Creating new Groups object
+16/11/07 12:47:16 [main]: DEBUG util.NativeCodeLoader: Trying to load the custom-built native-hadoop library...
+16/11/07 12:47:16 [main]: DEBUG util.NativeCodeLoader: Loaded the native-hadoop library
+16/11/07 12:47:16 [main]: DEBUG security.JniBasedUnixGroupsMapping: Using JniBasedUnixGroupsMapping for Group resolution
+16/11/07 12:47:16 [main]: DEBUG security.JniBasedUnixGroupsMappingWithFallback: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMapping
+16/11/07 12:47:16 [main]: DEBUG security.Groups: Group mapping impl=org.apache.hadoop.security.JniBasedUnixGroupsMappingWithFallback; cacheTimeout=300000; warningDeltaMs=5000
+16/11/07 12:47:16 [main]: DEBUG session.SessionState: SessionState user: null
+16/11/07 12:47:16 [main]: DEBUG security.UserGroupInformation: hadoop login
+16/11/07 12:47:16 [main]: DEBUG security.UserGroupInformation: hadoop login commit
+16/11/07 12:47:16 [main]: DEBUG security.UserGroupInformation: using local user:UnixPrincipal: spiderdt
+16/11/07 12:47:16 [main]: DEBUG security.UserGroupInformation: Using user: "UnixPrincipal: spiderdt" with name spiderdt
+16/11/07 12:47:16 [main]: DEBUG security.UserGroupInformation: User entry: "spiderdt"
+16/11/07 12:47:16 [main]: DEBUG security.UserGroupInformation: UGI loginUser:spiderdt (auth:SIMPLE)
+16/11/07 12:47:16 [main]: INFO metastore.HiveMetaStore: 0: Opening raw store with implementation class:org.apache.hadoop.hive.metastore.ObjectStore
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.storeManagerType value null from  jpox.properties with rdbms
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.schema.validateConstraints value null from  jpox.properties with false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.autoStartMechanismMode value null from  jpox.properties with checked
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.schema.validateTables value null from  jpox.properties with false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding javax.jdo.option.Multithreaded value null from  jpox.properties with true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.cache.level2.type value null from  jpox.properties with none
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.connectionPoolingType value null from  jpox.properties with BONECP
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding javax.jdo.option.ConnectionUserName value null from  jpox.properties with hive
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.schema.autoCreateAll value null from  jpox.properties with false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding javax.jdo.option.NonTransactionalRead value null from  jpox.properties with true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.transactionIsolation value null from  jpox.properties with read-committed
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding javax.jdo.option.ConnectionURL value null from  jpox.properties with jdbc:mysql://192.168.1.2:3306/hive?createDatabaseIfNotExist=true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.schema.validateColumns value null from  jpox.properties with false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.identifierFactory value null from  jpox.properties with datanucleus1
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding javax.jdo.PersistenceManagerFactoryClass value null from  jpox.properties with org.datanucleus.api.jdo.JDOPersistenceManagerFactory
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.cache.level2 value null from  jpox.properties with false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.rdbms.useLegacyNativeValueStrategy value null from  jpox.properties with true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding hive.metastore.integral.jdo.pushdown value null from  jpox.properties with false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding javax.jdo.option.DetachAllOnCommit value null from  jpox.properties with true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding javax.jdo.option.ConnectionDriverName value null from  jpox.properties with org.apache.derby.jdbc.EmbeddedDriver
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: Overriding datanucleus.plugin.pluginRegistryBundleCheck value null from  jpox.properties with LOG
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.schema.autoCreateAll = false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.schema.validateTables = false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.rdbms.useLegacyNativeValueStrategy = true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.schema.validateColumns = false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: hive.metastore.integral.jdo.pushdown = false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.autoStartMechanismMode = checked
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: javax.jdo.option.Multithreaded = true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.identifierFactory = datanucleus1
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.transactionIsolation = read-committed
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: javax.jdo.option.ConnectionURL = jdbc:mysql://192.168.1.2:3306/hive?createDatabaseIfNotExist=true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: javax.jdo.option.DetachAllOnCommit = true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: javax.jdo.option.NonTransactionalRead = true
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: javax.jdo.option.ConnectionDriverName = org.apache.derby.jdbc.EmbeddedDriver
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.schema.validateConstraints = false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: javax.jdo.option.ConnectionUserName = hive
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.cache.level2 = false
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.plugin.pluginRegistryBundleCheck = LOG
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.cache.level2.type = none
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: javax.jdo.PersistenceManagerFactoryClass = org.datanucleus.api.jdo.JDOPersistenceManagerFactory
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.storeManagerType = rdbms
+16/11/07 12:47:16 [main]: DEBUG metastore.ObjectStore: datanucleus.connectionPoolingType = BONECP
+16/11/07 12:47:16 [main]: INFO metastore.ObjectStore: ObjectStore, initialize called
+16/11/07 12:47:17 [main]: DEBUG bonecp.BoneCPDataSource: JDBC URL = jdbc:mysql://192.168.1.2:3306/hive?createDatabaseIfNotExist=true, Username = hive, partitions = 1, max (per partition) = 10, min (per partition) = 0, idle max age = 60 min, idle test period = 240 min, strategy = DEFAULT
+Mon Nov 07 12:47:17 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:47:17 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:47:17 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:47:17 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+16/11/07 12:47:17 [main]: INFO metastore.ObjectStore: Setting MetaStore object pin classes with hive.metastore.cache.pinobjtypes="Table,StorageDescriptor,SerDeInfo,Partition,Database,Type,FieldSchema,Order"
+16/11/07 12:47:18 [main]: DEBUG bonecp.BoneCPDataSource: JDBC URL = jdbc:mysql://192.168.1.2:3306/hive?createDatabaseIfNotExist=true, Username = hive, partitions = 1, max (per partition) = 10, min (per partition) = 0, idle max age = 60 min, idle test period = 240 min, strategy = DEFAULT
+Mon Nov 07 12:47:18 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:47:18 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:47:18 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+Mon Nov 07 12:47:18 CST 2016 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+16/11/07 12:47:18 [main]: DEBUG metastore.MetaStoreDirectSql: Direct SQL query in 0.257261ms + 0.042704ms, the query is [SET @@session.sql_mode=ANSI_QUOTES]
+16/11/07 12:47:18 [main]: INFO metastore.MetaStoreDirectSql: Using direct SQL, underlying DB is MYSQL
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: RawStore: org.apache.hadoop.hive.metastore.ObjectStore@21f8e55f, with PersistenceManager: org.datanucleus.api.jdo.JDOPersistenceManager@34cf5a97 created in the thread with id: 1
+16/11/07 12:47:18 [main]: INFO metastore.ObjectStore: Initialized ObjectStore
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 1, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getMSchemaVersion(ObjectStore.java:7703)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Commit transaction: count = 0, isactive true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getMSchemaVersion(ObjectStore.java:7716)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Found expected HMS version of 2.1.0
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 1, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore$GetHelper.start(ObjectStore.java:2687)
+16/11/07 12:47:18 [main]: DEBUG metastore.MetaStoreDirectSql: Direct SQL query in 0.242273ms + 0.013591ms, the query is [SET @@session.sql_mode=ANSI_QUOTES]
+16/11/07 12:47:18 [main]: TRACE metastore.MetaStoreDirectSql: getDatabase:query instantiated : select "DB_ID", "NAME", "DB_LOCATION_URI", "DESC", "OWNER_NAME", "OWNER_TYPE" FROM "DBS" where "NAME" = ?  with param [default]
+16/11/07 12:47:18 [main]: TRACE metastore.MetaStoreDirectSql: getDatabase:query2 instantiated : select "PARAM_KEY", "PARAM_VALUE"  FROM "DATABASE_PARAMS"  WHERE "DB_ID" = ?  AND "PARAM_KEY" IS NOT NULL with param [1]
+16/11/07 12:47:18 [main]: DEBUG metastore.MetaStoreDirectSql: getDatabase: directsql returning db default locn[hdfs://192.168.1.3:9000/user/hive/warehouse] desc [Default Hive database] owner [public] ownertype [ROLE]
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Commit transaction: count = 0, isactive true at:
+	org.apache.hadoop.hive.metastore.ObjectStore$GetHelper.commit(ObjectStore.java:2747)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: db details for db default retrieved using SQL in 9.565582ms
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 1, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.addRole(ObjectStore.java:3730)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 2, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getMRole(ObjectStore.java:4087)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Commit transaction: count = 1, isactive true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getMRole(ObjectStore.java:4093)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Rollback transaction, isActive: true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.addRole(ObjectStore.java:3742)
+16/11/07 12:47:18 [main]: DEBUG metastore.HiveMetaStore: admin role already exists
+InvalidObjectException(message:Role admin already exists.)
+	at org.apache.hadoop.hive.metastore.ObjectStore.addRole(ObjectStore.java:3733)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.hadoop.hive.metastore.RawStoreProxy.invoke(RawStoreProxy.java:101)
+	at com.sun.proxy.$Proxy22.addRole(Unknown Source)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultRoles_core(HiveMetaStore.java:644)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultRoles(HiveMetaStore.java:633)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:399)
+	at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:78)
+	at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:84)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6396)
+	at org.apache.hadoop.hive.metastore.HiveMetaStoreClient.<init>(HiveMetaStoreClient.java:236)
+	at org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient.<init>(SessionHiveMetaStoreClient.java:70)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.apache.hadoop.hive.metastore.MetaStoreUtils.newInstance(MetaStoreUtils.java:1625)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.<init>(RetryingMetaStoreClient.java:80)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.getProxy(RetryingMetaStoreClient.java:130)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.getProxy(RetryingMetaStoreClient.java:101)
+	at org.apache.hadoop.hive.ql.metadata.Hive.createMetaStoreClient(Hive.java:3317)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getMSC(Hive.java:3356)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getMSC(Hive.java:3336)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getAllFunctions(Hive.java:3590)
+	at org.apache.hadoop.hive.ql.metadata.Hive.reloadFunctions(Hive.java:236)
+	at org.apache.hadoop.hive.ql.metadata.Hive.registerAllFunctionsOnce(Hive.java:221)
+	at org.apache.hadoop.hive.ql.metadata.Hive.<init>(Hive.java:366)
+	at org.apache.hadoop.hive.ql.metadata.Hive.create(Hive.java:310)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getInternal(Hive.java:290)
+	at org.apache.hadoop.hive.ql.metadata.Hive.get(Hive.java:266)
+	at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:545)
+	at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:513)
+	at org.apache.hive.service.cli.CLIService.applyAuthorizationConfigPolicy(CLIService.java:125)
+	at org.apache.hive.service.cli.CLIService.init(CLIService.java:110)
+	at org.apache.hive.service.CompositeService.init(CompositeService.java:59)
+	at org.apache.hive.service.server.HiveServer2.init(HiveServer2.java:129)
+	at org.apache.hive.service.server.HiveServer2.startHiveServer2(HiveServer2.java:542)
+	at org.apache.hive.service.server.HiveServer2.access$700(HiveServer2.java:87)
+	at org.apache.hive.service.server.HiveServer2$StartOptionExecutor.execute(HiveServer2.java:790)
+	at org.apache.hive.service.server.HiveServer2.main(HiveServer2.java:659)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+16/11/07 12:47:18 [main]: INFO metastore.HiveMetaStore: Added admin role in metastore
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 1, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.addRole(ObjectStore.java:3730)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 2, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getMRole(ObjectStore.java:4087)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Commit transaction: count = 1, isactive true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getMRole(ObjectStore.java:4093)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Rollback transaction, isActive: true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.addRole(ObjectStore.java:3742)
+16/11/07 12:47:18 [main]: DEBUG metastore.HiveMetaStore: public role already exists
+InvalidObjectException(message:Role public already exists.)
+	at org.apache.hadoop.hive.metastore.ObjectStore.addRole(ObjectStore.java:3733)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.hadoop.hive.metastore.RawStoreProxy.invoke(RawStoreProxy.java:101)
+	at com.sun.proxy.$Proxy22.addRole(Unknown Source)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultRoles_core(HiveMetaStore.java:653)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultRoles(HiveMetaStore.java:633)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:399)
+	at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:78)
+	at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:84)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6396)
+	at org.apache.hadoop.hive.metastore.HiveMetaStoreClient.<init>(HiveMetaStoreClient.java:236)
+	at org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient.<init>(SessionHiveMetaStoreClient.java:70)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.apache.hadoop.hive.metastore.MetaStoreUtils.newInstance(MetaStoreUtils.java:1625)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.<init>(RetryingMetaStoreClient.java:80)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.getProxy(RetryingMetaStoreClient.java:130)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.getProxy(RetryingMetaStoreClient.java:101)
+	at org.apache.hadoop.hive.ql.metadata.Hive.createMetaStoreClient(Hive.java:3317)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getMSC(Hive.java:3356)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getMSC(Hive.java:3336)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getAllFunctions(Hive.java:3590)
+	at org.apache.hadoop.hive.ql.metadata.Hive.reloadFunctions(Hive.java:236)
+	at org.apache.hadoop.hive.ql.metadata.Hive.registerAllFunctionsOnce(Hive.java:221)
+	at org.apache.hadoop.hive.ql.metadata.Hive.<init>(Hive.java:366)
+	at org.apache.hadoop.hive.ql.metadata.Hive.create(Hive.java:310)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getInternal(Hive.java:290)
+	at org.apache.hadoop.hive.ql.metadata.Hive.get(Hive.java:266)
+	at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:545)
+	at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:513)
+	at org.apache.hive.service.cli.CLIService.applyAuthorizationConfigPolicy(CLIService.java:125)
+	at org.apache.hive.service.cli.CLIService.init(CLIService.java:110)
+	at org.apache.hive.service.CompositeService.init(CompositeService.java:59)
+	at org.apache.hive.service.server.HiveServer2.init(HiveServer2.java:129)
+	at org.apache.hive.service.server.HiveServer2.startHiveServer2(HiveServer2.java:542)
+	at org.apache.hive.service.server.HiveServer2.access$700(HiveServer2.java:87)
+	at org.apache.hive.service.server.HiveServer2$StartOptionExecutor.execute(HiveServer2.java:790)
+	at org.apache.hive.service.server.HiveServer2.main(HiveServer2.java:659)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+16/11/07 12:47:18 [main]: INFO metastore.HiveMetaStore: Added public role in metastore
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 1, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.grantPrivileges(ObjectStore.java:4480)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 2, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getMRole(ObjectStore.java:4087)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Commit transaction: count = 1, isactive true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getMRole(ObjectStore.java:4093)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 2, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.listPrincipalMGlobalGrants(ObjectStore.java:4996)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Commit transaction: count = 1, isactive true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.listPrincipalMGlobalGrants(ObjectStore.java:5004)
+16/11/07 12:47:18 [main]: DEBUG metastore.ObjectStore: Rollback transaction, isActive: true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.grantPrivileges(ObjectStore.java:4683)
+16/11/07 12:47:18 [main]: DEBUG metastore.HiveMetaStore: Failed while granting global privs to admin
+InvalidObjectException(message:All is already granted by admin)
+	at org.apache.hadoop.hive.metastore.ObjectStore.grantPrivileges(ObjectStore.java:4516)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.hadoop.hive.metastore.RawStoreProxy.invoke(RawStoreProxy.java:101)
+	at com.sun.proxy.$Proxy22.grantPrivileges(Unknown Source)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultRoles_core(HiveMetaStore.java:667)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.createDefaultRoles(HiveMetaStore.java:633)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore$HMSHandler.init(HiveMetaStore.java:399)
+	at org.apache.hadoop.hive.metastore.RetryingHMSHandler.<init>(RetryingHMSHandler.java:78)
+	at org.apache.hadoop.hive.metastore.RetryingHMSHandler.getProxy(RetryingHMSHandler.java:84)
+	at org.apache.hadoop.hive.metastore.HiveMetaStore.newRetryingHMSHandler(HiveMetaStore.java:6396)
+	at org.apache.hadoop.hive.metastore.HiveMetaStoreClient.<init>(HiveMetaStoreClient.java:236)
+	at org.apache.hadoop.hive.ql.metadata.SessionHiveMetaStoreClient.<init>(SessionHiveMetaStoreClient.java:70)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at org.apache.hadoop.hive.metastore.MetaStoreUtils.newInstance(MetaStoreUtils.java:1625)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.<init>(RetryingMetaStoreClient.java:80)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.getProxy(RetryingMetaStoreClient.java:130)
+	at org.apache.hadoop.hive.metastore.RetryingMetaStoreClient.getProxy(RetryingMetaStoreClient.java:101)
+	at org.apache.hadoop.hive.ql.metadata.Hive.createMetaStoreClient(Hive.java:3317)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getMSC(Hive.java:3356)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getMSC(Hive.java:3336)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getAllFunctions(Hive.java:3590)
+	at org.apache.hadoop.hive.ql.metadata.Hive.reloadFunctions(Hive.java:236)
+	at org.apache.hadoop.hive.ql.metadata.Hive.registerAllFunctionsOnce(Hive.java:221)
+	at org.apache.hadoop.hive.ql.metadata.Hive.<init>(Hive.java:366)
+	at org.apache.hadoop.hive.ql.metadata.Hive.create(Hive.java:310)
+	at org.apache.hadoop.hive.ql.metadata.Hive.getInternal(Hive.java:290)
+	at org.apache.hadoop.hive.ql.metadata.Hive.get(Hive.java:266)
+	at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:545)
+	at org.apache.hadoop.hive.ql.session.SessionState.start(SessionState.java:513)
+	at org.apache.hive.service.cli.CLIService.applyAuthorizationConfigPolicy(CLIService.java:125)
+	at org.apache.hive.service.cli.CLIService.init(CLIService.java:110)
+	at org.apache.hive.service.CompositeService.init(CompositeService.java:59)
+	at org.apache.hive.service.server.HiveServer2.init(HiveServer2.java:129)
+	at org.apache.hive.service.server.HiveServer2.startHiveServer2(HiveServer2.java:542)
+	at org.apache.hive.service.server.HiveServer2.access$700(HiveServer2.java:87)
+	at org.apache.hive.service.server.HiveServer2$StartOptionExecutor.execute(HiveServer2.java:790)
+	at org.apache.hive.service.server.HiveServer2.main(HiveServer2.java:659)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+16/11/07 12:47:18 [main]: INFO metastore.HiveMetaStore: No user is added in admin role, since config is empty
+16/11/07 12:47:19 [main]: INFO metastore.HiveMetaStore: 0: get_all_functions
+16/11/07 12:47:19 [main]: INFO HiveMetaStore.audit: ugi=spiderdt	ip=unknown-ip-addr	cmd=get_all_functions	
+16/11/07 12:47:19 [main]: DEBUG metastore.ObjectStore: Open transaction: count = 1, isActive = true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getAllFunctions(ObjectStore.java:7991)
+16/11/07 12:47:19 [main]: DEBUG metastore.ObjectStore: Commit transaction: count = 0, isactive true at:
+	org.apache.hadoop.hive.metastore.ObjectStore.getAllFunctions(ObjectStore.java:7995)
+16/11/07 12:47:19 [main]: DEBUG : address: node3/192.168.1.3 isLoopbackAddress: false, with host 192.168.1.3 node3
+16/11/07 12:47:19 [main]: DEBUG logging.InternalLoggerFactory: Using SLF4J as the default logging framework
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent0: java.nio.Buffer.address: available
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent0: sun.misc.Unsafe.theUnsafe: available
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent0: sun.misc.Unsafe.copyMemory: available
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent0: java.nio.Bits.unaligned: true
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: UID: 1000
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: Java version: 8
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: -Dio.netty.noUnsafe: false
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: sun.misc.Unsafe: available
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: -Dio.netty.noJavassist: false
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: Javassist: unavailable
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: You don't have Javassist in your class path or you don't have enough permission to load dynamically generated classes.  Please check the configuration for better performance.
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: -Dio.netty.bitMode: 64 (sun.arch.data.model)
+16/11/07 12:47:19 [main]: DEBUG internal.PlatformDependent: -Dio.netty.noPreferDirect: false
+16/11/07 12:47:19 [main]: DEBUG internal.NativeLibraryLoader: -Dio.netty.tmpdir: /tmp (java.io.tmpdir)
+16/11/07 12:47:19 [main]: DEBUG internal.NativeLibraryLoader: -Dio.netty.netty.workdir: /tmp (io.netty.tmpdir)
+16/11/07 12:47:19 [main]: TRACE tracing.SpanReceiverHost: No span receiver names found in dfs.client.htrace.spanreceiver.classes.
+16/11/07 12:47:19 [main]: DEBUG hdfs.BlockReaderLocal: dfs.client.use.legacy.blockreader.local = false
+16/11/07 12:47:19 [main]: DEBUG hdfs.BlockReaderLocal: dfs.client.read.shortcircuit = false
+16/11/07 12:47:19 [main]: DEBUG hdfs.BlockReaderLocal: dfs.client.domain.socket.data.traffic = false
+16/11/07 12:47:19 [main]: DEBUG hdfs.BlockReaderLocal: dfs.domain.socket.path = 
+16/11/07 12:47:19 [main]: DEBUG retry.RetryUtils: multipleLinearRandomRetry = null
+16/11/07 12:47:19 [main]: DEBUG ipc.Server: rpcKind=RPC_PROTOCOL_BUFFER, rpcRequestWrapperClass=class org.apache.hadoop.ipc.ProtobufRpcEngine$RpcRequestWrapper, rpcInvoker=org.apache.hadoop.ipc.ProtobufRpcEngine$Server$ProtoBufRpcInvoker@1aad0b1
+16/11/07 12:47:19 [main]: DEBUG ipc.Client: getting client out of cache: org.apache.hadoop.ipc.Client@4d21c56e
+16/11/07 12:47:19 [client DomainSocketWatcher]: DEBUG unix.DomainSocketWatcher: org.apache.hadoop.net.unix.DomainSocketWatcher$2@71c42df3: starting with interruptCheckPeriodMs = 60000
+16/11/07 12:47:19 [client DomainSocketWatcher]: TRACE unix.DomainSocketWatcher: DomainSocketWatcher(264906855): adding notificationSocket 384, connected to 383
+16/11/07 12:47:19 [main]: DEBUG util.PerformanceAdvisory: Both short-circuit local reads and UNIX domain socket are disabled.
+16/11/07 12:47:19 [main]: DEBUG sasl.DataTransferSaslUtil: DataTransferProtocol not using SaslPropertiesResolver, no QOP found in configuration for dfs.data.transfer.protection
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive"}
+16/11/07 12:47:19 [main]: DEBUG ipc.Client: The ping interval is 60000 ms.
+16/11/07 12:47:19 [main]: DEBUG ipc.Client: Connecting to /192.168.1.3:9000
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt: starting, having connections 1
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #0
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #0
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 83ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: getFileInfo {fs { fileType: IS_DIR path: "" length: 0 permission { perm: 475 } owner: "larluo" group: "supergroup" modification_time: 1475234355636 access_time: 0 block_replication: 0 blocksize: 0 fileId: 24478 childrenNum: 7 storagePolicy: 0 }}
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive"}
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #1
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #1
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 1ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: getFileInfo {fs { fileType: IS_DIR path: "" length: 0 permission { perm: 475 } owner: "larluo" group: "supergroup" modification_time: 1475234355636 access_time: 0 block_replication: 0 blocksize: 0 fileId: 24478 childrenNum: 7 storagePolicy: 0 }}
+16/11/07 12:47:19 [main]: DEBUG session.SessionState: HDFS root scratch dir: /tmp/hive with schema null, permission: rwx-wx-wx
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive/spiderdt"}
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #2
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #2
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 0ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: getFileInfo {fs { fileType: IS_DIR path: "" length: 0 permission { perm: 448 } owner: "spiderdt" group: "supergroup" modification_time: 1478493964865 access_time: 0 block_replication: 0 blocksize: 0 fileId: 24518 childrenNum: 255 storagePolicy: 0 }}
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13"}
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #3
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #3
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 1ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: getFileInfo {}
+16/11/07 12:47:19 [main]: DEBUG hdfs.DFSClient: /tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13: masked=rwx------
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: mkdirs {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13" masked { perm: 448 } createParent: true}
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #4
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #4
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: mkdirs took 11ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: mkdirs {result: true}
+16/11/07 12:47:19 [main]: INFO session.SessionState: Created HDFS directory: /tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13"}
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #5
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #5
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 0ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: getFileInfo {fs { fileType: IS_DIR path: "" length: 0 permission { perm: 448 } owner: "spiderdt" group: "supergroup" modification_time: 1478494039583 access_time: 0 block_replication: 0 blocksize: 0 fileId: 1501187 childrenNum: 0 storagePolicy: 0 }}
+16/11/07 12:47:19 [main]: DEBUG nativeio.NativeIO: Initialized cache for IDs to User/Group mapping with a  cache timeout of 14400 seconds.
+16/11/07 12:47:19 [main]: INFO session.SessionState: Created local directory: /tmp/spiderdt/03510b83-d04a-485a-8849-4828a0292c13
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13/_tmp_space.db"}
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #6
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #6
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 1ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: getFileInfo {}
+16/11/07 12:47:19 [main]: DEBUG hdfs.DFSClient: /tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13/_tmp_space.db: masked=rwx------
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: mkdirs {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13/_tmp_space.db" masked { perm: 448 } createParent: true}
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #7
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #7
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: mkdirs took 5ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: mkdirs {result: true}
+16/11/07 12:47:19 [main]: INFO session.SessionState: Created HDFS directory: /tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13/_tmp_space.db
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13/_tmp_space.db"}
+16/11/07 12:47:19 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #8
+16/11/07 12:47:19 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #8
+16/11/07 12:47:19 [main]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 0ms
+16/11/07 12:47:19 [main]: TRACE ipc.ProtobufRpcEngine: 1: Response <- /192.168.1.3:9000: getFileInfo {fs { fileType: IS_DIR path: "" length: 0 permission { perm: 448 } owner: "spiderdt" group: "supergroup" modification_time: 1478494039614 access_time: 0 block_replication: 0 blocksize: 0 fileId: 1501188 childrenNum: 0 storagePolicy: 0 }}
+16/11/07 12:47:19 [main]: INFO sqlstd.SQLStdHiveAccessController: Created SQLStdHiveAccessController for session context : HiveAuthzSessionContext [sessionString=03510b83-d04a-485a-8849-4828a0292c13, clientType=HIVESERVER2]
+16/11/07 12:47:19 [main]: WARN session.SessionState: METASTORE_FILTER_HOOK will be ignored, since hive.security.authorization.manager is set to instance of HiveAuthorizerFactory.
+16/11/07 12:47:19 [main]: INFO hive.metastore: Mestastore configuration hive.metastore.filter.hook changed from org.apache.hadoop.hive.metastore.DefaultMetaStoreFilterHookImpl to org.apache.hadoop.hive.ql.security.authorization.plugin.AuthorizationMetaStoreFilterHook
+16/11/07 12:47:19 [main]: DEBUG metadata.Hive: Creating new db. db = org.apache.hadoop.hive.ql.metadata.Hive@60990e5c, needsRefresh = false, db.isCurrentUserOwner = true
+16/11/07 12:47:19 [main]: DEBUG metadata.Hive: Closing current thread's connection to Hive Metastore.
+16/11/07 12:47:19 [main]: INFO metastore.HiveMetaStore: 0: Metastore shutdown started...
+16/11/07 12:47:19 [main]: INFO HiveMetaStore.audit: ugi=spiderdt	ip=unknown-ip-addr	cmd=Metastore shutdown started...	
+16/11/07 12:47:19 [main]: DEBUG metastore.ObjectStore: RawStore: org.apache.hadoop.hive.metastore.ObjectStore@21f8e55f, with PersistenceManager: org.datanucleus.api.jdo.JDOPersistenceManager@34cf5a97 will be shutdown
+16/11/07 12:47:19 [main]: INFO metastore.HiveMetaStore: 0: Metastore shutdown complete.
+16/11/07 12:47:19 [main]: INFO HiveMetaStore.audit: ugi=spiderdt	ip=unknown-ip-addr	cmd=Metastore shutdown complete.	
+16/11/07 12:47:19 [main]: DEBUG metadata.Hive: Closing current thread's connection to Hive Metastore.
+16/11/07 12:47:19 [main]: DEBUG session.SessionState: Session is using authorization class class org.apache.hadoop.hive.ql.security.authorization.plugin.HiveAuthorizerImpl
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: TRACE exec.Utilities: Use session specified class loader
+16/11/07 12:47:19 [main]: INFO service.CompositeService: Operation log root directory is created: /tmp/spiderdt/operation_logs
+16/11/07 12:47:19 [main]: INFO service.CompositeService: HiveServer2: Background operation thread pool size: 100
+16/11/07 12:47:19 [main]: INFO service.CompositeService: HiveServer2: Background operation thread wait queue size: 100
+16/11/07 12:47:19 [main]: INFO service.CompositeService: HiveServer2: Background operation thread keepalive time: 10 seconds
+16/11/07 12:47:19 [main]: DEBUG util.log: Logging to org.apache.logging.slf4j.Log4jLogger@3b7c58e7 via org.eclipse.jetty.util.log.Slf4jLog
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.server.Server@a1691c0 + hiveserver2-web{8<=0<=0/50,-1} as threadpool
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.server.Server@a1691c0 + SelectChannelConnector@0.0.0.0:10002 as connector
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container o.e.j.w.WebAppContext{/,null},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 + org.eclipse.jetty.servlet.ErrorPageErrorHandler@798cb6d9 as error
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.server.handler.ContextHandlerCollection@42679fc2 + o.e.j.w.WebAppContext{/,null},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 as handler
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.server.Server@a1691c0 + org.eclipse.jetty.server.handler.ContextHandlerCollection@42679fc2 as handler
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/jmx=jmx}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={jmx=jmx}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/jmx=jmx, /conf=conf}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={jmx=jmx, conf=conf}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/jmx=jmx, /conf=conf, /stacks=stacks}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={jmx=jmx, stacks=stacks, conf=conf}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/jmx=jmx, /conf=conf, /llap=llap, /stacks=stacks}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={jmx=jmx, stacks=stacks, conf=conf, llap=llap}
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.server.handler.ContextHandlerCollection@42679fc2 + o.e.j.s.ServletContextHandler{/static,null} as handler
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/*=org.eclipse.jetty.servlet.DefaultServlet-1}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={org.eclipse.jetty.servlet.DefaultServlet-1=org.eclipse.jetty.servlet.DefaultServlet-1}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/jmx=jmx, /query_page=query_page, /conf=conf, /llap=llap, /stacks=stacks}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={jmx=jmx, stacks=stacks, conf=conf, llap=llap, query_page=query_page}
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.server.Server@a1691c0
+16/11/07 12:47:19 [main]: INFO server.Server: jetty-7.6.0.v20120127
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.server.handler.ContextHandlerCollection@42679fc2
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting o.e.j.w.WebAppContext{/,null},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: Thread Context classloader WebAppClassLoader=hiveserver2@632b305d
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: Parent class loader: org.apache.hadoop.hive.ql.exec.UDFClassLoader@34158c08 
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: Parent class loader: sun.misc.Launcher$AppClassLoader@1f89ab83 
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: Parent class loader: sun.misc.Launcher$ExtClassLoader@7ac7a4e4 
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: preConfigure o.e.j.w.WebAppContext{/,null},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.WebInfConfiguration@44598ef7
+16/11/07 12:47:19 [main]: DEBUG webapp.WebInfConfiguration: Set temp dir /tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-
+16/11/07 12:47:19 [main]: DEBUG webapp.WebInfConfiguration: Try webapp=jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2, exists=true, directory=true
+16/11/07 12:47:19 [main]: INFO webapp.WebInfConfiguration: Extract jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2/ to /tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Extract jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2/ to /tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Extracting entry = hive-webapps/hiveserver2/ from jar file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: 
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/fonts/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/css/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/js/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/http/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/tmpl/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/servlet/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/generated/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/generated/hiveserver2/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: META-INF/DEPENDENCIES
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: META-INF/LICENSE
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: META-INF/NOTICE
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/fonts/glyphicons-halflings-regular.woff
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/fonts/glyphicons-halflings-regular.ttf
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/fonts/glyphicons-halflings-regular.eot
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/fonts/glyphicons-halflings-regular.svg
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/hive_logo.jpeg
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/css/hive.css
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/css/bootstrap.min.css
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/css/json.human.css
+16/11/07 12:47:19 [Thread-11]: INFO thrift.ThriftCLIService: Starting ThriftBinaryCLIService on port 10000 with 5...500 worker threads
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/css/bootstrap-theme.min.css
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/js/bootstrap.js
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/js/jquery.min.js
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/js/llap.js
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/js/tab.js
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/js/bootstrap.min.js
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: hive-webapps/static/js/json.human.js
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/http/LlapServlet.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/tmpl/QueryProfileTmplImpl.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/tmpl/QueryProfileTmpl$ImplData.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/tmpl/QueryProfileTmpl$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/tmpl/QueryProfileTmpl.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/tmpl/QueryProfileTmpl$Intf.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/TSetIpAddressProcessor$2.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/HttpAuthUtils$HttpKerberosClientAction.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PlainSaslHelper$PlainCallbackHandler.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PlainSaslServer$SaslPlainProvider.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/HttpAuthenticationException.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PlainSaslServer$SaslPlainServerFactory.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/KerberosSaslHelper.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/TSetIpAddressProcessor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PasswdAuthenticationProvider.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/HiveAuthFactory$AuthTypes.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PlainSaslServer.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PlainSaslHelper$PlainServerCallbackHandler.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/AuthenticationProviderFactory.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/HiveAuthFactory.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/TSubjectAssumingTransport.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/SaslQOP.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/AuthenticationProviderFactory$AuthMethods.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/TSetIpAddressProcessor$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PlainSaslHelper.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PlainSaslHelper$SQLPlainProcessorFactory.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/KerberosSaslHelper$CLIServiceProcessorFactory.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/AnonymousAuthenticationProviderImpl.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/LdapAuthenticationProviderImpl.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/TSubjectAssumingTransport$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/CustomAuthenticationProviderImpl.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/PamAuthenticationProviderImpl.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/auth/HttpAuthUtils.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/Service$STATE.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/CompositeService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/CLIServiceClient.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/CLIServiceUtils.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThriftBinaryCLIService$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThriftHttpServlet$HttpKerberosServerAction.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThriftCLIService$ThriftCLIServerContext.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/RetryingThriftCLIServiceClient.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/RetryingThriftCLIServiceClient$InvocationResult.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThriftHttpServlet.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThriftCLIService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThreadPoolExecutorWithOomHook.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThriftBinaryCLIService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThriftHttpCLIService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/ThriftCLIServiceClient.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/EmbeddedThriftBinaryCLIService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/thrift/RetryingThriftCLIServiceClient$CLIServiceClientWrapper.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/RowSetFactory.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/SessionManager$6.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionHook.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/SessionManager.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/SessionManager$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionImplwithUGI.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/SessionManager$3.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionImpl.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSession.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionHookContext.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionImpl$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionHookContextImpl.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/SessionManager$4.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionImpl$GlobalHivercFileProcessor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionBase.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionProxy.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/SessionManager$5.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/HiveSessionProxy$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/session/SessionManager$2.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/GetInfoValue.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/SessionHandle.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/ColumnDescriptor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/ICLIService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/RowBasedSet$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/TypeDescriptor$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/OperationHandle.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/FetchOrientation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/TypeQualifiers.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/HiveSQLException.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/OperationType.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/TypeDescriptor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/RowBasedSet$RemovableList.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/Handle.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/TableSchema.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/OperationStatus.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/GetInfoType.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/EmbeddedCLIServiceClient.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/FetchType.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/OperationState.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/ColumnBasedSet$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/ColumnBasedSet.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/OperationState$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/RowBasedSet.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/SQLOperation$2.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/LogDivertAppender$StringOutputStreamManager.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/ClassicTableTypeMapping$ClassicTableTypes.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetCatalogsOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/Operation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/SQLOperationDisplay.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/LogDivertAppender$NameFilter.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetFunctionsOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/SQLOperation$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/Operation$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetTablesOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/TableTypeMapping.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetTableTypesOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetCrossReferenceOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/SQLOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetColumnsOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/LogDivertAppender.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/TableTypeMappingFactory.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/SQLOperation$2$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/ExecuteStatementOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetTypeInfoOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/HiveCommandOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetSchemasOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/MetadataOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/OperationManager.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/HiveTableTypeMapping.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/SQLOperationDisplayCache.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/ClassicTableTypeMapping.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/GetPrimaryKeysOperation.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/operation/TableTypeMappingFactory$TableTypeMappings.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/GetInfoValue$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/CLIService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/HandleIdentifier.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/PatternOrIdentifier.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/ColumnValue$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/RowSet.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/cli/ColumnValue.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/BreakableService$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/ServiceUtils.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/BreakableService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/ServiceException.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/ServiceStateChangeListener.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/BreakableService$BrokenLifecycleEvent.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/FilterService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/AbstractService.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/ServiceOperations.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/servlet/QueryProfileServlet.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$3.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$ServerOptionsExecutor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$HelpOptionExecutor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$2.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$1.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/ThreadWithGarbageCleanup.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/ThreadFactoryWithGarbageCleanup.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$ServerOptionsProcessorResponse.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$DeregisterOptionExecutor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$ServerOptionsProcessor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$DeRegisterWatcher.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$DeleteCallBack.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/server/HiveServer2$StartOptionExecutor.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/Service.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/CookieSigner.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/service/CompositeService$CompositeServiceShutdownHook.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: org/apache/hive/generated/hiveserver2/hiveserver2_jsp.class
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: META-INF/maven/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: META-INF/maven/org.apache.hive/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: META-INF/maven/org.apache.hive/hive-service/
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: META-INF/maven/org.apache.hive/hive-service/pom.xml
+16/11/07 12:47:19 [main]: DEBUG resource.JarResource: Skipping entry: META-INF/maven/org.apache.hive/hive-service/pom.properties
+16/11/07 12:47:19 [main]: DEBUG webapp.WebInfConfiguration: webapp=file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: preConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.WebXmlConfiguration@3830f918
+16/11/07 12:47:19 [main]: DEBUG xml.XmlParser: parse: jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/jetty-all-7.6.0.v20120127.jar!/org/eclipse/jetty/webapp/webdefault.xml
+16/11/07 12:47:19 [main]: DEBUG xml.XmlParser: parsing: sid=jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/jetty-all-7.6.0.v20120127.jar!/org/eclipse/jetty/webapp/webdefault.xml,pid=null
+16/11/07 12:47:19 [main]: DEBUG webapp.WebDescriptor: jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/jetty-all-7.6.0.v20120127.jar!/org/eclipse/jetty/webapp/webdefault.xml: Calculated metadatacomplete = True with version=2.5
+16/11/07 12:47:19 [main]: DEBUG xml.XmlParser: parse: file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/WEB-INF/web.xml
+16/11/07 12:47:19 [main]: DEBUG xml.XmlParser: parsing: sid=file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/WEB-INF/web.xml,pid=null
+16/11/07 12:47:19 [main]: DEBUG webapp.WebDescriptor: file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/WEB-INF/web.xml: Calculated metadatacomplete = NotSet with version=2.5
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: preConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.MetaInfConfiguration@101bdd1c
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: preConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.FragmentConfiguration@e91af20
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: preConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.JettyWebXmlConfiguration@6221b13b
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: preConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.TagLibConfiguration@62c3f556
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: configure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.WebInfConfiguration@44598ef7
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: configure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.WebXmlConfiguration@3830f918
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: configure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.MetaInfConfiguration@101bdd1c
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: configure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.FragmentConfiguration@e91af20
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: configure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.JettyWebXmlConfiguration@6221b13b
+16/11/07 12:47:19 [main]: DEBUG webapp.JettyWebXmlConfiguration: Configuring web-jetty.xml
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppContext: configure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.TagLibConfiguration@62c3f556
+16/11/07 12:47:19 [main]: DEBUG webapp.MetaData: metadata resolve o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.eclipse.jetty.servlet.listener.ELContextCleaner from sun.misc.Launcher$AppClassLoader@1f89ab83
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.eclipse.jetty.servlet.listener.IntrospectorCleaner from sun.misc.Launcher$AppClassLoader@1f89ab83
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/jmx=jmx, /query_page=query_page, /conf=conf, /llap=llap, /stacks=stacks, /=default}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={default=default, jmx=jmx, stacks=stacks, conf=conf, llap=llap, query_page=query_page}
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.apache.jasper.servlet.JspServlet from sun.misc.Launcher$AppClassLoader@1f89ab83
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/query_page=query_page, *.JSPX=jsp, *.jsp=jsp, *.jspf=jsp, *.JSP=jsp, /stacks=stacks, /=default, /jmx=jmx, *.jspx=jsp, *.JSPF=jsp, /conf=conf, /llap=llap, *.xsp=jsp, *.XSP=jsp}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={default=default, jmx=jmx, stacks=stacks, jsp=jsp, conf=conf, llap=llap, query_page=query_page}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/query_page=query_page, *.JSPX=jsp, *.jsp=jsp, /hiveserver2.jsp=org.apache.hive.generated.hiveserver2.hiveserver2_jsp, *.jspf=jsp, *.JSP=jsp, /stacks=stacks, /=default, /jmx=jmx, *.jspx=jsp, *.JSPF=jsp, /conf=conf, /llap=llap, *.xsp=jsp, *.XSP=jsp}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={default=default, org.apache.hive.generated.hiveserver2.hiveserver2_jsp=org.apache.hive.generated.hiveserver2.hiveserver2_jsp, jmx=jmx, stacks=stacks, jsp=jsp, conf=conf, llap=llap, query_page=query_page}
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + jmx as servlet
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + conf as servlet
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + stacks as servlet
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + llap as servlet
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + query_page as servlet
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + default as servlet
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + jsp as servlet
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + org.apache.hive.generated.hiveserver2.hiveserver2_jsp as servlet
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + [/jmx]=>jmx as servletMapping
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + [/conf]=>conf as servletMapping
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + [/stacks]=>stacks as servletMapping
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + [/llap]=>llap as servletMapping
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + [/query_page]=>query_page as servletMapping
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + [/]=>default as servletMapping
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + [*.jsp, *.jspf, *.jspx, *.xsp, *.JSP, *.JSPF, *.JSPX, *.XSP]=>jsp as servletMapping
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@31aab981 + [/hiveserver2.jsp]=>org.apache.hive.generated.hiveserver2.hiveserver2_jsp as servletMapping
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.security.ConstraintSecurityHandler@26be9a6 + org.eclipse.jetty.servlet.ServletHandler@31aab981 as handler
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.server.session.SessionHandler@4d518c66 + org.eclipse.jetty.security.ConstraintSecurityHandler@26be9a6 as handler
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.server.session.SessionHandler@4d518c66 + org.eclipse.jetty.server.session.HashSessionManager@411fa0ce as sessionManager
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 + org.eclipse.jetty.server.session.SessionHandler@4d518c66 as handler
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.server.session.SessionHandler@4d518c66
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.server.session.HashSessionManager@411fa0ce
+16/11/07 12:47:19 [main]: DEBUG component.Container: Container org.eclipse.jetty.server.Server@a1691c0 + org.eclipse.jetty.server.session.HashSessionIdManager@4b9dbf07 as sessionIdManager
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.server.session.HashSessionIdManager@4b9dbf07
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.server.session.HashSessionIdManager@4b9dbf07
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.server.session.HashSessionManager@411fa0ce
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.security.ConstraintSecurityHandler@26be9a6
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.servlet.ServletHandler@31aab981
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletPathMap={/query_page=query_page, *.JSPX=jsp, *.jsp=jsp, /hiveserver2.jsp=org.apache.hive.generated.hiveserver2.hiveserver2_jsp, *.jspf=jsp, *.JSP=jsp, /stacks=stacks, /=default, /jmx=jmx, *.jspx=jsp, *.JSPF=jsp, /conf=conf, /llap=llap, *.xsp=jsp, *.XSP=jsp}
+16/11/07 12:47:19 [main]: DEBUG servlet.ServletHandler: servletNameMap={default=default, org.apache.hive.generated.hiveserver2.hiveserver2_jsp=org.apache.hive.generated.hiveserver2.hiveserver2_jsp, jmx=jmx, stacks=stacks, jsp=jsp, conf=conf, llap=llap, query_page=query_page}
+16/11/07 12:47:19 [main]: DEBUG handler.AbstractHandler: starting org.eclipse.jetty.servlet.ServletHandler@31aab981
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.servlet.ServletHandler@31aab981
+16/11/07 12:47:19 [main]: DEBUG handler.AbstractHandler: starting org.eclipse.jetty.security.ConstraintSecurityHandler@26be9a6
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.security.ConstraintSecurityHandler@26be9a6
+16/11/07 12:47:19 [main]: DEBUG handler.AbstractHandler: starting org.eclipse.jetty.server.session.SessionHandler@4d518c66
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.server.session.SessionHandler@4d518c66
+16/11/07 12:47:19 [main]: DEBUG handler.AbstractHandler: starting o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.servlet.ErrorPageErrorHandler@798cb6d9
+16/11/07 12:47:19 [main]: DEBUG handler.AbstractHandler: starting org.eclipse.jetty.servlet.ErrorPageErrorHandler@798cb6d9
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.servlet.ErrorPageErrorHandler@798cb6d9
+16/11/07 12:47:19 [main]: INFO handler.ContextHandler: started o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting org.apache.hive.generated.hiveserver2.hiveserver2_jsp
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.apache.hive.generated.hiveserver2.hiveserver2_jsp from sun.misc.Launcher$AppClassLoader@1f89ab83
+16/11/07 12:47:19 [main]: DEBUG servlet.Holder: Holding class org.apache.hive.generated.hiveserver2.hiveserver2_jsp
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED org.apache.hive.generated.hiveserver2.hiveserver2_jsp
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting conf
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED conf
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting jmx
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED jmx
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting llap
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED llap
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting stacks
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED stacks
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting query_page
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: STARTED query_page
+16/11/07 12:47:19 [main]: DEBUG component.AbstractLifeCycle: starting jsp
+16/11/07 12:47:19 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.apache.jasper.servlet.JspServlet from sun.misc.Launcher$AppClassLoader@1f89ab83
+16/11/07 12:47:19 [main]: DEBUG servlet.Holder: Holding class org.apache.jasper.servlet.JspServlet
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppClassLoader: getResource(META-INF/services/org.apache.commons.logging.LogFactory)=jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/spark-assembly-1.6.2-hadoop2.6.0.jar!/META-INF/services/org.apache.commons.logging.LogFactory
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.apache.commons.logging.impl.SLF4JLogFactory
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.apache.commons.logging.impl.SLF4JLogFactory from sun.misc.Launcher$AppClassLoader@1f89ab83
+16/11/07 12:47:20 [main]: DEBUG compiler.JspRuntimeContext: Parent class loader is: WebAppClassLoader=hiveserver2@632b305d
+16/11/07 12:47:20 [main]: DEBUG compiler.JspRuntimeContext: Compilation classpath initialized: /tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/jsp:null
+16/11/07 12:47:20 [main]: DEBUG servlet.JspServlet: Scratch dir for the JSP engine is: /tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/jsp
+16/11/07 12:47:20 [main]: DEBUG servlet.JspServlet: IMPORTANT: Do not modify the generated servlets
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED jsp
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: starting default
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.eclipse.jetty.servlet.DefaultServlet
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppClassLoader: loaded class org.eclipse.jetty.servlet.DefaultServlet from sun.misc.Launcher$AppClassLoader@1f89ab83
+16/11/07 12:47:20 [main]: DEBUG servlet.Holder: Holding class org.eclipse.jetty.servlet.DefaultServlet
+16/11/07 12:47:20 [main]: DEBUG servlet.DefaultServlet: resource base = null
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED default
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppContext: postConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.WebInfConfiguration@44598ef7
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppContext: postConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.WebXmlConfiguration@3830f918
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppContext: postConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.MetaInfConfiguration@101bdd1c
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppContext: postConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.FragmentConfiguration@e91af20
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppContext: postConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.JettyWebXmlConfiguration@6221b13b
+16/11/07 12:47:20 [main]: DEBUG webapp.WebAppContext: postConfigure o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2 with org.eclipse.jetty.webapp.TagLibConfiguration@62c3f556
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED o.e.j.w.WebAppContext{/,file:/tmp/jetty-0.0.0.0-10002-hiveserver2-_-any-/webapp/},jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/hiveserver2
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: starting o.e.j.s.ServletContextHandler{/static,jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/static}
+16/11/07 12:47:20 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@2c6c302f + org.eclipse.jetty.servlet.DefaultServlet-1 as servlet
+16/11/07 12:47:20 [main]: DEBUG component.Container: Container org.eclipse.jetty.servlet.ServletHandler@2c6c302f + [/*]=>org.eclipse.jetty.servlet.DefaultServlet-1 as servletMapping
+16/11/07 12:47:20 [main]: DEBUG component.Container: Container o.e.j.s.ServletContextHandler{/static,jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/static} + org.eclipse.jetty.servlet.ServletHandler@2c6c302f as handler
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.servlet.ServletHandler@2c6c302f
+16/11/07 12:47:20 [main]: DEBUG servlet.ServletHandler: filterNameMap={}
+16/11/07 12:47:20 [main]: DEBUG servlet.ServletHandler: pathFilters=null
+16/11/07 12:47:20 [main]: DEBUG servlet.ServletHandler: servletFilterMap=null
+16/11/07 12:47:20 [main]: DEBUG servlet.ServletHandler: servletPathMap={/*=org.eclipse.jetty.servlet.DefaultServlet-1}
+16/11/07 12:47:20 [main]: DEBUG servlet.ServletHandler: servletNameMap={org.eclipse.jetty.servlet.DefaultServlet-1=org.eclipse.jetty.servlet.DefaultServlet-1}
+16/11/07 12:47:20 [main]: DEBUG handler.AbstractHandler: starting org.eclipse.jetty.servlet.ServletHandler@2c6c302f
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.servlet.ServletHandler@2c6c302f
+16/11/07 12:47:20 [main]: DEBUG handler.AbstractHandler: starting o.e.j.s.ServletContextHandler{/static,jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/static}
+16/11/07 12:47:20 [main]: INFO handler.ContextHandler: started o.e.j.s.ServletContextHandler{/static,jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/static}
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.servlet.DefaultServlet-1
+16/11/07 12:47:20 [main]: DEBUG servlet.Holder: Holding class org.eclipse.jetty.servlet.DefaultServlet
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.servlet.DefaultServlet-1
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED o.e.j.s.ServletContextHandler{/static,jar:file:/home/spiderdt/work/git/spiderdt-env/cluster/tarball-src/apache-hive-2.1.0-src/packaging/target/apache-hive-2.1.0-bin/apache-hive-2.1.0-bin/lib/hive-service-2.1.0.jar!/hive-webapps/static}
+16/11/07 12:47:20 [main]: DEBUG handler.AbstractHandler: starting org.eclipse.jetty.server.handler.ContextHandlerCollection@42679fc2
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.server.handler.ContextHandlerCollection@42679fc2
+16/11/07 12:47:20 [main]: DEBUG handler.AbstractHandler: starting org.eclipse.jetty.server.Server@a1691c0
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: starting hiveserver2-web{8<=0<=0/50,-1}
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED hiveserver2-web{8<=7<=8/50,0}
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: starting SelectChannelConnector@0.0.0.0:10002
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: starting null/null
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED PooledBuffers [0/1024@6144,0/1024@16384,0/1024@-]/PooledBuffers [0/1024@6144,0/1024@32768,0/1024@-]
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: starting org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@72465eb2
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.server.nio.SelectChannelConnector$ConnectorSelectorManager@72465eb2
+16/11/07 12:47:20 [hiveserver2-web-32 Selector0]: DEBUG io.nio: Starting Thread[hiveserver2-web-32 Selector0,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@4f7c8ea3
+16/11/07 12:47:20 [hiveserver2-web-31 Selector1]: DEBUG io.nio: Starting Thread[hiveserver2-web-31 Selector1,5,main] on org.eclipse.jetty.io.nio.SelectorManager$1@729f416e
+16/11/07 12:47:20 [main]: INFO server.AbstractConnector: Started SelectChannelConnector@0.0.0.0:10002
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED SelectChannelConnector@0.0.0.0:10002
+16/11/07 12:47:20 [main]: DEBUG component.AbstractLifeCycle: STARTED org.eclipse.jetty.server.Server@a1691c0
+16/11/07 12:47:20 [main]: INFO http.HttpServer: Started HttpServer[hiveserver2] on port 10002
+16/11/07 12:47:20 [main]: INFO session.SparkSessionManagerImpl: Setting up the session manager.
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.admin.acl -> *).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.job.committer.cancel-timeout -> 60000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.hfilecleaner.plugins -> org.apache.hadoop.hbase.master.cleaner.TimeToLiveHFileCleaner).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.process-kill-wait.ms -> 2000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.regionSplitLimit -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.scanner.timeout.period -> 60000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rootdir -> /tmp/hbase-spiderdt/hbase).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.majorcompaction -> 604800000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.admin.address -> 192.168.1.3:8033).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.logroll.period -> 3600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.compactionThreshold -> 3).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client.job.max-retries -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.bytes.per.checksum -> 16384).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.recovery.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.delete.thread-count -> 4).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.admin-env -> MALLOC_ARENA_MAX=$MALLOC_ARENA_MAX).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.client.fallback-to-simple-auth-allowed -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.checksum.algo.impl -> org.apache.hadoop.yarn.sharedcache.ChecksumSHA256Impl).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.log.retain-seconds -> 10800).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.max.perregion.tasks -> 1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.max.filesize -> 10737418240).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.region.split.policy -> org.apache.hadoop.hbase.regionserver.IncreasingToUpperBoundRegionSplitPolicy).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.nonsecure-mode.limit-users -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.server.thread.wakefrequency -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.majorcompaction.jitter -> 0.50).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.coprocessor.abortonerror -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.logcleaner.ttl -> 600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.ha.automatic-failover.embedded -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.keytab -> /etc/krb5.keytab).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.max-cached-nodemanagers-proxies -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.app-checker.class -> org.apache.hadoop.yarn.server.sharedcachemanager.RemoteAppChecker).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.master -> yarn-cluster).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (zookeeper.znode.parent -> /hbase).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.am.max-attempts -> 2).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.server.callqueue.scan.ratio -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.rpc.threads -> 8).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.thrift.framed.max_frame_size_in_mb -> 2).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.serializer -> org.apache.spark.serializer.KryoSerializer).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.nodemanager-client-async.thread-pool-max-size -> 500).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.keytab -> /etc/krb5.keytab).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.filter.classes -> org.apache.hadoop.hbase.rest.filter.GzipFilter).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.port -> 16000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.connect.timeout -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.dynamic.jars.dir -> /tmp/hbase-spiderdt/hbase/lib).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.catalog.timeout -> 600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.blockingStoreFiles -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.client.retry-interval-ms -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.fs.state-store.uri -> /tmp/hadoop-spiderdt/yarn/system/rmstore).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.checksum.algorithm -> CRC32).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.container.log.limit.kb -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.resourcemanager.minimum.version -> NONE).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.nodemanager-connect.retry-interval-ms -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.read-cache-size -> 104857600).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.pmem-check-enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.optionalcacheflushinterval -> 3600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rpc.timeout -> 60000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.clientPort -> 2181).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.amlauncher.thread-count -> 50).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.nm.uploader.replication.factor -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.syncLimit -> 5).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.catalog.timeout -> 600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.write.buffer -> 2097152).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.snapshot.restore.take.failsafe.snapshot -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.handler-thread-count -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.connect.max-wait.ms -> 900000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.fetch.thread-count -> 4).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.bulkload.staging.dir -> /user/spiderdt/hbase-staging).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (zookeeper.znode.rootserver -> root-region-server).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.system-metrics-publisher.dispatcher.pool-size -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.port -> 8080).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.hostname -> 192.168.1.3).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.failover-retries-on-socket-timeouts -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rootdir.perms -> 700).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.windows-container.cpu-limit.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.vmem-pmem-ratio -> 2.1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.containerlauncher.threadpool-initial-size -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.localityCheck.threadPoolSize -> 2).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.ttl-interval-ms -> 300000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.auth.token.max.lifetime -> 604800000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.dns.nameserver -> default).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.container-manager.thread-count -> 20).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.snapshot.enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.fs.state-store.retry-policy-spec -> 2000, 500).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.delete.debug-delay-sec -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.cells.scanned.per.heartbeat.check -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.container.liveness-monitor.interval-ms -> 600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.acl.enable -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.nonsecure-mode.user-pattern -> ^[_.A-Za-z0-9][-@_.A-Za-z0-9]{0,255}?[$]?$).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-timeout-ms -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.max-completed-applications -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regions.slop -> 0.2).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.job.task.listener.thread-count -> 30).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.useMulti -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.connect.retry-interval.ms -> 30000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.webapp.address -> 0.0.0.0:8188).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.cleaner.resource-sleep-ms -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.http.staticuser.user -> dr.stack).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.table.max.rowsize -> 1073741824).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.blockingWaitTime -> 90000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.bin.path -> /home/spiderdt/work/git/spiderdt-env/cluster/tarball/hadoop-2.7.1/bin/yarn).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.application-client-protocol.poll-interval-ms -> 200).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.quorum -> localhost).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rpc.shortoperation.timeout -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.admin.thread-count -> 1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.log-aggregation.retain-check-interval-seconds -> -1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.thrift.framed -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.executor.instances -> 1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.admin.client.thread-count -> 1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.tmp.dir -> /tmp/hbase-spiderdt).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.ttl-ms -> 604800000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.recovery.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.initLimit -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.driver.memory -> 2g).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.thrift.compact -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.fs.state-store.retry-interval-ms -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.info.bindAddress -> 0.0.0.0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.lease.recovery.timeout -> 900000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.maxClientCnxns -> 300).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.online.schema.update.enable -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.store.in-memory.initial-delay-mins -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.security.exec.permission.checks -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.peerport -> 2888).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.webapp.address -> 0.0.0.0:8788).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.resource.mb -> 1536).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.container-monitor.interval-ms -> 3000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client-am.ipc.max-retries-on-timeouts -> 3).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.scheduler.maximum-allocation-vcores -> 32).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.dfs.client.read.shortcircuit.buffer.size -> 131072).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.http.policy -> HTTP_ONLY).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.region.replica.replication.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.readonly -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.config.read.zookeeper.config -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.snapshot.restore.failsafe.name -> hbase-failsafe-{snapshot.name}-{restore.timestamp}).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.scanner.max.result.size -> 2097152).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.metrics.showTableName -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.nm.uploader.thread-count -> 20).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client.job.retry-interval -> 2000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.store.class -> org.apache.hadoop.yarn.server.resourcemanager.recovery.FileSystemRMStateStore).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.container-executor.class -> org.apache.hadoop.yarn.server.nodemanager.DefaultContainerExecutor).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.shuffle.log.separate -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.http.filter.initializers -> org.apache.hadoop.hbase.http.lib.StaticUserWebFilter).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.max.perserver.tasks -> 5).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.threads.min -> 2).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-retry-interval-ms -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.keyvalue.maxsize -> 10485760).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.remote-app-log-dir -> /tmp/logs).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.storescanner.parallel.seek.enable -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.webapp.address -> 192.168.1.3:8088).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.store.in-memory.check-period-mins -> 720).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.hostname -> 0.0.0.0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.secret.bits -> 256).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.column.max.version -> 1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.resource-tracker.address -> 192.168.1.3:8031).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.disk-health-checker.min-healthy-disks -> 0.25).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.dns.interface -> default).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.loadbalancer.class -> org.apache.hadoop.hbase.master.balancer.StochasticLoadBalancer).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.delayed.delegation-token.removal-interval-ms -> 30000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.handler.count -> 30).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.defaults.for.version.skip -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.server.compactchecker.interval.multiplier -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.distributed.log.replay -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.info.port -> 16030).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.storefile.refresh.period -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.uploader.server.address -> 0.0.0.0:8046).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.threads.max -> 100).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.balancer.period -> 300000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.disk-health-checker.min-free-space-per-disk-mb -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.info.bindAddress -> 0.0.0.0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.leveldb-state-store.path -> /tmp/hadoop-spiderdt/yarn/system/rmstore).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.logcleaner.plugins -> org.apache.hadoop.hbase.master.cleaner.TimeToLiveLogCleaner).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.container-tokens.master-key-rolling-interval-secs -> 86400).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.windows-container.memory-limit.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.security.authentication -> simple).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.cache.cleanup.interval-ms -> 600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.start-time-read-cache-size -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.auth.key.update.interval -> 86400000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-num-retries -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rest.support.proxyuser -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.env-whitelist -> JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,HADOOP_YARN_HOME).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.cgroups.hierarchy -> /hadoop-yarn).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.container.log.backups -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.disk-health-checker.interval-ms -> 120000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.resource-tracker.client.thread-count -> 50).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.proxy-user-privileges.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.cleaner.initial-delay-mins -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.admin.address -> 0.0.0.0:8047).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.cluster.distributed -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.cgroups.mount -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.fs.tmp.dir -> /user/spiderdt/hbase-staging).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.log-aggregation-enable -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.nodemanager.minimum.version -> NONE).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.local-cache.max-files-per-directory -> 8192).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.server.scanner.max.result.size -> 104857600).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.scheduler.maximum-allocation-mb -> 8192).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.thrift.maxQueuedRequests -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.nonsecure-mode.local-user -> nobody).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.am-rm-tokens.master-key-rolling-interval-secs -> 86400).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.max.total.tasks -> 100).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.info.port.auto -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.client.best-effort -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.webapp.delegation-token-auth-filter.enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.server.connect.timeout -> 90000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.memstore.mslab.enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-state-store.parent-path -> /rmstore).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.failover-retries -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.port -> 16020).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.nodemanagers.heartbeat-interval-ms -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.dns.interface -> default).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.staging-dir -> /tmp/hadoop-yarn/staging).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.lease.recovery.dfs.timeout -> 64000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nm.liveness-monitor.expiry-interval-ms -> 600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.table.lock.enable -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.local-dirs -> /tmp/hadoop-spiderdt/nm-local-dir).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.recovery.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.percolumnfamilyflush.size.lower.bound -> 16777216).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.disk-health-checker.max-disk-utilization-per-disk-percentage -> 90.0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.container-monitor.procfs-tree.smaps-based-rss.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.server.callqueue.read.ratio -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.health-checker.interval-ms -> 600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.logroll.errors.tolerated -> 2).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.task.container.log.backups -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.http.max.threads -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.log-aggregation.compression-type -> none).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.work-preserving-recovery.scheduling-wait-ms -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.log-dirs -> ${yarn.log.dir}/userlogs).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.address -> 0.0.0.0:0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.address -> 0.0.0.0:10200).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.configuration.provider-class -> org.apache.hadoop.yarn.LocalConfigurationProvider).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.multicast.address.ip -> 226.1.1.3).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.dns.nameserver -> default).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.multicast.address.port -> 16100).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.http-authentication.type -> simple).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.log-aggregation.retain-seconds -> -1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.scheduler.minimum-allocation-vcores -> 1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load spark property from hive configuration (spark.executor.memory -> 2g).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.client.max-retries -> 30).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.publisher.class -> org.apache.hadoop.hbase.master.ClusterStatusPublisher$MulticastPublisher).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.address -> 192.168.1.3:8032).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.nodemanager-connect-retries -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.client-server.address -> 0.0.0.0:8045).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.published -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.retries.number -> 35).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.resources-handler.class -> org.apache.hadoop.yarn.server.nodemanager.util.DefaultLCEResourcesHandler).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.work-preserving-recovery.enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.client.thread-count -> 50).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.status.listener.class -> org.apache.hadoop.hbase.client.ClusterStatusListener$MulticastListener).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.scanner.caching -> 2147483647).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.webapp.https.address -> 0.0.0.0:8190).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.command-opts -> -Xmx1024m).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.property.dataDir -> /tmp/hbase-spiderdt/zookeeper).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.failover-proxy-provider -> org.apache.hadoop.yarn.client.ConfiguredRMFailoverProxyProvider).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.remote-app-log-dir-suffix -> logs).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.local.dir -> /tmp/hbase-spiderdt/local/).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.client.thread-count -> 5).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.uploader.server.thread-count -> 50).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.security.visibility.mutations.checkauths -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client.max-retries -> 3).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.class -> org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.msginterval -> 3000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.address -> 192.168.1.3:8030).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.start-time-write-cache-size -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (zookeeper.znode.acl.parent -> acl).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.ha.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.state-store.max-completed-applications -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.shuffle.log.limit.kb -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.log-aggregation.roll-monitoring-interval-seconds -> -1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.client.pause -> 100).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.state-store-class -> org.apache.hadoop.yarn.server.timeline.recovery.LeveldbTimelineStateStore).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.store.class -> org.apache.hadoop.yarn.server.sharedcachemanager.store.InMemorySCMStore).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.monitor.policies -> org.apache.hadoop.yarn.server.resourcemanager.monitor.capacity.ProportionalCapacityPreemptionPolicy).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.rs.cacheblocksonwrite -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.ipc.rpc.class -> org.apache.hadoop.yarn.ipc.HadoopYarnProtoRPC).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.coprocessor.enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.data.umask.enable -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.checksum.verify -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.keytab -> /etc/krb5.keytab).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.ttl-enable -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.server.callqueue.handler.factor -> 0.1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.memstore.block.multiplier -> 4).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.hostname -> 0.0.0.0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.time.to.purge.deletes -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.client.thread-count -> 50).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.thrift.htablepool.size.max -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.cleaner.period-mins -> 1440).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.resource.cpu-vcores -> 1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.root-dir -> /sharedcache).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.replication.rpc.codec -> org.apache.hadoop.hbase.codec.KeyValueCodecWithTags).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.compaction.kv.max -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.scheduler.minimum-allocation-mb -> 1024).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.vmem-check-enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.address -> 0.0.0.0:8040).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.compaction.max -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.resource.cpu-vcores -> 8).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.thrift.maxWorkerThreads -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.data.umask -> 000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.coprocessor.user.enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.zk-acl -> world:anyone:rwcda).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hstore.flusher.count -> 2).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.client.nodemanager-connect.max-wait-ms -> 180000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.client-am.ipc.max-retries -> 3).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.linux-container-executor.cgroups.strict-resource-usage -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.metrics.exposeOperationTimes -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.ipc.client.tcpnodelay -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.localizer.cache.target-size-mb -> 10240).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.store-class -> org.apache.hadoop.yarn.server.timeline.LeveldbTimelineStore).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.recovery.dir -> /tmp/hadoop-spiderdt/yarn-nm-recovery).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.scheduler.heartbeat.interval-ms -> 1000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load RPC property from hive configuration (hive.spark.client.rpc.max.size -> 52428800).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.docker-container-executor.exec-name -> /usr/bin/docker).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.store.in-memory.staleness-period-mins -> 10080).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.webapp.address -> 0.0.0.0:8042).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.job.committer.commit-window -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.memstore.flush.size -> 134217728).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.bulkload.retries.number -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.hlog.reader.impl -> org.apache.hadoop.hbase.regionserver.wal.ProtobufLogReader).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.sleep-delay-before-sigkill.ms -> 250).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.handler.abort.on.error.percent -> 0.5).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.shuffle.log.backups -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.coordinated.state.manager.class -> org.apache.hadoop.hbase.coordination.ZkCoordinatedStateManager).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.scheduler.monitor.enable -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.server.versionfile.writeattempts -> 3).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.defaults.for.version -> 1.1.1).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.am.liveness-monitor.expiry-interval-ms -> 600000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-timeline-store.path -> /tmp/hadoop-spiderdt/yarn/timeline).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.ha.automatic-failover.enabled -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.leveldb-state-store.path -> /tmp/hadoop-spiderdt/yarn/timeline).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.regionserver.hlog.writer.impl -> org.apache.hadoop.hbase.regionserver.wal.ProtobufLogWriter).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.zookeeper.leaderport -> 3888).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.thrift.minWorkerThreads -> 16).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.storescanner.parallel.seek.threads -> 10).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.hregion.preclose.flush.size -> 5242880).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.resource.percentage-physical-cpu-limit -> 100).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.app.mapreduce.am.hard-kill-timeout-ms -> 10000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.timeline-service.http-authentication.simple.anonymous.allowed -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.client-server.thread-count -> 50).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.resource.memory-mb -> 8192).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.system-metrics-publisher.enabled -> false).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.sharedcache.nested-level -> 3).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.health-checker.script.timeout-ms -> 1200000).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.fs.state-store.num-retries -> 0).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.ha.automatic-failover.zk-base-path -> /yarn-leader-election).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.info.port -> 16010).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.nodemanager.aux-services.mapreduce_shuffle.class -> org.apache.hadoop.mapred.ShuffleHandler).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load HBase configuration (hbase.master.infoserver.redirect -> true).
+16/11/07 12:47:20 [main]: INFO spark.HiveSparkClientFactory: load yarn property from hive configuration in yarn-cluster mode (yarn.resourcemanager.webapp.https.address -> 192.168.1.3:8090).
+16/11/07 12:47:20 [main]: DEBUG channel.MultithreadEventLoopGroup: -Dio.netty.eventLoopThreads: 16
+16/11/07 12:47:20 [main]: DEBUG nio.NioEventLoop: -Dio.netty.noKeySetOptimization: false
+16/11/07 12:47:20 [main]: DEBUG nio.NioEventLoop: -Dio.netty.selectorAutoRebuildThreshold: 512
+16/11/07 12:47:20 [main]: TRACE nio.NioEventLoop: Instrumented an optimized java.util.Set into: sun.nio.ch.EPollSelectorImpl@6889f56f
+16/11/07 12:47:20 [main]: TRACE nio.NioEventLoop: Instrumented an optimized java.util.Set into: sun.nio.ch.EPollSelectorImpl@231b35fb
+16/11/07 12:47:20 [main]: TRACE nio.NioEventLoop: Instrumented an optimized java.util.Set into: sun.nio.ch.EPollSelectorImpl@26da1ba2
+16/11/07 12:47:20 [main]: TRACE nio.NioEventLoop: Instrumented an optimized java.util.Set into: sun.nio.ch.EPollSelectorImpl@3820cfe
+16/11/07 12:47:20 [main]: TRACE nio.NioEventLoop: Instrumented an optimized java.util.Set into: sun.nio.ch.EPollSelectorImpl@2407a36c
+16/11/07 12:47:20 [main]: TRACE nio.NioEventLoop: Instrumented an optimized java.util.Set into: sun.nio.ch.EPollSelectorImpl@5ec9eefa
+16/11/07 12:47:20 [main]: TRACE nio.NioEventLoop: Instrumented an optimized java.util.Set into: sun.nio.ch.EPollSelectorImpl@28b8f98a
+16/11/07 12:47:20 [main]: TRACE nio.NioEventLoop: Instrumented an optimized java.util.Set into: sun.nio.ch.EPollSelectorImpl@3b4ef59f
+16/11/07 12:47:20 [main]: DEBUG internal.ThreadLocalRandom: -Dio.netty.initialSeedUniquifier: 0x0cd134caa9b1bbe1 (took 0 ms)
+16/11/07 12:47:20 [main]: DEBUG buffer.ByteBufUtil: -Dio.netty.allocator.type: unpooled
+16/11/07 12:47:20 [main]: DEBUG buffer.ByteBufUtil: -Dio.netty.threadLocalDirectBufferSize: 65536
+16/11/07 12:47:20 [main]: DEBUG util.NetUtil: Loopback interface: lo (lo, 127.0.0.1)
+16/11/07 12:47:20 [main]: DEBUG util.NetUtil: /proc/sys/net/core/somaxconn: 128
+^C16/11/07 12:47:28 [Thread-22]: INFO session.SparkSessionManagerImpl: Closing the session manager.
+16/11/07 12:47:28 [Thread-9]: INFO thrift.ThriftCLIService: Thrift server has stopped
+16/11/07 12:47:28 [Thread-1]: TRACE ipc.ProtobufRpcEngine: 12: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13"}
+16/11/07 12:47:28 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #9
+16/11/07 12:47:28 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #9
+16/11/07 12:47:28 [Thread-1]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 1ms
+16/11/07 12:47:28 [Thread-1]: TRACE ipc.ProtobufRpcEngine: 12: Response <- /192.168.1.3:9000: getFileInfo {fs { fileType: IS_DIR path: "" length: 0 permission { perm: 448 } owner: "spiderdt" group: "supergroup" modification_time: 1478494039614 access_time: 0 block_replication: 0 blocksize: 0 fileId: 1501187 childrenNum: 1 storagePolicy: 0 }}
+16/11/07 12:47:28 [Thread-1]: TRACE ipc.ProtobufRpcEngine: 12: Call -> /192.168.1.3:9000: delete {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13" recursive: true}
+16/11/07 12:47:28 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #10
+16/11/07 12:47:28 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #10
+16/11/07 12:47:28 [Thread-1]: DEBUG ipc.ProtobufRpcEngine: Call: delete took 20ms
+16/11/07 12:47:28 [Thread-1]: TRACE ipc.ProtobufRpcEngine: 12: Response <- /192.168.1.3:9000: delete {result: true}
+16/11/07 12:47:28 [Thread-1]: TRACE ipc.ProtobufRpcEngine: 12: Call -> /192.168.1.3:9000: getFileInfo {src: "/tmp/hive/spiderdt/03510b83-d04a-485a-8849-4828a0292c13/_tmp_space.db"}
+16/11/07 12:47:28 [IPC Parameter Sending Thread #0]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt sending #11
+16/11/07 12:47:28 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt got value #11
+16/11/07 12:47:28 [Thread-1]: DEBUG ipc.ProtobufRpcEngine: Call: getFileInfo took 0ms
+16/11/07 12:47:28 [Thread-1]: TRACE ipc.ProtobufRpcEngine: 12: Response <- /192.168.1.3:9000: getFileInfo {}
+16/11/07 12:47:28 [Thread-1]: DEBUG ipc.Client: stopping client from cache: org.apache.hadoop.ipc.Client@4d21c56e
+16/11/07 12:47:28 [Thread-1]: DEBUG ipc.Client: removing client from cache: org.apache.hadoop.ipc.Client@4d21c56e
+16/11/07 12:47:28 [Thread-1]: DEBUG ipc.Client: stopping actual client because no more references remain: org.apache.hadoop.ipc.Client@4d21c56e
+16/11/07 12:47:28 [Thread-1]: DEBUG ipc.Client: Stopping client
+16/11/07 12:47:28 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt: closed
+16/11/07 12:47:28 [IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt]: DEBUG ipc.Client: IPC Client (347572726) connection to /192.168.1.3:9000 from spiderdt: stopped, remaining connections 0
