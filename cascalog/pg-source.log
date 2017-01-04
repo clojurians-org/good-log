@@ -1,0 +1,39 @@
+17-01-04 14:40:27 client INFO [cascading.flow.hadoop.util.HadoopUtil:319] - using default application jar, may cause clas
+s not found exceptions on the cluster                                                                                    
+17-01-04 14:40:27 client INFO [cascading.flow.hadoop.planner.HadoopPlanner:205] - using application jar: /home/spiderdt/.
+m2/repository/cascading/cascading-hadoop/2.5.3/cascading-hadoop-2.5.3.jar                                                
+17-01-04 14:40:27 client INFO [cascading.property.AppProps:162] - using app.id: 204F5EAF01A546A1BFAB6F3A71601BDB         
+17-01-04 14:40:28 client INFO [cascading.util.Version:78] - Concurrent, Inc - Cascading 2.5.3                            
+17-01-04 14:40:28 client INFO [cascading.flow.Flow:1354] - [] starting                                                   
+17-01-04 14:40:28 client INFO [cascading.flow.Flow:1354] - []  source: JDBCTap{connectionUrl='jdbc:postgresql://192.168.1
+.3:5432/dw?useSSL=true&ssl=true&characterEncoding=utf-8&stringtype=unspecified&sslmode=require&sslkey=/data/ssl/client/cl
+ient.key.pk8&sslcert=/data/ssl/client/client.cert.pem&sslrootcert=/data/ssl/client/root.cert.pem&sslfactory=org.postgresq
+l.ssl.jdbc4.LibPQFactory', driverClassName='org.postgresql.Driver', tableDesc=TableDesc{tableName='d_cocacola_score', col
+umnNames=null, columnDefs=null, primaryKeys=null}}                                                                       
+17-01-04 14:40:28 client INFO [cascading.flow.Flow:1354] - []  sink: StdoutTap["SequenceFile[[UNKNOWN]->['?dw-dt', '?peri
+od', '?mbd', '?bg', '?bottler', '?channel', '?code', '?item', '?fact', '?value']]"]["/tmp/temp588392532747149452482201199
+8619564"]                                                                                                                
+17-01-04 14:40:28 client INFO [cascading.flow.Flow:1354] - []  parallel execution is enabled: false                      
+17-01-04 14:40:28 client INFO [cascading.flow.Flow:1354] - []  starting jobs: 1                                          
+17-01-04 14:40:28 client INFO [cascading.flow.Flow:1354] - []  allocating threads: 1                                     
+17-01-04 14:40:28 client INFO [cascading.flow.FlowStep:834] - [] starting step: (1/1) ...7471494524822011998619564       
+17-01-04 14:40:28 client INFO [cascading.jdbc.db.DBInputFormat:278] - creating DB input split with start: 0, end: 15582, 
+chunks: 1                                                                                                                
+17-01-04 14:40:28 client INFO [cascading.flow.FlowStep:834] - [] submitted hadoop job: job_local1532062514_0001          
+17-01-04 14:40:28 client INFO [cascading.flow.FlowStep:834] - [] tracking url: http://localhost:8080/                    
+17-01-04 14:40:28 client INFO [cascading.jdbc.db.DBInputFormat:114] - Executing select query                             
+17-01-04 14:40:28 client INFO [cascading.jdbc.db.DBInputFormat:92] - SELECT dw_dt, period, mbd, bg, bottler, channel, cod
+e, item, fact, value FROM d_cocacola_score d_cocacola_score                                                              
+17-01-04 14:40:29 client INFO [cascading.flow.hadoop.FlowMapper:70] - cascading version: 2.5.3                           
+17-01-04 14:40:29 client INFO [cascading.flow.hadoop.FlowMapper:71] - child jvm opts: -Xmx200m                           
+17-01-04 14:40:29 client INFO [cascading.flow.hadoop.FlowMapper:86] - sourcing from: JDBCTap{connectionUrl='jdbc:postgres
+ql://192.168.1.3:5432/dw?useSSL=true&ssl=true&characterEncoding=utf-8&stringtype=unspecified&sslmode=require&sslkey=/data
+/ssl/client/client.key.pk8&sslcert=/data/ssl/client/client.cert.pem&sslrootcert=/data/ssl/client/root.cert.pem&sslfactory
+=org.postgresql.ssl.jdbc4.LibPQFactory', driverClassName='org.postgresql.Driver', tableDesc=TableDesc{tableName='d_cocaco
+la_score', columnNames=null, columnDefs=null, primaryKeys=null}}                                                         
+17-01-04 14:40:29 client INFO [cascading.flow.hadoop.FlowMapper:89] - sinking to: StdoutTap["SequenceFile[[UNKNOWN]->['?d
+w-dt', '?period', '?mbd', '?bg', '?bottler', '?channel', '?code', '?item', '?fact', '?value']]"]["/tmp/temp58839253274714
+94524822011998619564"]                                                                                                   
+17-01-04 14:40:41 client INFO [cascading.tap.hadoop.util.Hadoop18TapUtil:219] - deleting temp path /tmp/temp5883925327471
+494524822011998619564/_temporary                                                                                         
+17-01-04 14:40:58 client INFO [cascading.util.Update:120] - newer Cascading release available: 2.5.6                     
