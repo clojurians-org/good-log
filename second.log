@@ -1,0 +1,465 @@
+[launcher:INFO] [2018-06-03 11:23:37.06 UTC] using configurations: ConfigurationOptions {cfoFilePath = "lib/configuration.yaml", cfoKey = "default", cfoSystemStart = Just 1512847931000000, cfoSeed = Nothing}
+[launcher:NOTICE] [2018-06-03 11:23:37.48 UTC] LAUNCHER STARTED
+[launcher:INFO] [2018-06-03 11:23:37.48 UTC] Running in the server scenario
+[launcher:NOTICE] [2018-06-03 11:23:37.48 UTC] Starting the node
+[launcher:NOTICE] [2018-06-03 11:23:37.48 UTC]     binaries/cardano-node "--db-path" "db-mainnet-staging" "--system-start" "1512847931" "--tlscert" "./scripts/tls-files/server.crt" "--tlskey" "./scripts/tls-files/server.key" "--tlsca" "./scripts/tls-files/ca.crt" "--topology" "docs/network/example-topologies/mainnet-staging.yaml" "--logs-prefix" "logs/test" "--wallet-db-path" "wdb-mainnet-staging" "--keyfile" "secret-mainnet-staging.key" "--configuration-file" "lib/configuration.yaml" "--configuration-key" "mainnet_dryrun_full"
+[launcher:INFO] [2018-06-03 11:23:37.48 UTC] Node has started
+Wallet is starting...
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:37.52 UTC] [Attention] Software is built with the wallet backend
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:37.52 UTC] using configurations: ConfigurationOptions {cfoFilePath = "lib/configuration.yaml", cfoKey = "mainnet_dryrun_full", cfoSystemStart = Just 1512847931000000, cfoSeed = Nothing}
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] Asserts are ON
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] System start time is 1506450213000000
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] Current time is 1528025018523594
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] Using configs and genesis:
+ConfigurationOptions {cfoFilePath = "lib/configuration.yaml", cfoKey = "mainnet_dryrun_full", cfoSystemStart = Just 1512847931000000, cfoSeed = Nothing}
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] Wallet is enabled!
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] <bracketWithLogging:before> bracketWalletWebDB
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] walletServeImpl initWsConnection
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] <bracketWithLogging:before> bracketWalletWS
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:38.52 UTC] Allocating node resources...
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:38.56 UTC] Opened DB, created some futures, going to run InitMode
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Initialized DB
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created EKG store
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Allocating node context...
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Got logger config
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created a StateLock
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created StateLock metrics
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created LRC sync
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created slotting variable
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created slotting context
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Filled slotting future
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created UserSecret variable
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created block retrieval queue, recovery and progress headers
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created last known header and shutdown flag variables
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created context for update
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created context for ssc
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created context for slog
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created peersVar
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Finished allocating node context!
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Filled LRC Context future
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Created DLG var
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.67 UTC] Loading SSC global state
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:39.68 UTC] Loaded SSC state:   commitments from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  openings from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  certificates from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.68 UTC] Created SSC var
+[*production*:DEBUG:ThreadId 4] [2018-06-03 11:23:39.68 UTC] Finished allocating node resources!
+[*production*:INFO:ThreadId 4] [2018-06-03 11:23:39.68 UTC] <bracketWithLogging:before> `NodeResources'
+[NtpClient:INFO:ThreadId 957] [2018-06-03 11:23:39.68 UTC] Created socket (family/addr): AF_INET/0.0.0.0:0
+[node:DEBUG:ThreadId 959] [2018-06-03 11:23:39.68 UTC] startNode, we are NodeId 5aa60bef-305c-4419-b20a-ef9bb9e68e3a
+[NtpClient:INFO:ThreadId 957] [2018-06-03 11:23:39.68 UTC] Created socket (family/addr): AF_INET6/[::]:0
+[node:NOTICE:ThreadId 965] [2018-06-03 11:23:39.68 UTC] dnsSubscriptionWorker: valency 1
+[node:INFO:ThreadId 959] [2018-06-03 11:23:39.68 UTC] Built with: Compile time info: git revision 'bfbcda3d9c733198d7f683cbb93a77a495d96f68'
+[node:INFO:ThreadId 959] [2018-06-03 11:23:39.68 UTC] Application: cardano-sl:0, last known block version 0.1.0, systemTag: macos64
+[node:INFO:ThreadId 959] [2018-06-03 11:23:39.68 UTC] Assert mode on
+[node:INFO:ThreadId 959] [2018-06-03 11:23:39.69 UTC] My public key is: pub:ba30112e, pk hash: f39a359e
+[node:INFO:ThreadId 959] [2018-06-03 11:23:39.69 UTC] Genesis stakeholders (7 addresses, dust threshold 7 coin(s)): GenesisWStakeholders: {44527f7f: 1, 4d842190: 1, 691f26be: 1, 6ea47947: 1, 9ddb7f32: 1, a4773a2a: 1, be2819fd: 1}
+[node:INFO:ThreadId 959] [2018-06-03 11:23:39.69 UTC] GenesisDelegation (stakeholder ids): [a4773a2a -> a2b1af0d, 6ea47947 -> 366718b4, 691f26be -> 98c7c54c, 4d842190 -> 9dcc4691, be2819fd -> ad702bc2, 44527f7f -> c677de8c, 9ddb7f32 -> 0f7443bb]
+[node:INFO:ThreadId 959] [2018-06-03 11:23:39.69 UTC] First genesis block hash: b365f1be, genesis seed is 76617361206f7061736120736b6f766f726f64612047677572646120626f726f64612070726f766f6461
+[node:INFO:ThreadId 959] [2018-06-03 11:23:39.69 UTC] Current tip header: MainBlockHeader:
+    hash: 8042fb5307f0650d34ac8081359a7990e5f05d9f5fd07c89bb95d3d52490f470
+    previous block: 3c11aacfc28d010b963f1e8f980da7e35d35e5b1bf36c89177694d49b6d6db86
+    slot: 20251st slot of 49th epoch
+    difficulty: 1076264
+    leader: pub:3e6a14cd
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:3e6a14cd, dPk = pub:ad0efdf3 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[node.worker.us:DEBUG:ThreadId 979] [2018-06-03 11:23:39.69 UTC] Updating slot for US...
+[NtpClient:INFO:ThreadId 957] [2018-06-03 11:23:39.70 UTC] Host "0.pool.ntp.org" is resolved: 173.255.246.13:123
+[acidcleanup:DEBUG:ThreadId 998] [2018-06-03 11:23:39.70 UTC] Starting cleanup
+[legacyServantBackend:INFO:ThreadId 996] [2018-06-03 11:23:39.70 UTC] Production mode for API: True
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:39.70 UTC] Starting retrievalWorker loop
+[node.worker.us:DEBUG:ThreadId 976] [2018-06-03 11:23:39.71 UTC] Checking for update...
+[node.worker.ssc:DEBUG:ThreadId 970] [2018-06-03 11:23:39.71 UTC] Not enough stake to participate in MPC
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:39.71 UTC] Our tip header: MainBlockHeader:
+    hash: 8042fb5307f0650d34ac8081359a7990e5f05d9f5fd07c89bb95d3d52490f470
+    previous block: 3c11aacfc28d010b963f1e8f980da7e35d35e5b1bf36c89177694d49b6d6db86
+    slot: 20251st slot of 49th epoch
+    difficulty: 1076264
+    leader: pub:3e6a14cd
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:3e6a14cd, dPk = pub:ad0efdf3 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[legacyServantBackend:INFO:ThreadId 996] [2018-06-03 11:23:39.71 UTC] Transaction submission disabled: False
+[NtpClient:INFO:ThreadId 957] [2018-06-03 11:23:39.71 UTC] Host "2.pool.ntp.org" is resolved: 202.112.29.82:123
+[acidcleanup:DEBUG:ThreadId 998] [2018-06-03 11:23:39.71 UTC] Created checkpoint/archived
+[node.worker.slotting.slotting:NOTICE:ThreadId 992] [2018-06-03 11:23:39.71 UTC] New slot has just started: 20340th slot of 49th epoch
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:39.71 UTC] Waiting on the block queue or recovery header var
+[node.worker.block:DEBUG:ThreadId 989] [2018-06-03 11:23:39.71 UTC] Our pk: pub:ba30112e, our pkHash: f39a359e
+[legacyServantBackend:INFO:ThreadId 996] [2018-06-03 11:23:39.71 UTC] Wallet Web API has STARTED!
+[acidcleanup:DEBUG:ThreadId 998] [2018-06-03 11:23:39.71 UTC] Removed 0 old archive files
+[node.worker.block:INFO:ThreadId 982] [2018-06-03 11:23:39.71 UTC] Difference between current slot and tip slot is: 89
+[node.worker.us:DEBUG:ThreadId 976] [2018-06-03 11:23:39.71 UTC] There are no new confirmed update proposals for our application
+[node.worker.slotting.slotting:DEBUG:ThreadId 992] [2018-06-03 11:23:39.71 UTC] Waiting for 13300225mcs before new slot
+[node.worker.block:DEBUG:ThreadId 989] [2018-06-03 11:23:39.71 UTC] Current slot leader: 691f26be
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:39.71 UTC] Block with depth 'k' (2160) was created during slot 18092nd slot of 49th epoch
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:39.71 UTC] Chain quality for the last 'k' (2160) blocks is 0.961
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:39.72 UTC] Overall chain quality is 0.998
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:39.72 UTC] Chain quality for last 3600s is 0.511
+[NtpClient:INFO:ThreadId 957] [2018-06-03 11:23:39.73 UTC] Host "3.pool.ntp.org" is resolved: 108.59.2.24:123
+[NtpClient:INFO:ThreadId 1015] [2018-06-03 11:23:39.74 UTC] Launched NTP client
+[NtpClient:DEBUG:ThreadId 1020] [2018-06-03 11:23:39.74 UTC] Sending requests
+[node.worker.block:DEBUG:ThreadId 989] [2018-06-03 11:23:39.74 UTC] Trimmed leaders: [(20330, 44527f7f), (20331, 9ddb7f32), (20332, be2819fd), (20333, 4d842190), (20334, 4d842190), (20335, 691f26be), (20336, 9ddb7f32), (20337, 4d842190), (20338, 4d842190), (20339, a4773a2a), (20340, 691f26be), (20341, 6ea47947), (20342, 6ea47947), (20343, be2819fd), (20344, 6ea47947), (20345, be2819fd), (20346, 44527f7f), (20347, 44527f7f), (20348, 4d842190), (20349, 44527f7f), (20350, a4773a2a)]
+[node.worker.block:DEBUG:ThreadId 989] [2018-06-03 11:23:39.74 UTC] End delegation psk for this slot: ProxySk { w = #0, iPk = pub:3e6a14cd, dPk = pub:ad0efdf3 }
+[NtpClient:DEBUG:ThreadId 1018] [2018-06-03 11:23:39.79 UTC] Got packet NtpPacket {ntpParams = 28, ntpPoll = 0, ntpOriginTime = 1528025019745021mcs, ntpReceivedTime = 1528025019688246mcs, ntpTransmitTime = 1528025019688284mcs}
+[NtpClient:DEBUG:ThreadId 1018] [2018-06-03 11:23:39.79 UTC] Received time delta -83510 mcs
+[NtpClient:DEBUG:ThreadId 1018] [2018-06-03 11:23:39.94 UTC] Got packet NtpPacket {ntpParams = 28, ntpPoll = 5, ntpOriginTime = 1528025019744952mcs, ntpReceivedTime = 1528025019759168mcs, ntpTransmitTime = 1528025019759201mcs}
+[NtpClient:DEBUG:ThreadId 1018] [2018-06-03 11:23:39.94 UTC] Received time delta -85397 mcs
+[node:NOTICE:ThreadId 967] [2018-06-03 11:23:40.00 UTC] subscriptionWorker: subscribing to NodeId 18.182.0.109:3000:0
+[NtpClient:DEBUG:ThreadId 1018] [2018-06-03 11:23:40.02 UTC] Got packet NtpPacket {ntpParams = 28, ntpPoll = 3, ntpOriginTime = 1528025019745267mcs, ntpReceivedTime = 1528025019777047mcs, ntpTransmitTime = 1528025019777090mcs}
+[NtpClient:DEBUG:ThreadId 1018] [2018-06-03 11:23:40.02 UTC] Received time delta -105847 mcs
+[NtpClient:DEBUG:ThreadId 1020] [2018-06-03 11:23:40.02 UTC] Collecting responses
+[NtpClient:INFO:ThreadId 1020] [2018-06-03 11:23:40.02 UTC] Evaluated clock offset -85397 mcs for request at 1528025019744952 mcs
+[node.worker.block:INFO:ThreadId 986] [2018-06-03 11:23:43.70 UTC] Checking if we need recovery as a safety measure
+[node.worker.block:INFO:ThreadId 986] [2018-06-03 11:23:43.70 UTC] Triggering recovery as a safety measure
+[node.worker.block:DEBUG:ThreadId 986] [2018-06-03 11:23:43.70 UTC] Recovery triggered, requesting tips from neighbors
+[diffusion.outboundqueue:DEBUG:ThreadId 986] [2018-06-03 11:23:43.70 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 986] [2018-06-03 11:23:43.70 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 986] [2018-06-03 11:23:43.70 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 986] [2018-06-03 11:23:43.70 UTC] self: message MsgRequestBlockHeaders Nothing enqueued to [NodeId 18.182.0.109:3000:0]
+[node.worker.block:DEBUG:ThreadId 986] [2018-06-03 11:23:43.70 UTC] Finished requesting tips for recovery
+[diffusion.outboundqueue:DEBUG:ThreadId 1037] [2018-06-03 11:23:43.70 UTC] self: sending MsgRequestBlockHeaders Nothing to NodeId 18.182.0.109:3000:0
+[node:DEBUG:ThreadId 1040] [2018-06-03 11:23:44.26 UTC] Requesting tip...
+[node:DEBUG:ThreadId 1040] [2018-06-03 11:23:44.80 UTC] Got tip 95fba2be, processing
+[node:DEBUG:ThreadId 1040] [2018-06-03 11:23:44.80 UTC] handleUnsolicitedHeader: single header was propagated, processing:
+MainBlockHeader:
+    hash: 95fba2bec2b1233ae940b0e5ac031d933295bb33b87b4cbde8f3f060637dff6b
+    previous block: f0a5294ca6bc4cf2c248170dfdda25dc95779fe9d3d91bd08c8ae959f145cad1
+    slot: 20340th slot of 49th epoch
+    difficulty: 1076353
+    leader: pub:3e6a14cd
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:3e6a14cd, dPk = pub:ad0efdf3 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[node:DEBUG:ThreadId 1040] [2018-06-03 11:23:44.80 UTC] Header 95fba2be potentially represents good alternative chain, will process
+[node:DEBUG:ThreadId 1040] [2018-06-03 11:23:44.80 UTC] addToBlockRequestQueue, : 95fba2be
+[node:DEBUG:ThreadId 1040] [2018-06-03 11:23:44.80 UTC] Added headers to block request queue: nodeId="18.182.0.109:3000:0", header=95fba2be
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:44.80 UTC] Block retrieval queue task received, nodeId="18.182.0.109:3000:0", header=95fba2be, continues=False
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:44.80 UTC] handleAlternative: 95fba2be
+[diffusion.outboundqueue:DEBUG:ThreadId 1037] [2018-06-03 11:23:44.80 UTC] self: sent MsgRequestBlockHeaders Nothing to NodeId 18.182.0.109:3000:0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:44.80 UTC] handleAlternative: considering header for recovery mode
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:44.80 UTC] Updating recovery header...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:44.80 UTC] Recovery started with nodeId="18.182.0.109:3000:0" and tip=95fba2be
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:44.80 UTC] Waiting on the block queue or recovery header var
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:44.80 UTC] Block retrieval queue is empty and we're in recovery mode, so we will fetch more blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:44.80 UTC] handleRecovery: fetching blocks
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:23:44.93 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:23:44.93 UTC] self: message MsgRequestBlockHeaders (Just (fromList [NodeId 18.182.0.109:3000:0])) enqueued to [NodeId 18.182.0.109:3000:0]
+[diffusion.outboundqueue:DEBUG:ThreadId 1044] [2018-06-03 11:23:44.93 UTC] self: sending MsgRequestBlockHeaders (Just (fromList [NodeId 18.182.0.109:3000:0])) to NodeId 18.182.0.109:3000:0
+[node:DEBUG:ThreadId 1047] [2018-06-03 11:23:46.01 UTC] requestHeaders: sending MsgGetHeaders {from = [745424b3, 1fb864fd, 3cd3af71, ae792497, 997f57c1, 951550c8, c951eb07, 4883c8fb, 1212df6a, 668bbadf, 8170d184, 3c11aacf, 8042fb53], to = 95fba2be}
+[node:DEBUG:ThreadId 1047] [2018-06-03 11:23:46.95 UTC] requestHeaders: inRecovery = True
+[node:DEBUG:ThreadId 1047] [2018-06-03 11:23:46.95 UTC] requestHeaders: received 88 headers from nodeId "18.182.0.109:3000:0"
+[diffusion.outboundqueue:DEBUG:ThreadId 1044] [2018-06-03 11:23:46.95 UTC] self: sent MsgRequestBlockHeaders (Just (fromList [NodeId 18.182.0.109:3000:0])) to NodeId 18.182.0.109:3000:0
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:23:46.95 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:23:46.95 UTC] self: message MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) enqueued to [NodeId 18.182.0.109:3000:0]
+[diffusion.outboundqueue:DEBUG:ThreadId 1051] [2018-06-03 11:23:46.96 UTC] self: sending MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) to NodeId 18.182.0.109:3000:0
+[node:DEBUG:ThreadId 1054] [2018-06-03 11:23:47.55 UTC] Requesting blocks from 24f0529e to f0a5294c
+[node:DEBUG:ThreadId 1054] [2018-06-03 11:23:47.55 UTC] Requested blocks, waiting for the response
+[diffusion.outboundqueue:DEBUG:ThreadId 1051] [2018-06-03 11:23:48.28 UTC] self: sent MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) to NodeId 18.182.0.109:3000:0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:48.28 UTC] Retrieved 88 blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:48.28 UTC] handleBlocks: processing
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:48.28 UTC] Processing sequence of blocks: [24f0529e..f0a5294c]...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:48.28 UTC] Handling block w/ LCA, which is 8042fb53
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:48.28 UTC] Trying to apply blocks w/o rollback. First 3: [MainBlockHeader:
+    hash: 24f0529e9d70c774cae2cd7f7244a1cf9ea3ac8e3f6b7281abdd56b21e2f6361
+    previous block: 8042fb5307f0650d34ac8081359a7990e5f05d9f5fd07c89bb95d3d52490f470
+    slot: 20252nd slot of 49th epoch
+    difficulty: 1076265
+    leader: pub:3e6a14cd
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:3e6a14cd, dPk = pub:ad0efdf3 } }
+    block: v0.1.0
+    software: cardano-sl:0
+, MainBlockHeader:
+    hash: ee8e58e08d6029d88d167d86fb81f6fc76d42977ec0d293bd346c66fb0a43f05
+    previous block: 24f0529e9d70c774cae2cd7f7244a1cf9ea3ac8e3f6b7281abdd56b21e2f6361
+    slot: 20253rd slot of 49th epoch
+    difficulty: 1076266
+    leader: pub:5dff2620
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:5dff2620, dPk = pub:2f19f1b8 } }
+    block: v0.1.0
+    software: cardano-sl:0
+, MainBlockHeader:
+    hash: 252b4361fd30cad812045e9ccc4982d1441417dbc42ab25850227e949768f3df
+    previous block: ee8e58e08d6029d88d167d86fb81f6fc76d42977ec0d293bd346c66fb0a43f05
+    slot: 20254th slot of 49th epoch
+    difficulty: 1076267
+    leader: pub:9096c397
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:9096c397, dPk = pub:d42e2f19 } }
+    block: v0.1.0
+    software: cardano-sl:0
+]
+Last 3: [MainBlockHeader:
+    hash: 7a6b5e290139631ca23ebd0a420e78e3dfa9c5e1574a2114a6113e7ebef79c6d
+    previous block: 5ba426f06f4e0c7d673cd2c53e7f52712892f0e46795477321f570b39bbe9bdd
+    slot: 20337th slot of 49th epoch
+    difficulty: 1076350
+    leader: pub:6f40449a
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:6f40449a, dPk = pub:f67cb296 } }
+    block: v0.1.0
+    software: cardano-sl:0
+, MainBlockHeader:
+    hash: 0168a5c5357290af86b6c5a109300089c1e723ca4a10784aa9c6d882d58c73c6
+    previous block: 7a6b5e290139631ca23ebd0a420e78e3dfa9c5e1574a2114a6113e7ebef79c6d
+    slot: 20338th slot of 49th epoch
+    difficulty: 1076351
+    leader: pub:6f40449a
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:6f40449a, dPk = pub:f67cb296 } }
+    block: v0.1.0
+    software: cardano-sl:0
+, MainBlockHeader:
+    hash: f0a5294ca6bc4cf2c248170dfdda25dc95779fe9d3d91bd08c8ae959f145cad1
+    previous block: 0168a5c5357290af86b6c5a109300089c1e723ca4a10784aa9c6d882d58c73c6
+    slot: 20339th slot of 49th epoch
+    difficulty: 1076352
+    leader: pub:68dfaf59
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:68dfaf59, dPk = pub:b1ce296b } }
+    block: v0.1.0
+    software: cardano-sl:0
+]
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:48.28 UTC] MemPool metrics wait: "applyWithoutRollback" queue length is 1
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:48.28 UTC] MemPool metrics acquire: "applyWithoutRollback" wait time was 15mcs
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:48.28 UTC] Verifying and applying blocks...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:48.28 UTC] Rolling: verifying
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:48.41 UTC] Rolling: Verification done, applying unsafe block
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:48.63 UTC] After applying blocks SSC global state is:
+  commitments from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  openings from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  certificates from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:49.56 UTC] Verifying and applying blocks done
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:49.56 UTC] MemPool metrics release: "applyWithoutRollback" modify time was 1279980mcs size is 0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:49.56 UTC] Not relaying block in recovery mode
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:49.56 UTC] Blocks have been adopted: [24f0529e, ee8e58e0, 252b4361, b550c35f, a3dd323e, 61fadb46, b6b29d18, 81def6e1, 2da44415, 83225417, 08bcc79b, 6105e4ff, 9c58c054, e3077df4, a61a506f, 6acf284f, de990b87, f31749e8, b4fa0590, d407b027, 11b89140, 5d28916b, f8fef997, 933fc9df, 14db42d8, 9889f6a2, 3ebb3dca, fe640467, f7f435a6, c009aaaf, 302862ed, db3e1847, 342e6f13, 0eebcfbe, 21f32ca6, 8ea82433, e64a5686, 5ba4d706, 32bccb82, bc5380ec, ea99bbf5, a094f6cf, a53c89dd, ca6cfa43, 033e6538, 080c874d, 49e91d13, 0645e930, 07818fa0, cb50c08c, f42ca0b1, fc011c23, 40bf9668, 13906446, d8e1775d, 6f4f9144, 50223013, fb961666, 263ddd07, 7b6ee2a0, be783f85, d339674f, 41caaeb2, ee7fca63, 414353a5, f19224ac, f8a0f04e, f0db65bf, 7f1f7f97, f031cbd3, f118f5ad, 2edc6465, 880dd15f, 9b9cbb6b, 2fda5aaf, 5c422343, e33fee36, ba7c9ff5, b9adc92b, a6a1b50c, eb79d98c, 0c077606, c2149be8, a60cc0ca, 5ba426f0, 7a6b5e29, 0168a5c5, f0a5294c]
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:49.56 UTC] Finished processing sequence of blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:49.57 UTC] Waiting on the block queue or recovery header var
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:49.57 UTC] Block retrieval queue is empty and we're in recovery mode, so we will fetch more blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:49.57 UTC] handleRecovery: fetching blocks
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:23:49.68 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:23:49.68 UTC] self: message MsgRequestBlockHeaders (Just (fromList [NodeId 18.182.0.109:3000:0])) enqueued to [NodeId 18.182.0.109:3000:0]
+[diffusion.outboundqueue:DEBUG:ThreadId 2371] [2018-06-03 11:23:49.68 UTC] self: sending MsgRequestBlockHeaders (Just (fromList [NodeId 18.182.0.109:3000:0])) to NodeId 18.182.0.109:3000:0
+[node:DEBUG:ThreadId 2374] [2018-06-03 11:23:50.29 UTC] requestHeaders: sending MsgGetHeaders {from = [f452bf4d, eb99cee7, 3babe6c7, 5d4e2ebf, 07b7b489, 1ae42387, 14db42d8, 50223013, 880dd15f, eb79d98c, 5ba426f0, 0168a5c5, f0a5294c], to = 95fba2be}
+[node:DEBUG:ThreadId 2374] [2018-06-03 11:23:50.84 UTC] requestHeaders: inRecovery = True
+[node:DEBUG:ThreadId 2374] [2018-06-03 11:23:50.84 UTC] requestHeaders: received 1 headers from nodeId "18.182.0.109:3000:0"
+[diffusion.outboundqueue:DEBUG:ThreadId 2371] [2018-06-03 11:23:50.84 UTC] self: sent MsgRequestBlockHeaders (Just (fromList [NodeId 18.182.0.109:3000:0])) to NodeId 18.182.0.109:3000:0
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:23:50.84 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:23:50.84 UTC] self: message MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) enqueued to [NodeId 18.182.0.109:3000:0]
+[diffusion.outboundqueue:DEBUG:ThreadId 2378] [2018-06-03 11:23:50.84 UTC] self: sending MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) to NodeId 18.182.0.109:3000:0
+[node:DEBUG:ThreadId 2381] [2018-06-03 11:23:51.44 UTC] Requesting blocks from 95fba2be to 95fba2be
+[node:DEBUG:ThreadId 2381] [2018-06-03 11:23:51.44 UTC] Requested blocks, waiting for the response
+[diffusion.outboundqueue:DEBUG:ThreadId 2378] [2018-06-03 11:23:51.97 UTC] self: sent MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) to NodeId 18.182.0.109:3000:0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:51.98 UTC] Retrieved 1 blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:51.98 UTC] handleBlocks: processing
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:51.98 UTC] Processing sequence of blocks: [95fba2be]...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:51.98 UTC] Handling block w/ LCA, which is f0a5294c
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:51.98 UTC] Trying to apply blocks w/o rollback. [MainBlockHeader:
+    hash: 95fba2bec2b1233ae940b0e5ac031d933295bb33b87b4cbde8f3f060637dff6b
+    previous block: f0a5294ca6bc4cf2c248170dfdda25dc95779fe9d3d91bd08c8ae959f145cad1
+    slot: 20340th slot of 49th epoch
+    difficulty: 1076353
+    leader: pub:3e6a14cd
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:3e6a14cd, dPk = pub:ad0efdf3 } }
+    block: v0.1.0
+    software: cardano-sl:0
+]
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:51.98 UTC] MemPool metrics wait: "applyWithoutRollback" queue length is 1
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:51.98 UTC] MemPool metrics acquire: "applyWithoutRollback" wait time was 16mcs
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:51.98 UTC] Verifying and applying blocks...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:51.98 UTC] Rolling: verifying
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:51.99 UTC] Rolling: Verification done, applying unsafe block
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:51.99 UTC] After applying blocks SSC global state is:
+  commitments from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  openings from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  certificates from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:52.95 UTC] Verifying and applying blocks done
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:52.95 UTC] MemPool metrics release: "applyWithoutRollback" modify time was 969119mcs size is 0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:52.95 UTC] Not relaying block in recovery mode
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:52.95 UTC] Block has been adopted 95fba2be
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:52.95 UTC] Finished processing sequence of blocks
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:23:52.95 UTC] Recovery mode exited gracefully on receiving block we needed
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:23:52.95 UTC] Waiting on the block queue or recovery header var
+[node.plugin.tx.resubmitter:DEBUG:ThreadId 1002] [2018-06-03 11:23:53.00 UTC] There are no transactions to resubmit
+[node.worker.us:DEBUG:ThreadId 3685] [2018-06-03 11:23:53.00 UTC] Updating slot for US...
+[node.worker.ssc:DEBUG:ThreadId 970] [2018-06-03 11:23:53.01 UTC] Not enough stake to participate in MPC
+[node.worker.slotting.slotting:NOTICE:ThreadId 992] [2018-06-03 11:23:53.01 UTC] New slot has just started: 20341st slot of 49th epoch
+[node.worker.slotting.slotting:DEBUG:ThreadId 992] [2018-06-03 11:23:53.01 UTC] Waiting for 19980605mcs before new slot
+[node.worker.us:DEBUG:ThreadId 976] [2018-06-03 11:23:53.02 UTC] Checking for update...
+[node.worker.us:DEBUG:ThreadId 976] [2018-06-03 11:23:53.02 UTC] There are no new confirmed update proposals for our application
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:53.02 UTC] Our tip header: MainBlockHeader:
+    hash: 95fba2bec2b1233ae940b0e5ac031d933295bb33b87b4cbde8f3f060637dff6b
+    previous block: f0a5294ca6bc4cf2c248170dfdda25dc95779fe9d3d91bd08c8ae959f145cad1
+    slot: 20340th slot of 49th epoch
+    difficulty: 1076353
+    leader: pub:3e6a14cd
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:3e6a14cd, dPk = pub:ad0efdf3 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[node.worker.block:INFO:ThreadId 982] [2018-06-03 11:23:53.02 UTC] Difference between current slot and tip slot is: 1
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:53.02 UTC] Block with depth 'k' (2160) was created during slot 18181st slot of 49th epoch
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:53.02 UTC] Chain quality for the last 'k' (2160) blocks is 1.000
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:53.02 UTC] Overall chain quality is 0.998
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:23:53.02 UTC] Chain quality for last 3600s is 1.000
+[node.worker.block:DEBUG:ThreadId 3687] [2018-06-03 11:23:53.06 UTC] Our pk: pub:ba30112e, our pkHash: f39a359e
+[node.worker.block:DEBUG:ThreadId 3687] [2018-06-03 11:23:53.06 UTC] Current slot leader: 6ea47947
+[node.worker.block:DEBUG:ThreadId 3687] [2018-06-03 11:23:53.07 UTC] Trimmed leaders: [(20331, 9ddb7f32), (20332, be2819fd), (20333, 4d842190), (20334, 4d842190), (20335, 691f26be), (20336, 9ddb7f32), (20337, 4d842190), (20338, 4d842190), (20339, a4773a2a), (20340, 691f26be), (20341, 6ea47947), (20342, 6ea47947), (20343, be2819fd), (20344, 6ea47947), (20345, be2819fd), (20346, 44527f7f), (20347, 44527f7f), (20348, 4d842190), (20349, 44527f7f), (20350, a4773a2a), (20351, 9ddb7f32)]
+[node.worker.block:DEBUG:ThreadId 3687] [2018-06-03 11:23:53.07 UTC] End delegation psk for this slot: ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 }
+[node.server.block:DEBUG:ThreadId 3688] [2018-06-03 11:24:01.28 UTC] handleBlockHeaders: got some unsolicited block header(s)
+[node.server.block:DEBUG:ThreadId 3688] [2018-06-03 11:24:01.48 UTC] handleUnsolicitedHeader: single header was propagated, processing:
+MainBlockHeader:
+    hash: 9dee60122292a01e05ee24f44de98e892eb0a1b37c628adac76ae3b9c2fb698e
+    previous block: 95fba2bec2b1233ae940b0e5ac031d933295bb33b87b4cbde8f3f060637dff6b
+    slot: 20341st slot of 49th epoch
+    difficulty: 1076354
+    leader: pub:9e9b1fa4
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[node.server.block:DEBUG:ThreadId 3688] [2018-06-03 11:24:01.49 UTC] Header 9dee6012 is a good continuation of our chain, will process
+[node.server.block:DEBUG:ThreadId 3688] [2018-06-03 11:24:01.49 UTC] addToBlockRequestQueue, : 9dee6012
+[node.server.block:DEBUG:ThreadId 3688] [2018-06-03 11:24:01.49 UTC] Added headers to block request queue: nodeId="18.182.0.109:3000:0", header=9dee6012
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:01.49 UTC] Block retrieval queue task received, nodeId="18.182.0.109:3000:0", header=9dee6012, continues=True
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:01.49 UTC] handleContinues: 9dee6012
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:24:01.50 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:24:01.50 UTC] self: message MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) enqueued to [NodeId 18.182.0.109:3000:0]
+[diffusion.outboundqueue:DEBUG:ThreadId 3694] [2018-06-03 11:24:01.50 UTC] self: sending MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) to NodeId 18.182.0.109:3000:0
+[node:DEBUG:ThreadId 3697] [2018-06-03 11:24:02.62 UTC] Requesting blocks from 9dee6012 to 9dee6012
+[node:DEBUG:ThreadId 3697] [2018-06-03 11:24:02.62 UTC] Requested blocks, waiting for the response
+[diffusion.outboundqueue:DEBUG:ThreadId 3694] [2018-06-03 11:24:03.12 UTC] self: sent MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) to NodeId 18.182.0.109:3000:0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:03.12 UTC] Retrieved 1 blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:03.12 UTC] handleBlocks: processing
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:03.12 UTC] Processing sequence of blocks: [9dee6012]...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:03.13 UTC] Handling block w/ LCA, which is 95fba2be
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:03.13 UTC] Trying to apply blocks w/o rollback. [MainBlockHeader:
+    hash: 9dee60122292a01e05ee24f44de98e892eb0a1b37c628adac76ae3b9c2fb698e
+    previous block: 95fba2bec2b1233ae940b0e5ac031d933295bb33b87b4cbde8f3f060637dff6b
+    slot: 20341st slot of 49th epoch
+    difficulty: 1076354
+    leader: pub:9e9b1fa4
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 } }
+    block: v0.1.0
+    software: cardano-sl:0
+]
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:03.13 UTC] MemPool metrics wait: "applyWithoutRollback" queue length is 1
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:03.13 UTC] MemPool metrics acquire: "applyWithoutRollback" wait time was 24mcs
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:03.13 UTC] Verifying and applying blocks...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:03.13 UTC] Rolling: verifying
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:03.14 UTC] Rolling: Verification done, applying unsafe block
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:03.14 UTC] After applying blocks SSC global state is:
+  commitments from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  openings from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  certificates from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:04.03 UTC] Verifying and applying blocks done
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:04.03 UTC] MemPool metrics release: "applyWithoutRollback" modify time was 905194mcs size is 0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:04.03 UTC] Calling announceBlock for 9dee6012.
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:04.03 UTC] Announcing header to others:
+MainBlockHeader:
+    hash: 9dee60122292a01e05ee24f44de98e892eb0a1b37c628adac76ae3b9c2fb698e
+    previous block: 95fba2bec2b1233ae940b0e5ac031d933295bb33b87b4cbde8f3f060637dff6b
+    slot: 20341st slot of 49th epoch
+    difficulty: 1076354
+    leader: pub:9e9b1fa4
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:04.03 UTC] Block has been adopted 9dee6012
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:04.03 UTC] Finished processing sequence of blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:04.03 UTC] Waiting on the block queue or recovery header var
+[node.plugin.tx.resubmitter:DEBUG:ThreadId 1002] [2018-06-03 11:24:13.00 UTC] There are no transactions to resubmit
+[node.worker.slotting.slotting:NOTICE:ThreadId 992] [2018-06-03 11:24:13.00 UTC] New slot has just started: 20342nd slot of 49th epoch
+[node.worker.slotting.slotting:DEBUG:ThreadId 992] [2018-06-03 11:24:13.00 UTC] Waiting for 19994804mcs before new slot
+[node.worker.ssc:DEBUG:ThreadId 970] [2018-06-03 11:24:13.00 UTC] Not enough stake to participate in MPC
+[node.worker.us:DEBUG:ThreadId 5001] [2018-06-03 11:24:13.00 UTC] Updating slot for US...
+[node.worker.us:DEBUG:ThreadId 976] [2018-06-03 11:24:13.00 UTC] Checking for update...
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:24:13.00 UTC] Our tip header: MainBlockHeader:
+    hash: 9dee60122292a01e05ee24f44de98e892eb0a1b37c628adac76ae3b9c2fb698e
+    previous block: 95fba2bec2b1233ae940b0e5ac031d933295bb33b87b4cbde8f3f060637dff6b
+    slot: 20341st slot of 49th epoch
+    difficulty: 1076354
+    leader: pub:9e9b1fa4
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[node.worker.block:INFO:ThreadId 982] [2018-06-03 11:24:13.00 UTC] Difference between current slot and tip slot is: 1
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:24:13.00 UTC] Block with depth 'k' (2160) was created during slot 18182nd slot of 49th epoch
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:24:13.00 UTC] Chain quality for the last 'k' (2160) blocks is 1.000
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:24:13.00 UTC] Overall chain quality is 0.998
+[node.worker.block:DEBUG:ThreadId 982] [2018-06-03 11:24:13.00 UTC] Chain quality for last 3600s is 1.000
+[node.worker.us:DEBUG:ThreadId 976] [2018-06-03 11:24:13.01 UTC] There are no new confirmed update proposals for our application
+[node.worker.block:DEBUG:ThreadId 5003] [2018-06-03 11:24:13.04 UTC] Our pk: pub:ba30112e, our pkHash: f39a359e
+[node.worker.block:DEBUG:ThreadId 5003] [2018-06-03 11:24:13.04 UTC] Current slot leader: 6ea47947
+[node.worker.block:DEBUG:ThreadId 5003] [2018-06-03 11:24:13.06 UTC] Trimmed leaders: [(20332, be2819fd), (20333, 4d842190), (20334, 4d842190), (20335, 691f26be), (20336, 9ddb7f32), (20337, 4d842190), (20338, 4d842190), (20339, a4773a2a), (20340, 691f26be), (20341, 6ea47947), (20342, 6ea47947), (20343, be2819fd), (20344, 6ea47947), (20345, be2819fd), (20346, 44527f7f), (20347, 44527f7f), (20348, 4d842190), (20349, 44527f7f), (20350, a4773a2a), (20351, 9ddb7f32), (20352, a4773a2a)]
+[node.worker.block:DEBUG:ThreadId 5003] [2018-06-03 11:24:13.06 UTC] End delegation psk for this slot: ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 }
+[node.server.block:DEBUG:ThreadId 5004] [2018-06-03 11:24:21.15 UTC] handleBlockHeaders: got some unsolicited block header(s)
+[node.server.block:DEBUG:ThreadId 5004] [2018-06-03 11:24:21.35 UTC] handleUnsolicitedHeader: single header was propagated, processing:
+MainBlockHeader:
+    hash: 10cd514d35e749ff4bcc3789f189f485663bcf8bd1ab932d62f91ce8f21c21a2
+    previous block: 9dee60122292a01e05ee24f44de98e892eb0a1b37c628adac76ae3b9c2fb698e
+    slot: 20342nd slot of 49th epoch
+    difficulty: 1076355
+    leader: pub:9e9b1fa4
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[node.server.block:DEBUG:ThreadId 5004] [2018-06-03 11:24:21.36 UTC] Header 10cd514d is a good continuation of our chain, will process
+[node.server.block:DEBUG:ThreadId 5004] [2018-06-03 11:24:21.36 UTC] addToBlockRequestQueue, : 10cd514d
+[node.server.block:DEBUG:ThreadId 5004] [2018-06-03 11:24:21.36 UTC] Added headers to block request queue: nodeId="18.182.0.109:3000:0", header=10cd514d
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:21.36 UTC] Block retrieval queue task received, nodeId="18.182.0.109:3000:0", header=10cd514d, continues=True
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:21.36 UTC] handleContinues: 10cd514d
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:24:21.37 UTC] self: inFlight = fromList []
+[diffusion.outboundqueue:DEBUG:ThreadId 984] [2018-06-03 11:24:21.37 UTC] self: message MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) enqueued to [NodeId 18.182.0.109:3000:0]
+[diffusion.outboundqueue:DEBUG:ThreadId 5009] [2018-06-03 11:24:21.37 UTC] self: sending MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) to NodeId 18.182.0.109:3000:0
+[node:DEBUG:ThreadId 5012] [2018-06-03 11:24:21.95 UTC] Requesting blocks from 10cd514d to 10cd514d
+[node:DEBUG:ThreadId 5012] [2018-06-03 11:24:21.95 UTC] Requested blocks, waiting for the response
+[diffusion.outboundqueue:DEBUG:ThreadId 5009] [2018-06-03 11:24:22.47 UTC] self: sent MsgRequestBlocks (fromList [NodeId 18.182.0.109:3000:0]) to NodeId 18.182.0.109:3000:0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:22.47 UTC] Retrieved 1 blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:22.47 UTC] handleBlocks: processing
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:22.47 UTC] Processing sequence of blocks: [10cd514d]...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:22.47 UTC] Handling block w/ LCA, which is 9dee6012
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:22.48 UTC] Trying to apply blocks w/o rollback. [MainBlockHeader:
+    hash: 10cd514d35e749ff4bcc3789f189f485663bcf8bd1ab932d62f91ce8f21c21a2
+    previous block: 9dee60122292a01e05ee24f44de98e892eb0a1b37c628adac76ae3b9c2fb698e
+    slot: 20342nd slot of 49th epoch
+    difficulty: 1076355
+    leader: pub:9e9b1fa4
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 } }
+    block: v0.1.0
+    software: cardano-sl:0
+]
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:22.48 UTC] MemPool metrics wait: "applyWithoutRollback" queue length is 1
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:22.48 UTC] MemPool metrics acquire: "applyWithoutRollback" wait time was 15mcs
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:22.48 UTC] Verifying and applying blocks...
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:22.48 UTC] Rolling: verifying
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:22.49 UTC] Rolling: Verification done, applying unsafe block
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:22.49 UTC] After applying blocks SSC global state is:
+  commitments from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  openings from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+  certificates from: [98c7c54c, ad702bc2, 0f7443bb, c677de8c, a2b1af0d, 9dcc4691, 366718b4]
+
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:23.45 UTC] Verifying and applying blocks done
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:23.45 UTC] MemPool metrics release: "applyWithoutRollback" modify time was 976819mcs size is 0
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:23.45 UTC] Calling announceBlock for 10cd514d.
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:23.45 UTC] Announcing header to others:
+MainBlockHeader:
+    hash: 10cd514d35e749ff4bcc3789f189f485663bcf8bd1ab932d62f91ce8f21c21a2
+    previous block: 9dee60122292a01e05ee24f44de98e892eb0a1b37c628adac76ae3b9c2fb698e
+    slot: 20342nd slot of 49th epoch
+    difficulty: 1076355
+    leader: pub:9e9b1fa4
+    signature: BlockPSignatureHeavy: Proxy signature { psk = ProxySk { w = #0, iPk = pub:9e9b1fa4, dPk = pub:1554fdf8 } }
+    block: v0.1.0
+    software: cardano-sl:0
+
+[node.worker.block:INFO:ThreadId 984] [2018-06-03 11:24:23.45 UTC] Block has been adopted 10cd514d
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:23.45 UTC] Finished processing sequence of blocks
+[node.worker.block:DEBUG:ThreadId 984] [2018-06-03 11:24:23.45 UTC] Waiting on the block queue or recovery header var
