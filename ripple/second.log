@@ -1,0 +1,434 @@
+larluo@larluo:/home/larluo/work/git/my-repo/rippled/dist$ ./rippled
+Loading: "/home/larluo/work/git/my-repo/rippled/dist/rippled.cfg"
+Watchdog: Launching child 1
+2018-Jun-26 06:26:27.670593823 JobQueue:NFO Auto-tuning to 3 validation/transaction/proposal threads.
+2018-Jun-26 06:26:27.673536491 Amendments:DBG Amendment 4C97EBA926031A7CF7D7B36FDE3ED66DDA5421192D63DE53FFB46E43B9DC8373 is supported.
+2018-Jun-26 06:26:27.673961230 Amendments:DBG Amendment 6781F8368C4771B83E8B821D88F580202BCB4228075297B19E4FDC5233F1EFDC is supported.
+2018-Jun-26 06:26:27.674187229 Amendments:DBG Amendment 42426C4D4F1009EE67080A9B7965B44656D7714D104A72F9B4369F97ABF044EE is supported.
+2018-Jun-26 06:26:27.674378902 Amendments:DBG Amendment 08DE7D96082187F6E6578530258C77FAABABE4C20474BDB82F04B021F1A68647 is supported.
+2018-Jun-26 06:26:27.674597495 Amendments:DBG Amendment 740352F2412A9909880C23A559FCECEDA3BE2126FED62FC7660D628A06927F11 is supported.
+2018-Jun-26 06:26:27.674783031 Amendments:DBG Amendment 1562511F573A19AE9BD103B5D6B9E01B3B46805AEC5D3C4805C902B514399146 is supported.
+2018-Jun-26 06:26:27.674986778 Amendments:DBG Amendment 532651B4FD58DF8922A49BA101AB3E996E5BFBF95A913B3E392504863E63B164 is supported.
+2018-Jun-26 06:26:27.675082446 Amendments:DBG Amendment E2E6F2866106419B88C50045ACE96368558C345566AC8F2BDF5A5B5587F0E6FA is supported.
+2018-Jun-26 06:26:27.675131444 Amendments:DBG Amendment 07D43DCE529B15A10827E5E04943B496762F9A88E3268269D69C44BE49E21104 is supported.
+2018-Jun-26 06:26:27.675178072 Amendments:DBG Amendment 86E83A7D2ECE3AD5FA87AB2195AE015C950469ABF0B72EAACED318F74886AE90 is supported.
+2018-Jun-26 06:26:27.675227156 Amendments:DBG Amendment 42EEA5E28A97824821D4EF97081FE36A54E9593C6E4F20CBAE098C69D2E072DC is supported.
+2018-Jun-26 06:26:27.675273794 Amendments:DBG Amendment DC9CA96AEA1DCF83E527D1AFC916EFAF5D27388ECA4060A88817C1238CAEE0BF is supported.
+2018-Jun-26 06:26:27.675319830 Amendments:DBG Amendment 3012E8230864E95A58C60FD61430D7E1B4D3353195F2981DC12B0C7C0950FFAC is supported.
+2018-Jun-26 06:26:27.675368393 Amendments:DBG Amendment CC5ABAE4F3EC92E94A59B1908C2BE82D2228B6485C00AFF8F22DF930D89C194E is supported.
+2018-Jun-26 06:26:27.675413848 Amendments:DBG Amendment B4D44CC3111ADD964E846FC57760C8B50FFCD5A82C86A72756F6B058DDDF96AD is supported.
+2018-Jun-26 06:26:27.675500924 Amendments:DBG Amendment 6C92211186613F9647A89DFFBAB8F94C99D4C7E956D495270789128569177DA1 is supported.
+2018-Jun-26 06:26:27.675548208 Amendments:DBG Amendment 67A34F2CF55BFC0F93AACD5B281413176FEE195269FA6D95219A2DF738671172 is supported.
+2018-Jun-26 06:26:27.675604496 Amendments:DBG Amendment B9E739B8296B4A1BB29BE990B17D66E21B62A300A909F25AC55C22D6C72E1F9D is supported.
+2018-Jun-26 06:26:27.675652389 Amendments:DBG Amendment 1D3463A5891F9E589C5AE839FFAC4A917CE96197098A1EF22304E1BC5B98A454 is supported.
+2018-Jun-26 06:26:27.675699901 Amendments:DBG Amendment F64E1EABBE79D55B3BB82020516CEC2C582A98A6BFE20FBE9BB6A0D233418064 is supported.
+2018-Jun-26 06:26:27.675747018 Amendments:DBG Amendment 157D2D480E006395B76F948E3E07A45A05FE10230D88A7993C71F97AE4B1F2D1 is supported.
+2018-Jun-26 06:26:27.675792360 Amendments:DBG Amendment 7117E2EC2DBF119CA55181D69819F1999ECEE1A0225A7FD2B9ED47940968479C is supported.
+2018-Jun-26 06:26:27.675841740 Amendments:DBG Amendment CA7C02118BA27599528543DFE77BA6838D1B0F43B447D4D7F53523CE6A0E9AC2 is supported.
+2018-Jun-26 06:26:27.675887639 Amendments:DBG Amendment 58BE9B5968C4DA7C59BA900961828B113E5490699B21877DEF9A31E9D0FE5D5F is supported.
+2018-Jun-26 06:26:27.678072763 OrderBookDB:DBG Advancing from 0 to 3
+2018-Jun-26 06:26:27.678379906 OrderBookDB:DBG OrderBookDB::update>
+2018-Jun-26 06:26:27.678554987 OrderBookDB:DBG OrderBookDB::update< 0 books found
+2018-Jun-26 06:26:27.725786623 ValidatorList:DBG Loading configured trusted validator list publisher keys
+2018-Jun-26 06:26:27.726271450 ValidatorList:DBG Loaded 1 keys
+2018-Jun-26 06:26:27.726624959 ValidatorList:DBG Loading configured validator keys
+2018-Jun-26 06:26:27.726991742 ValidatorList:DBG Loaded 0 entries
+2018-Jun-26 06:26:27.727479469 ValidatorSite:DBG Loading configured validator list sites
+2018-Jun-26 06:26:27.728064216 ValidatorSite:DBG Loaded 1 sites
+2018-Jun-26 06:26:27.728369556 NodeObject:DBG NodeStore.main target size set to 131072
+2018-Jun-26 06:26:27.728644047 NodeObject:DBG NodeStore.main target age set to 120000000000
+2018-Jun-26 06:26:27.728904982 TaggedCache:DBG LedgerCache target size set to 256
+2018-Jun-26 06:26:27.729211760 TaggedCache:DBG LedgerCache target age set to 180000000000
+2018-Jun-26 06:26:27.731195358 TaggedCache:DBG TreeNodeCache target size set to 512000
+2018-Jun-26 06:26:27.731565371 TaggedCache:DBG TreeNodeCache target age set to 90000000000
+2018-Jun-26 06:26:27.847934543 NetworkOPs:NFO Consensus time for #3 with LCL 7CC77F8909BAEA191DCB4F31C61D126C5FA869DEAD4B76114E7BECB5BC5B16B8
+2018-Jun-26 06:26:27.848333804 ValidatorList:DBG 0  of 0 listed validators eligible for inclusion in the trusted set
+2018-Jun-26 06:26:27.848640356 ValidatorList:DBG Using quorum of 18446744073709551615 for new set of 0 trusted validators (0 added, 0 removed)
+2018-Jun-26 06:26:27.848865157 ValidatorList:WRN New quorum of 18446744073709551615 exceeds the number of trusted validators (0)
+2018-Jun-26 06:26:27.849099044 LedgerConsensus:NFO Entering consensus process, watching, synced=no
+2018-Jun-26 06:26:27.849428630 LedgerConsensus:NFO Consensus mode change before=observing, after=observing
+2018-Jun-26 06:26:27.849682442 NetworkOPs:DBG Initiating consensus engine
+2018-Jun-26 06:26:27.874308203 Server:NFO Opened 'port_rpc_admin_local' (ip=127.0.0.1:5005, admin IPs:127.0.0.1, http)
+2018-Jun-26 06:26:27.874946468 Server:NFO Opened 'port_peer' (ip=0.0.0.0:51235, peer)
+2018-Jun-26 06:26:27.875324814 Server:NFO Opened 'port_ws_admin_local' (ip=127.0.0.1:6006, admin IPs:127.0.0.1, ws)
+2018-Jun-26 06:26:27.875694160 Application:FTL Startup RPC:
+{
+        "command" : "log_level",
+        "severity" : "warning"
+}
+
+
+2018-Jun-26 06:26:27.877314757 Application:FTL Result: {}
+
+
+2018-Jun-26 06:27:13.118372985 ValidatorSite:WRN Problem retrieving from https://vl.ripple.com 104:Connection reset by peer
+2018-Jun-26 06:27:32.922368266 NetworkOPs:WRN We are not running on the consensus ledger
+2018-Jun-26 06:27:32.922989066 ValidatorList:WRN New quorum of 18446744073709551615 exceeds the number of trusted validators (0)
+2018-Jun-26 06:27:32.923313846 LedgerConsensus:WRN Need consensus ledger 24F2C431309F478482172DB7548DAF73296DF382FE9BF47C4030644D946E47BB
+2018-Jun-26 06:27:33.920729200 LedgerConsensus:WRN View of consensus changed during open status=open,  mode=wrongLedger
+2018-Jun-26 06:27:33.921029918 LedgerConsensus:WRN 24F2C431309F478482172DB7548DAF73296DF382FE9BF47C4030644D946E47BB to 55CCD325CB24AC29AB2A8649C8A553A8AA903124C7642B47443CE64A0383C977
+2018-Jun-26 06:27:33.921197105 LedgerConsensus:WRN {"accepted":true,"account_hash":"303C64B97DFC1B6992C3444D7B1E103EC7543E38235CD117CA82C1785F3EABF3","close_flags":0,"close_time":583309650,"close_time_human":"2018-Jun-26 06:27:30.000000000","close_time_resolution":30,"closed":true,"hash":"55CCD325CB24AC29AB2A8649C8A553A8AA903124C7642B47443CE64A0383C977","ledger_hash":"55CCD325CB24AC29AB2A8649C8A553A8AA903124C7642B47443CE64A0383C977","ledger_index":"3","parent_close_time":583309590,"parent_hash":"7CC77F8909BAEA191DCB4F31C61D126C5FA869DEAD4B76114E7BECB5BC5B16B8","seqNum":"3","totalCoins":"100000000000000000","total_coins":"100000000000000000","transaction_hash":"0000000000000000000000000000000000000000000000000000000000000000"}
+2018-Jun-26 06:27:35.613976654 LoadMonitor:WRN Job: processLedgerData run: 1061ms wait: 0ms
+2018-Jun-26 06:27:37.138253485 LoadMonitor:WRN Job: processLedgerData run: 1359ms wait: 0ms
+2018-Jun-26 06:27:40.329425433 LoadMonitor:WRN Job: processLedgerData run: 1232ms wait: 0ms
+2018-Jun-26 06:27:44.569183442 LoadMonitor:WRN Job: processLedgerData run: 1205ms wait: 0ms
+2018-Jun-26 06:27:47.433275903 LoadMonitor:WRN Job: processLedgerData run: 1442ms wait: 1ms
+2018-Jun-26 06:27:55.207898009 LoadMonitor:WRN Job: processLedgerData run: 4658ms wait: 0ms
+2018-Jun-26 06:27:57.532104175 LoadMonitor:WRN Job: processLedgerData run: 1336ms wait: 0ms
+2018-Jun-26 06:28:01.864354223 LoadMonitor:WRN Job: processLedgerData run: 2757ms wait: 2ms
+2018-Jun-26 06:28:02.083667104 LoadMonitor:WRN Job: processLedgerData run: 1166ms wait: 3ms
+2018-Jun-26 06:28:05.587829662 LoadMonitor:WRN Job: processLedgerData run: 1515ms wait: 0ms
+2018-Jun-26 06:28:07.376143643 LoadMonitor:WRN Job: processLedgerData run: 1381ms wait: 0ms
+2018-Jun-26 06:28:10.276148265 LoadMonitor:WRN Job: processLedgerData run: 1233ms wait: 0ms
+2018-Jun-26 06:28:13.375780776 LoadMonitor:WRN Job: processLedgerData run: 2127ms wait: 0ms
+2018-Jun-26 06:28:15.312822657 Peer:WRN [003] onReadMessage: Connection reset by peer
+2018-Jun-26 06:28:16.895646342 LoadMonitor:WRN Job: InboundLedger run: 1359ms wait: 0ms
+2018-Jun-26 06:28:18.424058589 LoadMonitor:WRN Job: processLedgerData run: 2536ms wait: 12ms
+2018-Jun-26 06:28:22.204422750 LoadMonitor:WRN Job: processLedgerData run: 1074ms wait: 0ms
+2018-Jun-26 06:28:25.179852830 LoadMonitor:WRN Job: processLedgerData run: 1405ms wait: 0ms
+2018-Jun-26 06:28:26.317845253 Peer:WRN [001] onReadMessage: Connection reset by peer
+2018-Jun-26 06:28:28.392227043 LoadMonitor:WRN Job: processLedgerData run: 1783ms wait: 1ms
+2018-Jun-26 06:28:32.970881816 NetworkOPs:WRN We are not running on the consensus ledger
+2018-Jun-26 06:28:32.973300880 ValidatorList:WRN New quorum of 18446744073709551615 exceeds the number of trusted validators (0)
+2018-Jun-26 06:28:32.973917690 LedgerConsensus:WRN Need consensus ledger 88520C6A3DBDD21565340B88C898A308CA2FF92F70332EE31EDFBA55887855B0
+2018-Jun-26 06:28:33.151008578 Peer:WRN [009] onReadMessage: Connection reset by peer
+2018-Jun-26 06:28:33.356902185 LoadMonitor:WRN Job: processLedgerData run: 1959ms wait: 0ms
+2018-Jun-26 06:28:33.971139963 LedgerConsensus:WRN View of consensus changed during open status=open,  mode=wrongLedger
+2018-Jun-26 06:28:33.971475544 LedgerConsensus:WRN 88520C6A3DBDD21565340B88C898A308CA2FF92F70332EE31EDFBA55887855B0 to 475C1B4041D79833C52F05CD15E24B6B0176D80551195342DEE8CED031417BD7
+2018-Jun-26 06:28:33.971571534 LedgerConsensus:WRN {"accepted":true,"account_hash":"EDD75EEEA35542DF067239F0841CCF52E69CC1A14F0C3ADF6421771E12EBE523","close_flags":0,"close_time":583309710,"close_time_human":"2018-Jun-26 06:28:30.000000000","close_time_resolution":30,"closed":true,"hash":"475C1B4041D79833C52F05CD15E24B6B0176D80551195342DEE8CED031417BD7","ledger_hash":"475C1B4041D79833C52F05CD15E24B6B0176D80551195342DEE8CED031417BD7","ledger_index":"4","parent_close_time":583309650,"parent_hash":"55CCD325CB24AC29AB2A8649C8A553A8AA903124C7642B47443CE64A0383C977","seqNum":"4","totalCoins":"100000000000000000","total_coins":"100000000000000000","transaction_hash":"0000000000000000000000000000000000000000000000000000000000000000"}
+2018-Jun-26 06:28:38.384891214 LoadMonitor:WRN Job: processLedgerData run: 1977ms wait: 810ms
+2018-Jun-26 06:28:38.842730933 LoadMonitor:WRN Job: processLedgerData run: 3461ms wait: 0ms
+2018-Jun-26 06:28:38.843409693 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 1209ms
+2018-Jun-26 06:28:39.235831244 LoadMonitor:WRN Job: processLedgerData run: 851ms wait: 1176ms
+2018-Jun-26 06:28:39.573663760 Peer:WRN [008] onReadMessage: short read
+2018-Jun-26 06:28:41.432476132 LoadMonitor:WRN Job: processLedgerData run: 2086ms wait: 0ms
+2018-Jun-26 06:28:41.667715078 LoadMonitor:WRN Job: processLedgerData run: 1741ms wait: 2ms
+2018-Jun-26 06:28:43.855988272 LoadMonitor:WRN Job: processLedgerData run: 1605ms wait: 0ms
+2018-Jun-26 06:28:45.396280624 LoadMonitor:WRN Job: InboundLedger run: 1462ms wait: 0ms
+2018-Jun-26 06:28:47.246828650 LoadMonitor:WRN Job: processLedgerData run: 2906ms wait: 0ms
+2018-Jun-26 06:28:48.495970304 LoadMonitor:WRN Job: processLedgerData run: 3099ms wait: 394ms
+2018-Jun-26 06:28:48.496385549 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 2062ms
+2018-Jun-26 06:28:49.272781873 LoadMonitor:WRN Job: InboundLedger run: 776ms wait: 605ms
+2018-Jun-26 06:28:49.715977544 LoadMonitor:WRN Job: processLedgerData run: 2468ms wait: 1620ms
+2018-Jun-26 06:28:52.047879368 LoadMonitor:WRN Job: InboundLedger run: 1051ms wait: 0ms
+2018-Jun-26 06:28:55.828912385 LoadMonitor:WRN Job: processLedgerData run: 3341ms wait: 0ms
+2018-Jun-26 06:28:56.409821266 LoadMonitor:WRN Job: processLedgerData run: 3576ms wait: 238ms
+2018-Jun-26 06:28:57.752980100 LoadMonitor:WRN Job: InboundLedger run: 1333ms wait: 2144ms
+2018-Jun-26 06:28:57.753450186 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 3205ms
+2018-Jun-26 06:28:59.392428440 Peer:WRN [002] onReadMessage: Connection reset by peer
+2018-Jun-26 06:28:59.431885648 LoadMonitor:WRN Job: processLedgerData run: 3602ms wait: 2193ms
+2018-Jun-26 06:29:01.688377723 LoadMonitor:WRN Job: processLedgerData run: 1664ms wait: 0ms
+2018-Jun-26 06:29:03.367889230 LoadMonitor:WRN Job: InboundLedger run: 3114ms wait: 0ms
+2018-Jun-26 06:29:06.284612500 LoadMonitor:WRN Job: InboundLedger run: 2916ms wait: 615ms
+2018-Jun-26 06:29:09.007587276 LoadMonitor:WRN Job: processLedgerData run: 2721ms wait: 2732ms
+2018-Jun-26 06:29:09.077354264 LoadMonitor:WRN Job: InboundLedger run: 65ms wait: 3147ms
+2018-Jun-26 06:29:09.506916096 LoadMonitor:WRN Job: processLedgerData run: 7818ms wait: 1133ms
+2018-Jun-26 06:29:13.215075688 LoadMonitor:WRN Job: InboundLedger run: 1637ms wait: 0ms
+2018-Jun-26 06:29:14.106019596 LoadMonitor:WRN Job: processLedgerData run: 1545ms wait: 1ms
+2018-Jun-26 06:29:14.939706235 LoadMonitor:WRN Job: processLedgerData run: 824ms wait: 669ms
+2018-Jun-26 06:29:16.216515956 LoadMonitor:WRN Job: InboundLedger run: 1269ms wait: 860ms
+2018-Jun-26 06:29:17.331906584 LoadMonitor:WRN Job: processLedgerData run: 1115ms wait: 821ms
+2018-Jun-26 06:29:17.340244989 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 1633ms
+2018-Jun-26 06:29:18.499616894 LoadMonitor:WRN Job: processLedgerData run: 5284ms wait: 375ms
+2018-Jun-26 06:29:19.159532841 InboundLedger:WRN Want: 35F2C2DD4C5E6AAA41333F8FA1B6528D28FD77BF5703A3A4B18EB3765BE621DB
+2018-Jun-26 06:29:19.159861452 InboundLedger:WRN Want: 27DB0F95E23C0E8B9BDD363E04255D967ECCAFE5C55BE64FD06C9E9AF39C7AA9
+2018-Jun-26 06:29:19.160099898 InboundLedger:WRN Want: 8D0C22566C34F0A94D430F1108497094A4BE6D662A917824E65A00F78ABA8349
+2018-Jun-26 06:29:19.161183398 InboundLedger:WRN Want: 5813764D0E2EE9B7B4C4DBC678ABF790244F1E32EF579D9DCA68FB2C5DD6398B
+2018-Jun-26 06:29:21.637789045 LoadMonitor:WRN Job: InboundLedger run: 1797ms wait: 0ms
+2018-Jun-26 06:29:21.917489557 LoadMonitor:WRN Job: InboundLedger run: 3200ms wait: 0ms
+2018-Jun-26 06:29:24.368959913 LoadMonitor:WRN Job: processLedgerData run: 2451ms wait: 909ms
+2018-Jun-26 06:29:25.525367319 LoadMonitor:WRN Job: InboundLedger run: 1153ms wait: 234ms
+2018-Jun-26 06:29:25.525694920 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 1108ms
+2018-Jun-26 06:29:25.771940210 LoadMonitor:WRN Job: processLedgerData run: 4128ms wait: 1390ms
+2018-Jun-26 06:29:30.074004190 LoadMonitor:WRN Job: InboundLedger run: 2048ms wait: 0ms
+2018-Jun-26 06:29:30.078275631 LoadMonitor:WRN Job: NetOPs.heartbeat run: 4ms wait: 1025ms
+2018-Jun-26 06:29:30.432539321 LoadMonitor:WRN Job: NodeObject::store run: 354ms wait: 1688ms
+2018-Jun-26 06:29:30.965804962 LoadMonitor:WRN Job: processLedgerData run: 4361ms wait: 7ms
+2018-Jun-26 06:29:31.971907308 LoadMonitor:WRN Job: sweep run: 3579ms wait: 0ms
+2018-Jun-26 06:29:32.022442444 LoadMonitor:WRN Job: NodeObject::store run: 48ms wait: 999ms
+2018-Jun-26 06:29:32.030046984 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3423ms
+2018-Jun-26 06:29:32.031331490 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3343ms
+2018-Jun-26 06:29:32.032570126 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3345ms
+2018-Jun-26 06:29:32.033836637 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3346ms
+2018-Jun-26 06:29:32.041725542 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3354ms
+2018-Jun-26 06:29:32.043388951 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3355ms
+2018-Jun-26 06:29:32.044671935 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3324ms
+2018-Jun-26 06:29:32.045996175 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3308ms
+2018-Jun-26 06:29:32.047230069 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3303ms
+2018-Jun-26 06:29:32.053784308 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3310ms
+2018-Jun-26 06:29:32.055077511 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3311ms
+2018-Jun-26 06:29:32.056250736 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3312ms
+2018-Jun-26 06:29:32.061871830 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3317ms
+2018-Jun-26 06:29:32.063037192 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3304ms
+2018-Jun-26 06:29:32.064229726 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3290ms
+2018-Jun-26 06:29:32.069480701 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3269ms
+2018-Jun-26 06:29:32.070978941 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3270ms
+2018-Jun-26 06:29:32.072260338 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3271ms
+2018-Jun-26 06:29:32.077583041 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3276ms
+2018-Jun-26 06:29:32.079000295 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3270ms
+2018-Jun-26 06:29:32.080204104 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3271ms
+2018-Jun-26 06:29:32.084296481 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3275ms
+2018-Jun-26 06:29:32.087948116 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3273ms
+2018-Jun-26 06:29:32.089551243 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3265ms
+2018-Jun-26 06:29:32.093426954 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3269ms
+2018-Jun-26 06:29:32.096230611 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 3221ms
+2018-Jun-26 06:29:32.097650208 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3161ms
+2018-Jun-26 06:29:32.102590786 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3165ms
+2018-Jun-26 06:29:32.104169642 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3167ms
+2018-Jun-26 06:29:32.109737897 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3166ms
+2018-Jun-26 06:29:32.110995689 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3168ms
+2018-Jun-26 06:29:32.112243389 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3151ms
+2018-Jun-26 06:29:32.119966508 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3158ms
+2018-Jun-26 06:29:32.121216635 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3159ms
+2018-Jun-26 06:29:32.122843620 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3160ms
+2018-Jun-26 06:29:32.124065449 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3149ms
+2018-Jun-26 06:29:32.129511022 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3154ms
+2018-Jun-26 06:29:32.130748614 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3156ms
+2018-Jun-26 06:29:32.131976905 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3134ms
+2018-Jun-26 06:29:32.133307075 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3135ms
+2018-Jun-26 06:29:32.138413764 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3140ms
+2018-Jun-26 06:29:32.139980281 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3138ms
+2018-Jun-26 06:29:32.143129644 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3141ms
+2018-Jun-26 06:29:32.144402690 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3136ms
+2018-Jun-26 06:29:32.154422502 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3146ms
+2018-Jun-26 06:29:32.155732337 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3147ms
+2018-Jun-26 06:29:32.157471526 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3148ms
+2018-Jun-26 06:29:32.158693251 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3125ms
+2018-Jun-26 06:29:32.159914258 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3053ms
+2018-Jun-26 06:29:32.161416283 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3055ms
+2018-Jun-26 06:29:32.164086709 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 3052ms
+2018-Jun-26 06:29:32.166596609 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2830ms
+2018-Jun-26 06:29:32.172002105 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2836ms
+2018-Jun-26 06:29:32.173479665 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2837ms
+2018-Jun-26 06:29:32.174640157 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2825ms
+2018-Jun-26 06:29:32.181630320 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2832ms
+2018-Jun-26 06:29:32.183071844 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2833ms
+2018-Jun-26 06:29:32.184363471 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2824ms
+2018-Jun-26 06:29:32.185622505 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2824ms
+2018-Jun-26 06:29:32.190135626 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2829ms
+2018-Jun-26 06:29:32.191377947 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2830ms
+2018-Jun-26 06:29:32.197643669 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2836ms
+2018-Jun-26 06:29:32.198987949 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2837ms
+2018-Jun-26 06:29:32.200206014 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2807ms
+2018-Jun-26 06:29:32.202683344 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2799ms
+2018-Jun-26 06:29:32.207394213 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2803ms
+2018-Jun-26 06:29:32.211234386 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2806ms
+2018-Jun-26 06:29:32.212543364 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2761ms
+2018-Jun-26 06:29:32.217092596 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2766ms
+2018-Jun-26 06:29:32.218331967 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2767ms
+2018-Jun-26 06:29:32.226242761 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 2719ms
+2018-Jun-26 06:29:32.227548549 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2720ms
+2018-Jun-26 06:29:32.228933012 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2721ms
+2018-Jun-26 06:29:32.230208985 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 2722ms
+2018-Jun-26 06:29:32.237522176 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1792ms
+2018-Jun-26 06:29:32.239046714 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1793ms
+2018-Jun-26 06:29:32.240704436 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1794ms
+2018-Jun-26 06:29:32.243007483 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 1766ms
+2018-Jun-26 06:29:32.248738968 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1732ms
+2018-Jun-26 06:29:32.249956968 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1732ms
+2018-Jun-26 06:29:32.251209829 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1713ms
+2018-Jun-26 06:29:32.254387888 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1716ms
+2018-Jun-26 06:29:32.256496190 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1718ms
+2018-Jun-26 06:29:32.261570724 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1723ms
+2018-Jun-26 06:29:32.265994785 LoadMonitor:WRN Job: recvPropose->checkPropose run: 4ms wait: 1705ms
+2018-Jun-26 06:29:32.267871435 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1696ms
+2018-Jun-26 06:29:32.276221690 LoadMonitor:WRN Job: recvPropose->checkPropose run: 8ms wait: 1697ms
+2018-Jun-26 06:29:32.278081283 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1705ms
+2018-Jun-26 06:29:32.279498820 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1699ms
+2018-Jun-26 06:29:32.280703931 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1687ms
+2018-Jun-26 06:29:32.282250834 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1638ms
+2018-Jun-26 06:29:32.283455782 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1639ms
+2018-Jun-26 06:29:32.288104522 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1643ms
+2018-Jun-26 06:29:32.289816001 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1644ms
+2018-Jun-26 06:29:32.291099268 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1646ms
+2018-Jun-26 06:29:32.297489507 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1652ms
+2018-Jun-26 06:29:32.298808179 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1638ms
+2018-Jun-26 06:29:32.300006470 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1628ms
+2018-Jun-26 06:29:32.305668236 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1630ms
+2018-Jun-26 06:29:32.307098115 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1618ms
+2018-Jun-26 06:29:32.308404768 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1599ms
+2018-Jun-26 06:29:32.312813887 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1603ms
+2018-Jun-26 06:29:32.314196179 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1555ms
+2018-Jun-26 06:29:32.322229300 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1559ms
+2018-Jun-26 06:29:32.323600624 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1560ms
+2018-Jun-26 06:29:32.325190746 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1561ms
+2018-Jun-26 06:29:32.326414097 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1547ms
+2018-Jun-26 06:29:32.327665381 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1512ms
+2018-Jun-26 06:29:32.333957292 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1519ms
+2018-Jun-26 06:29:32.335558144 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1520ms
+2018-Jun-26 06:29:32.337069127 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1499ms
+2018-Jun-26 06:29:32.341635196 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1503ms
+2018-Jun-26 06:29:32.342908400 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1483ms
+2018-Jun-26 06:29:32.349528577 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1490ms
+2018-Jun-26 06:29:32.351065860 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1491ms
+2018-Jun-26 06:29:32.352344765 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1492ms
+2018-Jun-26 06:29:32.353669162 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1493ms
+2018-Jun-26 06:29:32.363208417 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1502ms
+2018-Jun-26 06:29:32.364737444 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1499ms
+2018-Jun-26 06:29:32.366121881 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1497ms
+2018-Jun-26 06:29:32.367359530 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1491ms
+2018-Jun-26 06:29:32.368706928 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1485ms
+2018-Jun-26 06:29:32.371462190 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1487ms
+2018-Jun-26 06:29:32.377555018 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1469ms
+2018-Jun-26 06:29:32.378874557 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1441ms
+2018-Jun-26 06:29:32.380216542 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1425ms
+2018-Jun-26 06:29:32.385228770 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1430ms
+2018-Jun-26 06:29:32.387106551 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 1431ms
+2018-Jun-26 06:29:32.388420047 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1413ms
+2018-Jun-26 06:29:32.393350385 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1418ms
+2018-Jun-26 06:29:32.394596894 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1419ms
+2018-Jun-26 06:29:32.401335629 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 1397ms
+2018-Jun-26 06:29:32.407510060 LoadMonitor:WRN Job: InboundLedger run: 1436ms wait: 446ms
+2018-Jun-26 06:29:32.413272287 LoadMonitor:WRN Job: recvPropose->checkPropose run: 11ms wait: 1387ms
+2018-Jun-26 06:29:32.414507515 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1398ms
+2018-Jun-26 06:29:32.417243107 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 1340ms
+2018-Jun-26 06:29:32.420508896 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 1342ms
+2018-Jun-26 06:29:32.421744395 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1318ms
+2018-Jun-26 06:29:32.427213007 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1323ms
+2018-Jun-26 06:29:32.431689478 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 1326ms
+2018-Jun-26 06:29:32.432952756 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1328ms
+2018-Jun-26 06:29:32.441671874 LoadMonitor:WRN Job: recvPropose->checkPropose run: 4ms wait: 1334ms
+2018-Jun-26 06:29:32.442886167 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1334ms
+2018-Jun-26 06:29:32.445464493 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1336ms
+2018-Jun-26 06:29:32.443667960 LoadMonitor:WRN Job: recvPropose->checkPropose run: 3ms wait: 1333ms
+2018-Jun-26 06:29:32.449543399 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1299ms
+2018-Jun-26 06:29:32.450781834 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1300ms
+2018-Jun-26 06:29:32.453199650 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1267ms
+2018-Jun-26 06:29:32.452106298 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1288ms
+2018-Jun-26 06:29:32.469123167 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1278ms
+2018-Jun-26 06:29:32.470337029 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1280ms
+2018-Jun-26 06:29:32.462397627 LoadMonitor:WRN Job: processLedgerData run: 2029ms wait: 657ms
+2018-Jun-26 06:29:32.475509415 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1275ms
+2018-Jun-26 06:29:32.476750846 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1238ms
+2018-Jun-26 06:29:32.479005759 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1240ms
+2018-Jun-26 06:29:32.477862936 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1239ms
+2018-Jun-26 06:29:32.481562524 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1237ms
+2018-Jun-26 06:29:32.483490322 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1148ms
+2018-Jun-26 06:29:32.484801313 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1150ms
+2018-Jun-26 06:29:32.482381503 LoadMonitor:WRN Job: recvPropose->checkPropose run: 3ms wait: 1236ms
+2018-Jun-26 06:29:32.488015061 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 1152ms
+2018-Jun-26 06:29:32.489613071 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1154ms
+2018-Jun-26 06:29:32.496727573 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1127ms
+2018-Jun-26 06:29:32.490714283 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1152ms
+2018-Jun-26 06:29:32.499419420 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1129ms
+2018-Jun-26 06:29:32.501027728 LoadMonitor:WRN Job: recvPropose->checkPropose run: 4ms wait: 1128ms
+2018-Jun-26 06:29:32.502872144 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1132ms
+2018-Jun-26 06:29:32.501575699 LoadMonitor:WRN Job: recvPropose->checkPropose run: 2ms wait: 1131ms
+2018-Jun-26 06:29:32.505228128 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1134ms
+2018-Jun-26 06:29:32.506446622 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1120ms
+2018-Jun-26 06:29:32.508033155 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1122ms
+2018-Jun-26 06:29:32.506886051 LoadMonitor:WRN Job: recvPropose->checkPropose run: 4ms wait: 1134ms
+2018-Jun-26 06:29:32.509521424 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1123ms
+2018-Jun-26 06:29:32.516495753 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1126ms
+2018-Jun-26 06:29:32.518586223 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1088ms
+2018-Jun-26 06:29:32.517421979 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1120ms
+2018-Jun-26 06:29:32.522786681 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1091ms
+2018-Jun-26 06:29:32.522955348 LoadMonitor:WRN Job: recvPropose->checkPropose run: 4ms wait: 1089ms
+2018-Jun-26 06:29:32.525063424 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1074ms
+2018-Jun-26 06:29:32.526280773 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1017ms
+2018-Jun-26 06:29:32.528496982 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1019ms
+2018-Jun-26 06:29:32.527394909 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1018ms
+2018-Jun-26 06:29:32.549697303 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 3064ms
+2018-Jun-26 06:29:32.557395656 LoadMonitor:WRN Job: recvValidation->checkValidation run: 2ms wait: 3005ms
+2018-Jun-26 06:29:32.558680805 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2789ms
+2018-Jun-26 06:29:32.559999118 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2790ms
+2018-Jun-26 06:29:32.552259983 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 3044ms
+2018-Jun-26 06:29:32.561502742 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2762ms
+2018-Jun-26 06:29:32.568899108 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2692ms
+2018-Jun-26 06:29:32.562640265 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2719ms
+2018-Jun-26 06:29:32.574501369 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2636ms
+2018-Jun-26 06:29:32.575646056 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2637ms
+2018-Jun-26 06:29:32.576911567 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2604ms
+2018-Jun-26 06:29:32.578194283 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2176ms
+2018-Jun-26 06:29:32.572790284 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2635ms
+2018-Jun-26 06:29:32.579787649 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2177ms
+2018-Jun-26 06:29:32.580888887 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2178ms
+2018-Jun-26 06:29:32.589219030 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2186ms
+2018-Jun-26 06:29:32.595539796 LoadMonitor:WRN Job: recvValidation->checkValidation run: 8ms wait: 2185ms
+2018-Jun-26 06:29:32.597216076 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2182ms
+2018-Jun-26 06:29:32.598484823 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2183ms
+2018-Jun-26 06:29:32.596120137 LoadMonitor:WRN Job: recvValidation->checkValidation run: 6ms wait: 2188ms
+2018-Jun-26 06:29:32.600130736 LoadMonitor:WRN Job: recvValidation->checkValidation run: 1ms wait: 2147ms
+2018-Jun-26 06:29:32.976790440 NetworkOPs:WRN We are not running on the consensus ledger
+2018-Jun-26 06:29:32.977515060 ValidatorList:WRN New quorum of 18446744073709551615 exceeds the number of trusted validators (0)
+2018-Jun-26 06:29:32.978174291 LedgerConsensus:WRN Need consensus ledger 148338F9860307D5FDF11C3A991D70BC751CD0FC7CC0A09FB153D70465E2C3A0
+2018-Jun-26 06:29:33.979489360 LedgerConsensus:WRN View of consensus changed during open status=open,  mode=wrongLedger
+2018-Jun-26 06:29:33.979856199 LedgerConsensus:WRN 148338F9860307D5FDF11C3A991D70BC751CD0FC7CC0A09FB153D70465E2C3A0 to 27B885BE2F0D35CADA3889B50028F5C87A800B0FB2D320127D349B7D274BD3ED
+2018-Jun-26 06:29:33.980109698 LedgerConsensus:WRN {"accepted":true,"account_hash":"8417D9D3C43553323A7B6C6D78ACFA3B5369007E0CFDE33E2BACEB7CE9014695","close_flags":0,"close_time":583309770,"close_time_human":"2018-Jun-26 06:29:30.000000000","close_time_resolution":30,"closed":true,"hash":"27B885BE2F0D35CADA3889B50028F5C87A800B0FB2D320127D349B7D274BD3ED","ledger_hash":"27B885BE2F0D35CADA3889B50028F5C87A800B0FB2D320127D349B7D274BD3ED","ledger_index":"5","parent_close_time":583309710,"parent_hash":"475C1B4041D79833C52F05CD15E24B6B0176D80551195342DEE8CED031417BD7","seqNum":"5","totalCoins":"100000000000000000","total_coins":"100000000000000000","transaction_hash":"0000000000000000000000000000000000000000000000000000000000000000"}
+2018-Jun-26 06:29:41.785122348 LoadMonitor:WRN Job: processLedgerData run: 728ms wait: 409ms
+2018-Jun-26 06:29:43.083966248 LoadMonitor:WRN Job: processLedgerData run: 1001ms wait: 1ms
+2018-Jun-26 06:29:45.368364380 LoadMonitor:WRN Job: processLedgerData run: 1228ms wait: 48ms
+2018-Jun-26 06:29:46.711540425 LoadMonitor:WRN Job: processLedgerData run: 1343ms wait: 1092ms
+2018-Jun-26 06:29:47.596643582 LoadMonitor:WRN Job: processLedgerData run: 3925ms wait: 1ms
+2018-Jun-26 06:29:48.302865297 LoadMonitor:WRN Job: InboundLedger run: 704ms wait: 2412ms
+2018-Jun-26 06:29:50.420958271 LoadMonitor:WRN Job: processLedgerData run: 2118ms wait: 2710ms
+2018-Jun-26 06:29:50.422255703 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 1669ms
+2018-Jun-26 06:29:50.863691832 LoadMonitor:WRN Job: processLedgerData run: 441ms wait: 626ms
+2018-Jun-26 06:29:51.148189315 LoadMonitor:WRN Job: processLedgerData run: 4436ms wait: 1672ms
+2018-Jun-26 06:29:52.123741594 LoadMonitor:WRN Job: processLedgerData run: 972ms wait: 160ms
+2018-Jun-26 06:29:54.220761444 LoadMonitor:WRN Job: processLedgerData run: 3356ms wait: 127ms
+2018-Jun-26 06:29:54.243386019 LoadMonitor:WRN Job: processLedgerData run: 2119ms wait: 499ms
+2018-Jun-26 06:29:54.244794749 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 1322ms
+2018-Jun-26 06:29:55.156874275 LoadMonitor:WRN Job: InboundLedger run: 912ms wait: 593ms
+2018-Jun-26 06:29:56.585138984 LoadMonitor:WRN Job: processLedgerData run: 2364ms wait: 2378ms
+2018-Jun-26 06:30:00.200672564 InboundLedger:WRN Want: 27FB8AF7C9A16C71CFEFCC72B70EA2E61D36108E1CE67B209D62E9150BB0F5AD
+2018-Jun-26 06:30:00.200962726 InboundLedger:WRN Want: 41F3C69A49F25B618C577936C2540B1F69C40BFF5A04D795EF42A359BDCF25CE
+2018-Jun-26 06:30:00.201300786 InboundLedger:WRN Want: 4D70826BFAB542EAB271750C524A34512D0AF8F23ABBFD7BECBA19E8B82377BA
+2018-Jun-26 06:30:00.201510052 InboundLedger:WRN Want: CE684FD34DB641298B8E426F9B154CA14464EBF5B3D2250DD14C842AFAE60C38
+2018-Jun-26 06:30:01.268028711 LoadMonitor:WRN Job: InboundLedger run: 1110ms wait: 0ms
+2018-Jun-26 06:30:02.708091367 LoadMonitor:WRN Job: processLedgerData run: 2834ms wait: 0ms
+2018-Jun-26 06:30:02.890090365 LoadMonitor:WRN Job: processLedgerData run: 1614ms wait: 61ms
+2018-Jun-26 06:30:07.805194900 LoadMonitor:WRN Job: processLedgerData run: 1948ms wait: 4ms
+2018-Jun-26 06:30:07.830650225 LoadMonitor:WRN Job: processLedgerData run: 1559ms wait: 336ms
+2018-Jun-26 06:30:08.987368282 InboundLedger:WRN Want: B3205AA67BA33913FB5B6FAAE69F49A057803D56395ADCB7D8068B045285EBE9
+2018-Jun-26 06:30:08.987726079 InboundLedger:WRN Want: BEE61565CEFB6C0BA2CFCB266234D94883040F895AAA73798A26D958AD0670BA
+2018-Jun-26 06:30:08.988027863 InboundLedger:WRN Want: 70F0B51A4C3EB5ADCDC687460B239BD7BBD4A5AF20DC420221FF74EF033F1E28
+2018-Jun-26 06:30:08.988335598 InboundLedger:WRN Want: 558E3C24AEE4F0593108C1EAB026058F8604C279706D74ABA335A7A20D47ECE8
+2018-Jun-26 06:30:09.899245023 LoadMonitor:WRN Job: InboundLedger run: 2079ms wait: 1296ms
+2018-Jun-26 06:30:12.095661876 LoadMonitor:WRN Job: processLedgerData run: 4264ms wait: 827ms
+2018-Jun-26 06:30:12.749696217 LoadMonitor:WRN Job: InboundLedger run: 650ms wait: 4001ms
+2018-Jun-26 06:30:13.811033821 LoadMonitor:WRN Job: processLedgerData run: 3911ms wait: 2852ms
+2018-Jun-26 06:30:15.803799435 LoadMonitor:WRN Job: processLedgerData run: 1412ms wait: 0ms
+2018-Jun-26 06:30:18.165489847 InboundLedger:WRN Want: 5CC7F6412DF031CEF4C51BFBE11AF3AE71A62363B09F154EE2C32E523A062760
+2018-Jun-26 06:30:18.167756135 InboundLedger:WRN Want: 2BF071873C5C4DC0E942A9F475682E8824F8659EFD20F33C11FDD37246D908B0
+2018-Jun-26 06:30:18.168172586 InboundLedger:WRN Want: 84EC9CEB92EA9440E487DD30292418A11C77B7A44BDF8FFE6DD03C60DE7EA004
+2018-Jun-26 06:30:18.168473264 InboundLedger:WRN Want: C063CD2DA5F7D8C64D158373AE258E89345F0499099696DFBBD681A169FF932B
+2018-Jun-26 06:30:18.332368988 LoadMonitor:WRN Job: processLedgerData run: 2007ms wait: 0ms
+2018-Jun-26 06:30:19.988721291 LoadMonitor:WRN Job: processLedgerData run: 1760ms wait: 399ms
+2018-Jun-26 06:30:22.100778702 LoadMonitor:WRN Job: processLedgerData run: 2042ms wait: 0ms
+2018-Jun-26 06:30:22.380826510 LoadMonitor:WRN Job: processLedgerData run: 881ms wait: 263ms
+2018-Jun-26 06:30:25.651911647 LoadMonitor:WRN Job: processLedgerData run: 1560ms wait: 17ms
+2018-Jun-26 06:30:25.831396542 LoadMonitor:WRN Job: processLedgerData run: 1575ms wait: 100ms
+2018-Jun-26 06:30:29.195612047 InboundLedger:WRN Want: 962AD3FD5E5463C85235BD103D249B3B7A56093209588D1A0E0E4DA3AE2D1551
+2018-Jun-26 06:30:29.196012078 InboundLedger:WRN Want: 27E23446716C033C46C72D30A33BC000BD173F38061D1384A69B3874184B322B
+2018-Jun-26 06:30:29.196460491 InboundLedger:WRN Want: 0DE9E21D1F7F577B64F6A96336B67795CCCE7334E345A7A11D93D02810C98FB0
+2018-Jun-26 06:30:29.196830552 InboundLedger:WRN Want: 921C7CE345FC94C7CDA5FD4DE103331A8EE8CDAD09AE3B11545048F3F298F03A
+2018-Jun-26 06:30:33.302860582 LoadMonitor:WRN Job: processLedgerData run: 3788ms wait: 223ms
+2018-Jun-26 06:30:33.303469465 LoadMonitor:WRN Job: NetOPs.heartbeat run: 0ms wait: 1260ms
+2018-Jun-26 06:30:33.324633275 NetworkOPs:WRN We are not running on the consensus ledger
+2018-Jun-26 06:30:33.325009106 ValidatorList:WRN New quorum of 18446744073709551615 exceeds the number of trusted validators (0)
+2018-Jun-26 06:30:33.325350490 LedgerConsensus:WRN Need consensus ledger DBA0F48C2B54489D0C47F06DFE1965C5764FE10CCA680682801F4D3B90793343
+2018-Jun-26 06:30:33.325941886 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 1311ms
+2018-Jun-26 06:30:33.331707153 LoadMonitor:WRN Job: InboundLedger run: 0ms wait: 1204ms
+2018-Jun-26 06:30:33.333970887 LoadMonitor:WRN Job: recvPropose->checkPropose run: 1ms wait: 1003ms
+2018-Jun-26 06:30:33.497072498 LoadMonitor:WRN Job: processLedgerData run: 3853ms wait: 320ms
+2018-Jun-26 06:30:34.383835828 LedgerConsensus:WRN View of consensus changed during open status=open,  mode=wrongLedger
+2018-Jun-26 06:30:34.388494353 LedgerConsensus:WRN DBA0F48C2B54489D0C47F06DFE1965C5764FE10CCA680682801F4D3B90793343 to B187069BAF0458681604CBA651AA3DDEA2EF185CD8ED90CE9AC11B7502CCB9AF
+2018-Jun-26 06:30:34.389051426 LedgerConsensus:WRN {"accepted":true,"account_hash":"88B2C0D974DE1E362F6CD5870A0C94946DBF8D5CBF444CFB79C13182395694D4","close_flags":0,"close_time":583309830,"close_time_human":"2018-Jun-26 06:30:30.000000000","close_time_resolution":30,"closed":true,"hash":"B187069BAF0458681604CBA651AA3DDEA2EF185CD8ED90CE9AC11B7502CCB9AF","ledger_hash":"B187069BAF0458681604CBA651AA3DDEA2EF185CD8ED90CE9AC11B7502CCB9AF","ledger_index":"6","parent_close_time":583309770,"parent_hash":"27B885BE2F0D35CADA3889B50028F5C87A800B0FB2D320127D349B7D274BD3ED","seqNum":"6","totalCoins":"100000000000000000","total_coins":"100000000000000000","transaction_hash":"0000000000000000000000000000000000000000000000000000000000000000"}
+2018-Jun-26 06:30:35.359564724 LoadMonitor:WRN Job: processLedgerData run: 966ms wait: 327ms
+2018-Jun-26 06:30:36.350578384 LoadMonitor:WRN Job: sweep run: 4378ms wait: 0ms
+2018-Jun-26 06:30:40.882843515 LoadMonitor:WRN Job: processLedgerData run: 1690ms wait: 1ms
+2018-Jun-26 06:30:46.287395882 LoadMonitor:WRN Job: processLedgerData run: 1033ms wait: 0ms
+2018-Jun-26 06:30:51.603943530 LoadMonitor:WRN Job: processLedgerData run: 1717ms wait: 0ms
+2018-Jun-26 06:30:54.994624440 LoadMonitor:WRN Job: processLedgerData run: 1751ms wait: 0ms
+2018-Jun-26 06:30:56.688994018 LoadMonitor:WRN Job: processLedgerData run: 1391ms wait: 2ms
+2018-Jun-26 06:30:58.175664781 LoadMonitor:WRN Job: processLedgerData run: 1099ms wait: 1ms
+2018-Jun-26 06:31:00.759781178 LoadMonitor:WRN Job: processLedgerData run: 1847ms wait: 1ms
+2018-Jun-26 06:31:06.829312199 LoadMonitor:WRN Job: processLedgerData run: 1260ms wait: 0ms
+2018-Jun-26 06:31:13.203421845 LoadMonitor:WRN Job: processLedgerData run: 2059ms wait: 0ms
+2018-Jun-26 06:31:15.792031004 LoadMonitor:WRN Job: processLedgerData run: 1257ms wait: 0ms
+2018-Jun-26 06:31:17.612690516 LoadMonitor:WRN Job: processLedgerData run: 1022ms wait: 0ms
+2018-Jun-26 06:31:19.854959069 LoadMonitor:WRN Job: processLedgerData run: 1652ms wait: 0ms
+2018-Jun-26 06:31:23.015670987 LoadMonitor:WRN Job: InboundLedger run: 1974ms wait: 0ms
+2018-Jun-26 06:31:25.513327908 LoadMonitor:WRN Job: processLedgerData run: 3973ms wait: 3ms
+
