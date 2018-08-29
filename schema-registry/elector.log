@@ -1,0 +1,119 @@
+/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/schema-registry-start /home/op/my-env/nix.var/data/confluent-oss-5.0.0/schema-registry/8081/config/schema-registry.properties
+[2018-08-29 17:37:12,134] INFO SchemaRegistryConfig values: 
+        resource.extension.class = []
+        metric.reporters = []
+        kafkastore.sasl.kerberos.kinit.cmd = /usr/bin/kinit
+        response.mediatype.default = application/vnd.schemaregistry.v1+json
+        kafkastore.ssl.trustmanager.algorithm = PKIX
+        inter.instance.protocol = http
+        authentication.realm = 
+        ssl.keystore.type = JKS
+        kafkastore.topic = _schemas
+        metrics.jmx.prefix = kafka.schema.registry
+        kafkastore.ssl.enabled.protocols = TLSv1.2,TLSv1.1,TLSv1
+        kafkastore.topic.replication.factor = 3
+        ssl.truststore.password = [hidden]
+        kafkastore.timeout.ms = 500
+        host.name = localhost
+        kafkastore.bootstrap.servers = [PLAINTEXT://10.132.37.201:9092, PLAINTEXT://10.132.37.202:9092, PLAINTEXT://10.132.37.203:9092]
+        schema.registry.zk.namespace = schema_registry
+        kafkastore.sasl.kerberos.ticket.renew.window.factor = 0.8
+        kafkastore.sasl.kerberos.service.name = 
+        schema.registry.resource.extension.class = []
+        ssl.endpoint.identification.algorithm = 
+        compression.enable = false
+        kafkastore.ssl.truststore.type = JKS
+        avro.compatibility.level = backward
+        kafkastore.ssl.protocol = TLS
+        kafkastore.ssl.provider = 
+        kafkastore.ssl.truststore.location = 
+        response.mediatype.preferred = [application/vnd.schemaregistry.v1+json, application/vnd.schemaregistry+json, application/json]
+        kafkastore.ssl.keystore.type = JKS
+        authentication.skip.paths = []
+        ssl.truststore.type = JKS
+        kafkastore.ssl.truststore.password = [hidden]
+        access.control.allow.origin = 
+        ssl.truststore.location = 
+        ssl.keystore.password = [hidden]
+        port = 8081
+        kafkastore.ssl.keystore.location = 
+        metrics.tag.map = {}
+        master.eligibility = true
+        ssl.client.auth = false
+        kafkastore.ssl.keystore.password = [hidden]
+        websocket.path.prefix = /ws
+        kafkastore.security.protocol = PLAINTEXT
+        ssl.trustmanager.algorithm = 
+        authentication.method = NONE
+        request.logger.name = io.confluent.rest-utils.requests
+        ssl.key.password = [hidden]
+        kafkastore.zk.session.timeout.ms = 30000
+        kafkastore.sasl.mechanism = GSSAPI
+        kafkastore.sasl.kerberos.ticket.renew.jitter = 0.05
+        kafkastore.ssl.key.password = [hidden]
+        zookeeper.set.acl = false
+        schema.registry.inter.instance.protocol = 
+        authentication.roles = [*]
+        metrics.num.samples = 2
+        ssl.protocol = TLS
+        schema.registry.group.id = schema-registry
+        kafkastore.ssl.keymanager.algorithm = SunX509
+        kafkastore.connection.url = 
+        debug = false
+        listeners = [http://10.132.37.203:8081]
+        kafkastore.group.id = 
+        ssl.provider = 
+        ssl.enabled.protocols = []
+        shutdown.graceful.ms = 1000
+        ssl.keystore.location = 
+        ssl.cipher.suites = []
+        kafkastore.ssl.endpoint.identification.algorithm = 
+        kafkastore.ssl.cipher.suites = 
+        access.control.allow.methods = 
+        kafkastore.sasl.kerberos.min.time.before.relogin = 60000
+        ssl.keymanager.algorithm = 
+        metrics.sample.window.ms = 30000
+        kafkastore.init.timeout.ms = 60000
+ (io.confluent.kafka.schemaregistry.rest.SchemaRegistryConfig:179)
+[2018-08-29 17:37:12,164] INFO Logging initialized @371ms to org.eclipse.jetty.util.log.Slf4jLog (org.eclipse.jetty.util.log:193)
+[2018-08-29 17:37:12,467] INFO Initializing KafkaStore with broker endpoints: PLAINTEXT://10.132.37.201:9092,PLAINTEXT://10.132.37.202:9092,PLAINTEXT://10.132.37.203:9092 (io.confluent.kafka.schemaregistry.storage.KafkaStore:103)
+[2018-08-29 17:37:12,668] INFO Validating schemas topic _schemas (io.confluent.kafka.schemaregistry.storage.KafkaStore:229)
+[2018-08-29 17:37:12,809] INFO Initialized last consumed offset to -1 (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread:138)
+[2018-08-29 17:37:12,810] INFO [kafka-store-reader-thread-_schemas]: Starting (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread:66)
+[2018-08-29 17:37:12,892] INFO Wait to catch up until the offset of the last message at 11 (io.confluent.kafka.schemaregistry.storage.KafkaStore:278)
+[2018-08-29 17:37:12,919] INFO Joining schema registry with Kafka-based coordination (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry:209)
+[2018-08-29 17:37:49,326] ERROR Found duplicate URLs for schema registry group members. This indicates a misconfiguration and is common when executing in containers. Use the host.name configuration to set each instance's advertised host name to a value that is routable from all other schema registry instances. (io.confluent.kafka.schemaregistry.masterelector.kafka.SchemaRegistryCoordinator:179)
+[2018-08-29 17:37:49,339] INFO Finished rebalance with master election result: Assignment{version=1, error=1, master='sr-1-eef14a45-da17-4db5-9394-9137807f6856', masterIdentity=version=1,host=localhost,port=8081,scheme=http,masterEligibility=true} (io.confluent.kafka.schemaregistry.masterelector.kafka.KafkaGroupMasterElector:232)
+[2018-08-29 17:37:49,340] ERROR Unexpected exception in schema registry group processing thread (io.confluent.kafka.schemaregistry.masterelector.kafka.KafkaGroupMasterElector:195)
+java.lang.IllegalStateException: The schema registry group contained multiple members advertising the same URL. Verify that each instance has a unique, routable listener by setting the 'listeners' configuration. This error may happen if executing in containers where the default hostname is 'localhost'.
+        at io.confluent.kafka.schemaregistry.masterelector.kafka.KafkaGroupMasterElector.onAssigned(KafkaGroupMasterElector.java:247)
+        at io.confluent.kafka.schemaregistry.masterelector.kafka.SchemaRegistryCoordinator.onJoinComplete(SchemaRegistryCoordinator.java:137)
+        at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.joinGroupIfNeeded(AbstractCoordinator.java:422)
+        at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureActiveGroup(AbstractCoordinator.java:352)
+        at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureActiveGroup(AbstractCoordinator.java:337)
+        at org.apache.kafka.clients.consumer.internals.AbstractCoordinator.ensureActiveGroup(AbstractCoordinator.java:325)
+        at io.confluent.kafka.schemaregistry.masterelector.kafka.SchemaRegistryCoordinator.poll(SchemaRegistryCoordinator.java:102)
+        at io.confluent.kafka.schemaregistry.masterelector.kafka.KafkaGroupMasterElector$1.run(KafkaGroupMasterElector.java:192)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+        at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+        at java.lang.Thread.run(Thread.java:748)
+[2018-08-29 17:38:12,926] ERROR Error starting the schema registry (io.confluent.kafka.schemaregistry.rest.SchemaRegistryRestApplication:65)
+io.confluent.kafka.schemaregistry.exceptions.SchemaRegistryInitializationException: io.confluent.kafka.schemaregistry.exceptions.SchemaRegistryTimeoutException: Timed out waiting for join group to complete
+        at io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry.init(KafkaSchemaRegistry.java:220)
+        at io.confluent.kafka.schemaregistry.rest.SchemaRegistryRestApplication.setupResources(SchemaRegistryRestApplication.java:63)
+        at io.confluent.kafka.schemaregistry.rest.SchemaRegistryRestApplication.setupResources(SchemaRegistryRestApplication.java:41)
+        at io.confluent.rest.Application.createServer(Application.java:169)
+        at io.confluent.kafka.schemaregistry.rest.SchemaRegistryMain.main(SchemaRegistryMain.java:43)
+Caused by: io.confluent.kafka.schemaregistry.exceptions.SchemaRegistryTimeoutException: Timed out waiting for join group to complete
+        at io.confluent.kafka.schemaregistry.masterelector.kafka.KafkaGroupMasterElector.init(KafkaGroupMasterElector.java:202)
+        at io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry.init(KafkaSchemaRegistry.java:215)
+        ... 4 more
+[2018-08-29 17:38:12,927] INFO Shutting down schema registry (io.confluent.kafka.schemaregistry.storage.KafkaSchemaRegistry:726)
+[2018-08-29 17:38:12,928] INFO [kafka-store-reader-thread-_schemas]: Shutting down (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread:66)
+[2018-08-29 17:38:12,928] INFO [kafka-store-reader-thread-_schemas]: Shutdown completed (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread:66)
+[2018-08-29 17:38:12,928] INFO [kafka-store-reader-thread-_schemas]: Stopped (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread:66)
+[2018-08-29 17:38:12,937] INFO KafkaStoreReaderThread shutdown complete. (io.confluent.kafka.schemaregistry.storage.KafkaStoreReaderThread:227)
+Connection to 10.132.37.203 closed.
+
