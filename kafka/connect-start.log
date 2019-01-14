@@ -1,0 +1,2094 @@
+[action] start-foreground  confluent-oss-5.0.0
+#=> sync conf file: /home/op/my-env/nix.conf/confluent-oss-5.0.0
+====dump file content start====
+# Sample configuration for a distributed Kafka Connect worker that uses Avro serialization and
+# integrates the the Schema Registry. This sample configuration assumes a local installation of
+# Confluent Platform with all services running on their default ports.
+
+# Bootstrap Kafka servers. If multiple servers are specified, they should be comma-separated.
+bootstrap.servers=10.132.37.201:9092,10.132.37.202:9092,10.132.37.203:9092
+
+# The group ID is a unique identifier for the set of workers that form a single Kafka Connect
+# cluster
+group.id=monitor_kafka_connect
+
+# The converters specify the format of data in Kafka and how to translate it into Connect data.
+# Every Connect user will need to configure these based on the format they want their data in
+# when loaded from or stored into Kafka
+key.converter=io.confluent.connect.avro.AvroConverter
+key.converter.schema.registry.url=http://10.132.37.201:8081
+value.converter=io.confluent.connect.avro.AvroConverter
+value.converter.schema.registry.url=http://10.132.37.201:8081
+
+# Internal Storage Topics.
+#
+# Kafka Connect distributed workers store the connector and task configurations, connector offsets,
+# and connector statuses in three internal topics. These topics MUST be compacted.
+# When the Kafka Connect distributed worker starts, it will check for these topics and attempt to create them
+# as compacted topics if they don't yet exist, using the topic name, replication factor, and number of partitions
+# as specified in these properties, and other topic-specific settings inherited from your brokers'
+# auto-creation settings. If you need more control over these other topic-specific settings, you may want to
+# manually create these topics before starting Kafka Connect distributed workers.
+#
+# The following properties set the names of these three internal topics for storing configs, offsets, and status.
+config.storage.topic=connect-configs
+offset.storage.topic=connect-offsets
+status.storage.topic=connect-statuses
+
+# The following properties set the replication factor for the three internal topics, defaulting to 3 for each
+# and therefore requiring a minimum of 3 brokers in the cluster. Since we want the examples to run with
+# only a single broker, we set the replication factor here to just 1. That's okay for the examples, but
+# ALWAYS use a replication factor of AT LEAST 3 for production environments to reduce the risk of 
+# losing connector offsets, configurations, and status.
+config.storage.replication.factor=1
+offset.storage.replication.factor=1
+status.storage.replication.factor=1
+
+# The config storage topic must have a single partition, and this cannot be changed via properties. 
+# Offsets for all connectors and tasks are written quite frequently and therefore the offset topic
+# should be highly partitioned; by default it is created with 25 partitions, but adjust accordingly
+# with the number of connector tasks deployed to a distributed worker cluster. Kafka Connect records
+# the status less frequently, and so by default the topic is created with 5 partitions.
+#offset.storage.partitions=25
+#status.storage.partitions=5
+
+# The offsets, status, and configurations are written to the topics using converters specified through
+# the following required properties. Most users will always want to use the JSON converter without schemas. 
+# Offset and config data is never visible outside of Connect in this format.
+internal.key.converter=org.apache.kafka.connect.json.JsonConverter
+internal.value.converter=org.apache.kafka.connect.json.JsonConverter
+internal.key.converter.schemas.enable=false
+internal.value.converter.schemas.enable=false
+
+# Confluent Control Center Integration -- uncomment these lines to enable Kafka client interceptors
+# that will report audit data that can be displayed and analyzed in Confluent Control Center
+# producer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringProducerInterceptor
+# consumer.interceptor.classes=io.confluent.monitoring.clients.interceptor.MonitoringConsumerInterceptor
+
+# These are provided to inform the user about the presence of the REST host and port configs
+# Hostname & Port for the REST API to listen on. If this is set, it will bind to the interface used to listen to requests.
+#rest.host.name=0.0.0.0
+#rest.port=8083
+
+# The Hostname & Port that will be given out to other workers to connect to i.e. URLs that are routable from other servers.
+#rest.advertised.host.name=0.0.0.0
+#rest.advertised.port=8083
+
+# Set to a list of filesystem paths separated by commas (,) to enable class loading isolation for plugins
+# (connectors, converters, transformations). The list should consist of top level directories that include
+# any combination of:
+# a) directories immediately containing jars with plugins and their dependencies
+# b) uber-jars with plugins and their dependencies
+# c) directories immediately containing the package directory structure of classes of plugins and their dependencies
+# Examples:
+# plugin.path=/usr/local/share/java,/usr/local/share/kafka/plugins,/opt/connectors,
+# Replace the relative path below with an absolute path if you are planning to start Kafka Connect from within a
+# directory other than the home directory of Confluent Platform.
+plugin.path=/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java
+====dump file content end====
+JAVA_HOME: /nix/store/f6s6xd2cvcqhaw8i3hkb481ywdxn24l6-openjdk-8u172b11/lib/openjdk/jre
+--> use path java: /nix/store/f6s6xd2cvcqhaw8i3hkb481ywdxn24l6-openjdk-8u172b11/lib/openjdk/jre/bin/java
+/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/connect-distributed /home/op/my-env/nix.var/data/confluent-oss-5.0.0/kafka-connect/8083/config/connect-avro-distributed.properties
+[2019-01-14 09:37:32,216] INFO Kafka Connect distributed worker initializing ... (org.apache.kafka.connect.cli.ConnectDistributed:64)
+[2019-01-14 09:37:32,231] INFO WorkerInfo values: 
+	jvm.args = -Xms256M, -Xmx2G, -XX:+UseG1GC, -XX:MaxGCPauseMillis=20, -XX:InitiatingHeapOccupancyPercent=35, -XX:+ExplicitGCInvokesConcurrent, -Djava.awt.headless=true, -Dcom.sun.management.jmxremote, -Dcom.sun.management.jmxremote.authenticate=false, -Dcom.sun.management.jmxremote.ssl=false, -Dkafka.logs.dir=/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../logs, -Dlog4j.configuration=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../etc/kafka/connect-log4j.properties
+	jvm.spec = Oracle Corporation, OpenJDK 64-Bit Server VM, 1.8.0_172, 25.172-b11
+	jvm.classpath = /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/rocksdbjni-5.7.3.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/javax.inject-1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jersey-client-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jackson-module-jaxb-annotations-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-io-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka-streams-examples-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jackson-jaxrs-json-provider-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-http-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/zookeeper-3.4.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jackson-core-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-client-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/validation-api-1.1.0.Final.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-logging-1.2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/lz4-java-1.4.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/audience-annotations-0.5.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-util-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/guava-20.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka_2.11-2.0.0-cp1-test-sources.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/javax.servlet-api-3.1.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-validator-1.4.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-collections-3.2.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/javassist-3.22.0-CR2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/httpclient-4.5.2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/metrics-core-2.2.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/hk2-utils-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/avro-1.8.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/hk2-locator-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka-streams-scala_2.11-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka-log4j-appender-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/log4j-1.2.17.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka-tools-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka_2.11-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/netty-3.10.6.Final.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/connect-api-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka_2.11-2.0.0-cp1-test.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-lang3-3.5.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-servlet-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/scala-library-2.11.12.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-security-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jersey-container-servlet-core-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/hk2-api-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/common-utils-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/aopalliance-repackaged-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-server-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/connect-file-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/javax.annotation-api-1.2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jersey-container-servlet-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jersey-common-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jersey-media-jaxb-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/plexus-utils-3.1.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jackson-core-asl-1.9.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/slf4j-api-1.7.25.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jersey-hk2-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/xz-1.5.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-servlets-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka-clients-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka_2.11-2.0.0-cp1-sources.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-compress-1.8.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka_2.11-2.0.0-cp1-scaladoc.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jline-0.9.94.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jersey-server-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/javax.ws.rs-api-2.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-codec-1.9.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka-streams-test-utils-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jackson-jaxrs-base-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/activation-1.1.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-lang3-3.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jaxb-api-2.3.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/connect-basic-auth-extension-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/httpcore-4.4.4.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jopt-simple-5.0.4.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/slf4j-log4j12-1.7.25.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/paranamer-2.7.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/support-metrics-client-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/reflections-0.9.11.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/scala-logging_2.11-3.9.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jackson-databind-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/osgi-resource-locator-1.0.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/javax.inject-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/snappy-java-1.1.7.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/httpmime-4.5.2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/connect-transforms-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jackson-annotations-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/connect-json-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka_2.11-2.0.0-cp1-javadoc.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jackson-mapper-asl-1.9.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/jetty-continuation-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka-streams-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/connect-runtime-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/zkclient-0.10.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/kafka.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/maven-artifact-3.5.3.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/scala-reflect-2.11.12.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/support-metrics-common-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-beanutils-1.8.3.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/argparse4j-0.7.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/commons-digester-1.8.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/zookeeper-3.4.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/audience-annotations-0.5.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/build-tools-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/log4j-1.2.17.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/netty-3.10.6.Final.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/common-utils-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/common-metrics-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/slf4j-api-1.7.25.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/jline-0.9.94.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/common-config-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/zkclient-0.10.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/jackson-core-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/kafka-json-serializer-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/kafka-avro-serializer-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/kafka-connect-avro-converter-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/avro-1.8.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/kafka-streams-avro-serde-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/jackson-core-asl-1.9.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/xz-1.5.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/commons-compress-1.8.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/paranamer-2.7.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/jackson-databind-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/jackson-annotations-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/kafka-schema-registry-client-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/jackson-mapper-asl-1.9.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/snappy-java-1.1.1.3.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/rocksdbjni-5.7.3.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/javax.inject-1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jersey-client-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jackson-module-jaxb-annotations-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-io-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka-streams-examples-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jackson-jaxrs-json-provider-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-http-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/zookeeper-3.4.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jackson-core-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-client-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/validation-api-1.1.0.Final.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-logging-1.2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/lz4-java-1.4.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/audience-annotations-0.5.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-util-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/guava-20.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka_2.11-2.0.0-cp1-test-sources.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/javax.servlet-api-3.1.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-validator-1.4.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-collections-3.2.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/javassist-3.22.0-CR2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/httpclient-4.5.2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/metrics-core-2.2.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/hk2-utils-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/avro-1.8.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/hk2-locator-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka-streams-scala_2.11-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka-log4j-appender-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/log4j-1.2.17.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka-tools-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka_2.11-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/netty-3.10.6.Final.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/connect-api-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka_2.11-2.0.0-cp1-test.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-lang3-3.5.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-servlet-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/scala-library-2.11.12.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-security-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jersey-container-servlet-core-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/hk2-api-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/common-utils-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/aopalliance-repackaged-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-server-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/connect-file-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/javax.annotation-api-1.2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jersey-container-servlet-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jersey-common-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jersey-media-jaxb-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/plexus-utils-3.1.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jackson-core-asl-1.9.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/slf4j-api-1.7.25.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jersey-hk2-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/xz-1.5.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-servlets-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka-clients-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka_2.11-2.0.0-cp1-sources.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-compress-1.8.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka_2.11-2.0.0-cp1-scaladoc.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jline-0.9.94.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jersey-server-2.27.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/javax.ws.rs-api-2.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-codec-1.9.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka-streams-test-utils-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jackson-jaxrs-base-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/activation-1.1.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-lang3-3.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jaxb-api-2.3.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/connect-basic-auth-extension-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/httpcore-4.4.4.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jopt-simple-5.0.4.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/slf4j-log4j12-1.7.25.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/paranamer-2.7.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/support-metrics-client-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/reflections-0.9.11.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/scala-logging_2.11-3.9.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jackson-databind-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/osgi-resource-locator-1.0.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/javax.inject-2.5.0-b42.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/snappy-java-1.1.7.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/httpmime-4.5.2.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/connect-transforms-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jackson-annotations-2.9.6.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/connect-json-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka_2.11-2.0.0-cp1-javadoc.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jackson-mapper-asl-1.9.13.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/jetty-continuation-9.4.11.v20180605.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka-streams-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/connect-runtime-2.0.0-cp1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/zkclient-0.10.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/kafka.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/maven-artifact-3.5.3.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/scala-reflect-2.11.12.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/support-metrics-common-5.0.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-beanutils-1.8.3.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/argparse4j-0.7.0.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/kafka/commons-digester-1.8.1.jar:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/bin/../share/java/confluent-support-metrics/*:/usr/share/java/confluent-support-metrics/*
+	os.spec = Linux, amd64, 3.10.0-693.17.1.el7.x86_64
+	os.vcpus = 4
+ (org.apache.kafka.connect.runtime.WorkerInfo:71)
+[2019-01-14 09:37:32,233] INFO Scanning for plugin classes. This might take a moment ... (org.apache.kafka.connect.cli.ConnectDistributed:73)
+[2019-01-14 09:37:32,260] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/schema-registry (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:34,535] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/schema-registry/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:34,536] INFO Added plugin 'org.apache.kafka.common.config.provider.FileConfigProvider' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:34,537] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:34,661] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/confluent-common/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:34,661] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-storage-common (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:38,489] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-storage-common/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:38,489] INFO Added plugin 'io.confluent.connect.storage.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:38,489] INFO Added plugin 'io.confluent.connect.avro.AvroConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:38,544] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-s3 (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:40,776] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-s3/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:40,776] INFO Added plugin 'io.confluent.connect.s3.S3SinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:40,808] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:41,897] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:41,897] INFO Added plugin 'org.apache.kafka.connect.tools.VerifiableSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,897] INFO Added plugin 'org.apache.kafka.connect.tools.MockSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.tools.VerifiableSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.tools.MockConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.tools.MockSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,898] INFO Added plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,901] INFO Added plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,901] INFO Added plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,901] INFO Added plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,901] INFO Added plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,901] INFO Added plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,901] INFO Added plugin 'org.apache.kafka.connect.storage.SimpleHeaderConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,901] INFO Added plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,901] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.SetSchemaMetadata$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.Flatten$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.InsertField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,902] INFO Added plugin 'org.apache.kafka.connect.transforms.ExtractField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,903] INFO Added plugin 'org.apache.kafka.connect.transforms.TimestampConverter$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,903] INFO Added plugin 'org.apache.kafka.connect.transforms.MaskField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,903] INFO Added plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,903] INFO Added plugin 'org.apache.kafka.connect.transforms.HoistField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,903] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Value' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,903] INFO Added plugin 'org.apache.kafka.connect.transforms.Cast$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,903] INFO Added plugin 'org.apache.kafka.connect.transforms.ReplaceField$Key' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,903] INFO Added plugin 'org.apache.kafka.connect.rest.basic.auth.extension.BasicAuthSecurityRestExtension' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:41,904] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-rest (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:42,447] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-rest/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:42,447] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:42,553] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-serde-tools/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:42,553] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/ksql (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:43,568] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/ksql/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:43,569] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-hdfs (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:45,802] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-hdfs/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:45,802] INFO Added plugin 'io.confluent.connect.hdfs.HdfsSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:45,802] INFO Added plugin 'io.confluent.connect.hdfs.tools.SchemaSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:45,836] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-elasticsearch (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:46,047] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-elasticsearch/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:46,047] INFO Added plugin 'io.confluent.connect.elasticsearch.ElasticsearchSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:46,047] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-jdbc (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:46,150] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/kafka-connect-jdbc/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:46,150] INFO Added plugin 'io.confluent.connect.jdbc.JdbcSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:46,150] INFO Added plugin 'io.confluent.connect.jdbc.JdbcSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:170)
+[2019-01-14 09:37:46,158] INFO Loading plugin from: /home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/rest-utils (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:218)
+[2019-01-14 09:37:46,334] INFO Registered loader: PluginClassLoader{pluginLocation=file:/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java/rest-utils/} (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:48,541] INFO Registered loader: sun.misc.Launcher$AppClassLoader@764c12b6 (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:241)
+[2019-01-14 09:37:48,542] INFO Added aliases 'ElasticsearchSinkConnector' and 'ElasticsearchSink' to plugin 'io.confluent.connect.elasticsearch.ElasticsearchSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,542] INFO Added aliases 'HdfsSinkConnector' and 'HdfsSink' to plugin 'io.confluent.connect.hdfs.HdfsSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,542] INFO Added aliases 'JdbcSinkConnector' and 'JdbcSink' to plugin 'io.confluent.connect.jdbc.JdbcSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,542] INFO Added aliases 'JdbcSourceConnector' and 'JdbcSource' to plugin 'io.confluent.connect.jdbc.JdbcSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,542] INFO Added aliases 'S3SinkConnector' and 'S3Sink' to plugin 'io.confluent.connect.s3.S3SinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,543] INFO Added aliases 'FileStreamSinkConnector' and 'FileStreamSink' to plugin 'org.apache.kafka.connect.file.FileStreamSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,543] INFO Added aliases 'FileStreamSourceConnector' and 'FileStreamSource' to plugin 'org.apache.kafka.connect.file.FileStreamSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,543] INFO Added aliases 'MockConnector' and 'Mock' to plugin 'org.apache.kafka.connect.tools.MockConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,543] INFO Added aliases 'MockSinkConnector' and 'MockSink' to plugin 'org.apache.kafka.connect.tools.MockSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,543] INFO Added aliases 'MockSourceConnector' and 'MockSource' to plugin 'org.apache.kafka.connect.tools.MockSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,543] INFO Added aliases 'VerifiableSinkConnector' and 'VerifiableSink' to plugin 'org.apache.kafka.connect.tools.VerifiableSinkConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,544] INFO Added aliases 'VerifiableSourceConnector' and 'VerifiableSource' to plugin 'org.apache.kafka.connect.tools.VerifiableSourceConnector' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,544] INFO Added aliases 'AvroConverter' and 'Avro' to plugin 'io.confluent.connect.avro.AvroConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,544] INFO Added aliases 'ByteArrayConverter' and 'ByteArray' to plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,544] INFO Added aliases 'DoubleConverter' and 'Double' to plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,544] INFO Added aliases 'FloatConverter' and 'Float' to plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,544] INFO Added aliases 'IntegerConverter' and 'Integer' to plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,544] INFO Added aliases 'LongConverter' and 'Long' to plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,544] INFO Added aliases 'ShortConverter' and 'Short' to plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,545] INFO Added aliases 'JsonConverter' and 'Json' to plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,545] INFO Added aliases 'StringConverter' and 'String' to plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,545] INFO Added aliases 'ByteArrayConverter' and 'ByteArray' to plugin 'org.apache.kafka.connect.converters.ByteArrayConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,545] INFO Added aliases 'DoubleConverter' and 'Double' to plugin 'org.apache.kafka.connect.converters.DoubleConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,545] INFO Added aliases 'FloatConverter' and 'Float' to plugin 'org.apache.kafka.connect.converters.FloatConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,545] INFO Added aliases 'IntegerConverter' and 'Integer' to plugin 'org.apache.kafka.connect.converters.IntegerConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,546] INFO Added aliases 'LongConverter' and 'Long' to plugin 'org.apache.kafka.connect.converters.LongConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,546] INFO Added aliases 'ShortConverter' and 'Short' to plugin 'org.apache.kafka.connect.converters.ShortConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,546] INFO Added aliases 'JsonConverter' and 'Json' to plugin 'org.apache.kafka.connect.json.JsonConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,546] INFO Added alias 'SimpleHeaderConverter' to plugin 'org.apache.kafka.connect.storage.SimpleHeaderConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:389)
+[2019-01-14 09:37:48,546] INFO Added aliases 'StringConverter' and 'String' to plugin 'org.apache.kafka.connect.storage.StringConverter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:392)
+[2019-01-14 09:37:48,547] INFO Added alias 'RegexRouter' to plugin 'org.apache.kafka.connect.transforms.RegexRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:389)
+[2019-01-14 09:37:48,547] INFO Added alias 'TimestampRouter' to plugin 'org.apache.kafka.connect.transforms.TimestampRouter' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:389)
+[2019-01-14 09:37:48,547] INFO Added alias 'ValueToKey' to plugin 'org.apache.kafka.connect.transforms.ValueToKey' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:389)
+[2019-01-14 09:37:48,547] INFO Added alias 'BasicAuthSecurityRestExtension' to plugin 'org.apache.kafka.connect.rest.basic.auth.extension.BasicAuthSecurityRestExtension' (org.apache.kafka.connect.runtime.isolation.DelegatingClassLoader:389)
+[2019-01-14 09:37:48,566] INFO DistributedConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	client.id = 
+	config.providers = []
+	config.storage.replication.factor = 1
+	config.storage.topic = connect-configs
+	connections.max.idle.ms = 540000
+	group.id = monitor_kafka_connect
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	heartbeat.interval.ms = 3000
+	internal.key.converter = class org.apache.kafka.connect.json.JsonConverter
+	internal.value.converter = class org.apache.kafka.connect.json.JsonConverter
+	key.converter = class io.confluent.connect.avro.AvroConverter
+	listeners = null
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 60000
+	offset.flush.timeout.ms = 5000
+	offset.storage.partitions = 25
+	offset.storage.replication.factor = 1
+	offset.storage.topic = connect-offsets
+	plugin.path = [/home/op/my-env/nix.var/data/confluent-oss-5.0.0/confluent-5.0.0/share/java]
+	rebalance.timeout.ms = 60000
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 40000
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	rest.host.name = null
+	rest.port = 8083
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	status.storage.partitions = 5
+	status.storage.replication.factor = 1
+	status.storage.topic = connect-statuses
+	task.shutdown.graceful.timeout.ms = 5000
+	value.converter = class io.confluent.connect.avro.AvroConverter
+	worker.sync.timeout.ms = 3000
+	worker.unsync.backoff.ms = 300000
+ (org.apache.kafka.connect.runtime.distributed.DistributedConfig:279)
+[2019-01-14 09:37:48,567] INFO Worker configuration property 'internal.key.converter' is deprecated and may be removed in an upcoming release. The specified value matches the default, so this property can be safely removed from the worker configuration. (org.apache.kafka.connect.runtime.WorkerConfig:307)
+[2019-01-14 09:37:48,567] INFO Worker configuration property 'internal.key.converter.schemas.enable' (along with all configuration for 'internal.key.converter') is deprecated and may be removed in an upcoming release. The specified value matches the default, so this property can be safely removed from the worker configuration. (org.apache.kafka.connect.runtime.WorkerConfig:307)
+[2019-01-14 09:37:48,567] INFO Worker configuration property 'internal.value.converter' is deprecated and may be removed in an upcoming release. The specified value matches the default, so this property can be safely removed from the worker configuration. (org.apache.kafka.connect.runtime.WorkerConfig:307)
+[2019-01-14 09:37:48,567] INFO Worker configuration property 'internal.value.converter.schemas.enable' (along with all configuration for 'internal.value.converter') is deprecated and may be removed in an upcoming release. The specified value matches the default, so this property can be safely removed from the worker configuration. (org.apache.kafka.connect.runtime.WorkerConfig:307)
+[2019-01-14 09:37:48,568] INFO Creating Kafka admin client (org.apache.kafka.connect.util.ConnectUtils:43)
+[2019-01-14 09:37:48,571] INFO AdminClientConfig values: 
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.clients.admin.AdminClientConfig:279)
+[2019-01-14 09:37:48,611] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,611] WARN The configuration 'group.id' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,611] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,611] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,611] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,612] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:48,613] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:48,613] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:48,734] INFO Kafka cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.connect.util.ConnectUtils:59)
+[2019-01-14 09:37:48,750] INFO Logging initialized @16932ms to org.eclipse.jetty.util.log.Slf4jLog (org.eclipse.jetty.util.log:193)
+[2019-01-14 09:37:48,799] INFO Added connector for http://:8083 (org.apache.kafka.connect.runtime.rest.RestServer:119)
+[2019-01-14 09:37:48,823] INFO Advertised URI: http://10.132.37.201:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:267)
+[2019-01-14 09:37:48,837] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:48,837] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:48,975] INFO JsonConverterConfig values: 
+	converter.type = key
+	schemas.cache.size = 1000
+	schemas.enable = false
+ (org.apache.kafka.connect.json.JsonConverterConfig:279)
+[2019-01-14 09:37:48,977] INFO JsonConverterConfig values: 
+	converter.type = value
+	schemas.cache.size = 1000
+	schemas.enable = false
+ (org.apache.kafka.connect.json.JsonConverterConfig:279)
+[2019-01-14 09:37:49,013] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,014] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,018] INFO Kafka Connect distributed worker initialization took 16799ms (org.apache.kafka.connect.cli.ConnectDistributed:104)
+[2019-01-14 09:37:49,018] INFO Kafka Connect starting (org.apache.kafka.connect.runtime.Connect:49)
+[2019-01-14 09:37:49,018] INFO Starting REST server (org.apache.kafka.connect.runtime.rest.RestServer:163)
+[2019-01-14 09:37:49,023] INFO Herder starting (org.apache.kafka.connect.runtime.distributed.DistributedHerder:213)
+[2019-01-14 09:37:49,023] INFO Worker starting (org.apache.kafka.connect.runtime.Worker:172)
+[2019-01-14 09:37:49,023] INFO Starting KafkaOffsetBackingStore (org.apache.kafka.connect.storage.KafkaOffsetBackingStore:108)
+[2019-01-14 09:37:49,023] INFO Starting KafkaBasedLog with topic connect-offsets (org.apache.kafka.connect.util.KafkaBasedLog:124)
+[2019-01-14 09:37:49,024] INFO AdminClientConfig values: 
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.clients.admin.AdminClientConfig:279)
+[2019-01-14 09:37:49,027] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'group.id' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,027] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,028] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,028] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,028] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,028] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,028] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,028] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,029] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,082] INFO ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	confluent.batch.expiry.ms = 30000
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.clients.producer.ProducerConfig:279)
+[2019-01-14 09:37:49,124] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'group.id' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,124] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,125] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,125] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,125] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,125] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,125] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,132] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = monitor_kafka_connect
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:279)
+[2019-01-14 09:37:49,148] INFO jetty-9.4.11.v20180605; built: 2018-06-05T18:24:03.829Z; git: d5fc0523cfa96bfebfbda19606cad384d772f04c; jvm 1.8.0_172-11 (org.eclipse.jetty.server.Server:374)
+[2019-01-14 09:37:49,165] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,169] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,170] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,170] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,170] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,182] INFO Cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.clients.Metadata:285)
+[2019-01-14 09:37:49,201] INFO DefaultSessionIdManager workerName=node0 (org.eclipse.jetty.server.session:365)
+[2019-01-14 09:37:49,201] INFO No SessionScavenger set, using defaults (org.eclipse.jetty.server.session:370)
+[2019-01-14 09:37:49,203] INFO node0 Scavenging every 660000ms (org.eclipse.jetty.server.session:149)
+[2019-01-14 09:37:49,221] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Discovered group coordinator 10.132.37.202:9092 (id: 2147483445 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:677)
+[2019-01-14 09:37:49,233] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-10 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,233] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-7 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,233] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-13 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,233] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-1 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,233] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-16 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,233] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-22 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,233] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-4 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,233] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-19 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,234] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-9 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,234] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-24 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,234] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-12 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,234] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-18 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-0 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-15 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-6 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-21 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-3 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-8 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-23 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-14 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,235] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-11 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,236] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-2 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,236] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-17 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,236] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-5 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,236] INFO [Consumer clientId=consumer-1, groupId=monitor_kafka_connect] Resetting offset for partition connect-offsets-20 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,247] INFO Finished reading KafkaBasedLog for topic connect-offsets (org.apache.kafka.connect.util.KafkaBasedLog:153)
+[2019-01-14 09:37:49,247] INFO Started KafkaBasedLog for topic connect-offsets (org.apache.kafka.connect.util.KafkaBasedLog:155)
+[2019-01-14 09:37:49,247] INFO Finished reading offsets topic and starting KafkaOffsetBackingStore (org.apache.kafka.connect.storage.KafkaOffsetBackingStore:110)
+[2019-01-14 09:37:49,248] INFO Worker started (org.apache.kafka.connect.runtime.Worker:177)
+[2019-01-14 09:37:49,248] INFO Starting KafkaBasedLog with topic connect-statuses (org.apache.kafka.connect.util.KafkaBasedLog:124)
+[2019-01-14 09:37:49,249] INFO AdminClientConfig values: 
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.clients.admin.AdminClientConfig:279)
+[2019-01-14 09:37:49,251] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,251] WARN The configuration 'group.id' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,251] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,251] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,251] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,251] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,251] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,251] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,251] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,252] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,252] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,252] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,252] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,252] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,252] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,252] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,252] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,252] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,308] INFO ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	confluent.batch.expiry.ms = 30000
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.clients.producer.ProducerConfig:279)
+[2019-01-14 09:37:49,314] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'group.id' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,314] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,315] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,315] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,315] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,315] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,315] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,315] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,315] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,316] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = monitor_kafka_connect
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:279)
+[2019-01-14 09:37:49,319] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,319] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,320] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,324] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,325] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,325] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,330] INFO Cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.clients.Metadata:285)
+[2019-01-14 09:37:49,350] INFO [Consumer clientId=consumer-2, groupId=monitor_kafka_connect] Discovered group coordinator 10.132.37.202:9092 (id: 2147483445 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:677)
+[2019-01-14 09:37:49,368] INFO [Consumer clientId=consumer-2, groupId=monitor_kafka_connect] Resetting offset for partition connect-statuses-4 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,368] INFO [Consumer clientId=consumer-2, groupId=monitor_kafka_connect] Resetting offset for partition connect-statuses-1 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,369] INFO [Consumer clientId=consumer-2, groupId=monitor_kafka_connect] Resetting offset for partition connect-statuses-2 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,369] INFO [Consumer clientId=consumer-2, groupId=monitor_kafka_connect] Resetting offset for partition connect-statuses-0 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,369] INFO [Consumer clientId=consumer-2, groupId=monitor_kafka_connect] Resetting offset for partition connect-statuses-3 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,465] INFO Finished reading KafkaBasedLog for topic connect-statuses (org.apache.kafka.connect.util.KafkaBasedLog:153)
+[2019-01-14 09:37:49,465] INFO Started KafkaBasedLog for topic connect-statuses (org.apache.kafka.connect.util.KafkaBasedLog:155)
+[2019-01-14 09:37:49,466] INFO Starting KafkaConfigBackingStore (org.apache.kafka.connect.storage.KafkaConfigBackingStore:248)
+[2019-01-14 09:37:49,466] INFO Starting KafkaBasedLog with topic connect-configs (org.apache.kafka.connect.util.KafkaBasedLog:124)
+[2019-01-14 09:37:49,467] INFO AdminClientConfig values: 
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+ (org.apache.kafka.clients.admin.AdminClientConfig:279)
+[2019-01-14 09:37:49,469] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,469] WARN The configuration 'group.id' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,469] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,469] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,469] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,469] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,469] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,469] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,471] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,471] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,471] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,472] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,472] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,472] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,472] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,472] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.admin.AdminClientConfig:287)
+[2019-01-14 09:37:49,472] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,473] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,498] INFO ProducerConfig values: 
+	acks = all
+	batch.size = 16384
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	confluent.batch.expiry.ms = 30000
+	connections.max.idle.ms = 540000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 1
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+ (org.apache.kafka.clients.producer.ProducerConfig:279)
+[2019-01-14 09:37:49,501] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'group.id' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,502] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.producer.ProducerConfig:287)
+[2019-01-14 09:37:49,503] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,503] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,503] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = monitor_kafka_connect
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:279)
+[2019-01-14 09:37:49,506] WARN The configuration 'config.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,506] WARN The configuration 'status.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,506] WARN The configuration 'plugin.path' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,506] WARN The configuration 'internal.key.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,506] WARN The configuration 'config.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'value.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'internal.key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'internal.value.converter.schemas.enable' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'status.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'internal.value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'offset.storage.replication.factor' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'offset.storage.topic' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'value.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'key.converter' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] WARN The configuration 'key.converter.schema.registry.url' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:287)
+[2019-01-14 09:37:49,507] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:49,507] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:49,511] INFO Cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.clients.Metadata:285)
+[2019-01-14 09:37:49,524] INFO [Consumer clientId=consumer-3, groupId=monitor_kafka_connect] Discovered group coordinator 10.132.37.202:9092 (id: 2147483445 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:677)
+[2019-01-14 09:37:49,527] INFO [Consumer clientId=consumer-3, groupId=monitor_kafka_connect] Resetting offset for partition connect-configs-0 to offset 0. (org.apache.kafka.clients.consumer.internals.Fetcher:583)
+[2019-01-14 09:37:49,533] INFO Removed connector elasticsearch_sink_logi_pimp_protal_test due to null configuration. This is usually intentional and does not indicate an issue. (org.apache.kafka.connect.storage.KafkaConfigBackingStore:517)
+[2019-01-14 09:37:49,534] INFO Removed connector postgresql_sink_MCS_PAGE_STAT due to null configuration. This is usually intentional and does not indicate an issue. (org.apache.kafka.connect.storage.KafkaConfigBackingStore:517)
+[2019-01-14 09:37:49,543] INFO Removed connector pg_sink_HOP_SDK_INTERFACE_ELOG due to null configuration. This is usually intentional and does not indicate an issue. (org.apache.kafka.connect.storage.KafkaConfigBackingStore:517)
+[2019-01-14 09:37:49,544] INFO Removed connector pg_sink_HOP_SDK_INTERFACE_ELOG due to null configuration. This is usually intentional and does not indicate an issue. (org.apache.kafka.connect.storage.KafkaConfigBackingStore:517)
+[2019-01-14 09:37:49,544] INFO Removed connector pg_sink_HOP_SDK_INTERFACE_ELOG due to null configuration. This is usually intentional and does not indicate an issue. (org.apache.kafka.connect.storage.KafkaConfigBackingStore:517)
+[2019-01-14 09:37:49,545] INFO Removed connector pg_sink_HOP_SDK_EVT_FREQ due to null configuration. This is usually intentional and does not indicate an issue. (org.apache.kafka.connect.storage.KafkaConfigBackingStore:517)
+[2019-01-14 09:37:49,545] INFO Removed connector pg_sink_HOP_SDK_EVT_FREQ due to null configuration. This is usually intentional and does not indicate an issue. (org.apache.kafka.connect.storage.KafkaConfigBackingStore:517)
+[2019-01-14 09:37:49,548] INFO Finished reading KafkaBasedLog for topic connect-configs (org.apache.kafka.connect.util.KafkaBasedLog:153)
+[2019-01-14 09:37:49,548] INFO Started KafkaBasedLog for topic connect-configs (org.apache.kafka.connect.util.KafkaBasedLog:155)
+[2019-01-14 09:37:49,548] INFO Started KafkaConfigBackingStore (org.apache.kafka.connect.storage.KafkaConfigBackingStore:253)
+[2019-01-14 09:37:49,548] INFO Herder started (org.apache.kafka.connect.runtime.distributed.DistributedHerder:217)
+[2019-01-14 09:37:49,561] INFO Cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.clients.Metadata:285)
+[2019-01-14 09:37:49,561] INFO [Worker clientId=connect-1, groupId=monitor_kafka_connect] Discovered group coordinator 10.132.37.202:9092 (id: 2147483445 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:677)
+[2019-01-14 09:37:49,563] INFO [Worker clientId=connect-1, groupId=monitor_kafka_connect] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:509)
+Jan 14, 2019 9:37:49 AM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider org.apache.kafka.connect.runtime.rest.resources.RootResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.kafka.connect.runtime.rest.resources.RootResource will be ignored. 
+Jan 14, 2019 9:37:49 AM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider org.apache.kafka.connect.runtime.rest.resources.ConnectorPluginsResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.kafka.connect.runtime.rest.resources.ConnectorPluginsResource will be ignored. 
+Jan 14, 2019 9:37:49 AM org.glassfish.jersey.internal.inject.Providers checkProviderRuntime
+WARNING: A provider org.apache.kafka.connect.runtime.rest.resources.ConnectorsResource registered in SERVER runtime does not implement any provider interfaces applicable in the SERVER runtime. Due to constraint configuration problems the provider org.apache.kafka.connect.runtime.rest.resources.ConnectorsResource will be ignored. 
+Jan 14, 2019 9:37:50 AM org.glassfish.jersey.internal.Errors logErrors
+WARNING: The following warnings have been detected: WARNING: The (sub)resource method listConnectors in org.apache.kafka.connect.runtime.rest.resources.ConnectorsResource contains empty path annotation.
+WARNING: The (sub)resource method createConnector in org.apache.kafka.connect.runtime.rest.resources.ConnectorsResource contains empty path annotation.
+WARNING: The (sub)resource method listConnectorPlugins in org.apache.kafka.connect.runtime.rest.resources.ConnectorPluginsResource contains empty path annotation.
+WARNING: The (sub)resource method serverInfo in org.apache.kafka.connect.runtime.rest.resources.RootResource contains empty path annotation.
+
+[2019-01-14 09:37:50,082] INFO Started o.e.j.s.ServletContextHandler@3e4e8fdf{/,null,AVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:851)
+[2019-01-14 09:37:50,091] INFO Started http_8083@188598ad{HTTP/1.1,[http/1.1]}{0.0.0.0:8083} (org.eclipse.jetty.server.AbstractConnector:289)
+[2019-01-14 09:37:50,091] INFO Started @18273ms (org.eclipse.jetty.server.Server:411)
+[2019-01-14 09:37:50,091] INFO Advertised URI: http://10.132.37.201:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:267)
+[2019-01-14 09:37:50,093] INFO REST server listening at http://10.132.37.201:8083/, advertising URL http://10.132.37.201:8083/ (org.apache.kafka.connect.runtime.rest.RestServer:217)
+[2019-01-14 09:37:50,093] INFO Kafka Connect started (org.apache.kafka.connect.runtime.Connect:55)
+[2019-01-14 09:37:54,566] INFO [Worker clientId=connect-1, groupId=monitor_kafka_connect] Successfully joined group with generation 98 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:473)
+[2019-01-14 09:37:54,567] INFO Joined group and got assignment: Assignment{error=0, leader='connect-1-ed86476c-d419-4b2f-8b65-e5c7bacecb92', leaderUrl='http://10.132.37.202:8083/', offset=140, connectorIds=[elasticsearch_sink_logi_pimp_protal, postgresql_sink_HOP_SDK_APM_STAT_AVRO, pg_sink_HOP_SDK_INTERFACE_ELOG], taskIds=[pg_sink_HOP_SDK_EVT_DEVICE-0, pg_sink_MCS_PAGE_STAT-0, postgresql_sink_MCS_VST_STAT-0]} (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1216)
+[2019-01-14 09:37:54,567] WARN Catching up to assignment's config offset. (org.apache.kafka.connect.runtime.distributed.DistributedHerder:783)
+[2019-01-14 09:37:54,568] INFO Current config state offset -1 is behind group assignment 140, reading to end of config log (org.apache.kafka.connect.runtime.distributed.DistributedHerder:828)
+[2019-01-14 09:37:55,058] INFO Finished reading to end of log and updated config snapshot, new config log offset: 140 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:832)
+[2019-01-14 09:37:55,059] INFO Starting connectors and tasks using config offset 140 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:858)
+[2019-01-14 09:37:55,060] INFO Starting connector elasticsearch_sink_logi_pimp_protal (org.apache.kafka.connect.runtime.distributed.DistributedHerder:912)
+[2019-01-14 09:37:55,060] INFO Starting connector pg_sink_HOP_SDK_INTERFACE_ELOG (org.apache.kafka.connect.runtime.distributed.DistributedHerder:912)
+[2019-01-14 09:37:55,060] INFO Starting task pg_sink_HOP_SDK_EVT_DEVICE-0 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:872)
+[2019-01-14 09:37:55,060] INFO Starting connector postgresql_sink_HOP_SDK_APM_STAT_AVRO (org.apache.kafka.connect.runtime.distributed.DistributedHerder:912)
+[2019-01-14 09:37:55,062] INFO Starting task postgresql_sink_MCS_VST_STAT-0 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:872)
+[2019-01-14 09:37:55,062] INFO Starting task pg_sink_MCS_PAGE_STAT-0 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:872)
+[2019-01-14 09:37:55,062] INFO Creating task pg_sink_HOP_SDK_EVT_DEVICE-0 (org.apache.kafka.connect.runtime.Worker:396)
+[2019-01-14 09:37:55,062] INFO Creating task pg_sink_MCS_PAGE_STAT-0 (org.apache.kafka.connect.runtime.Worker:396)
+[2019-01-14 09:37:55,062] INFO Creating task postgresql_sink_MCS_VST_STAT-0 (org.apache.kafka.connect.runtime.Worker:396)
+[2019-01-14 09:37:55,065] INFO ConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_MCS_PAGE_STAT
+	tasks.max = 1
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:279)
+[2019-01-14 09:37:55,065] INFO ConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = postgresql_sink_HOP_SDK_APM_STAT_AVRO
+	tasks.max = 1
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:279)
+[2019-01-14 09:37:55,065] INFO ConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = postgresql_sink_MCS_VST_STAT
+	tasks.max = 1
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:279)
+[2019-01-14 09:37:55,066] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = postgresql_sink_MCS_VST_STAT
+	tasks.max = 1
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,066] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = postgresql_sink_HOP_SDK_APM_STAT_AVRO
+	tasks.max = 1
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,066] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_MCS_PAGE_STAT
+	tasks.max = 1
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,068] INFO Creating connector postgresql_sink_HOP_SDK_APM_STAT_AVRO of type io.confluent.connect.jdbc.JdbcSinkConnector (org.apache.kafka.connect.runtime.Worker:235)
+[2019-01-14 09:37:55,070] INFO ConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_HOP_SDK_EVT_DEVICE
+	tasks.max = 1
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:279)
+[2019-01-14 09:37:55,070] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_HOP_SDK_EVT_DEVICE
+	tasks.max = 1
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,070] INFO ConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_HOP_SDK_INTERFACE_ELOG
+	tasks.max = 1
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.ConnectorConfig:279)
+[2019-01-14 09:37:55,070] INFO ConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = elasticsearch_sink_logi_pimp_protal
+	tasks.max = 1
+	transforms = [routeTS]
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig:279)
+[2019-01-14 09:37:55,073] INFO TaskConfig values: 
+	task.class = class io.confluent.connect.jdbc.sink.JdbcSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:279)
+[2019-01-14 09:37:55,074] INFO Instantiated task pg_sink_HOP_SDK_EVT_DEVICE-0 with version null of type io.confluent.connect.jdbc.sink.JdbcSinkTask (org.apache.kafka.connect.runtime.Worker:411)
+[2019-01-14 09:37:55,075] INFO Instantiated connector postgresql_sink_HOP_SDK_APM_STAT_AVRO with version 5.0.0 of type class io.confluent.connect.jdbc.JdbcSinkConnector (org.apache.kafka.connect.runtime.Worker:238)
+[2019-01-14 09:37:55,073] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_HOP_SDK_INTERFACE_ELOG
+	tasks.max = 1
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,076] INFO Creating connector pg_sink_HOP_SDK_INTERFACE_ELOG of type io.confluent.connect.jdbc.JdbcSinkConnector (org.apache.kafka.connect.runtime.Worker:235)
+[2019-01-14 09:37:55,076] INFO Instantiated connector pg_sink_HOP_SDK_INTERFACE_ELOG with version 5.0.0 of type class io.confluent.connect.jdbc.JdbcSinkConnector (org.apache.kafka.connect.runtime.Worker:238)
+[2019-01-14 09:37:55,073] INFO TaskConfig values: 
+	task.class = class io.confluent.connect.jdbc.sink.JdbcSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:279)
+[2019-01-14 09:37:55,076] INFO StringConverterConfig values: 
+	converter.encoding = UTF8
+	converter.type = key
+ (org.apache.kafka.connect.storage.StringConverterConfig:279)
+[2019-01-14 09:37:55,075] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = elasticsearch_sink_logi_pimp_protal
+	tasks.max = 1
+	transforms = [routeTS]
+	transforms.routeTS.timestamp.format = YYYYMM
+	transforms.routeTS.topic.format = monitor-${timestamp}
+	transforms.routeTS.type = class org.apache.kafka.connect.transforms.TimestampRouter
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,079] INFO Creating connector elasticsearch_sink_logi_pimp_protal of type io.confluent.connect.elasticsearch.ElasticsearchSinkConnector (org.apache.kafka.connect.runtime.Worker:235)
+[2019-01-14 09:37:55,080] INFO Instantiated connector elasticsearch_sink_logi_pimp_protal with version 5.0.0 of type class io.confluent.connect.elasticsearch.ElasticsearchSinkConnector (org.apache.kafka.connect.runtime.Worker:238)
+[2019-01-14 09:37:55,073] INFO TaskConfig values: 
+	task.class = class io.confluent.connect.jdbc.sink.JdbcSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:279)
+[2019-01-14 09:37:55,084] INFO Instantiated task pg_sink_MCS_PAGE_STAT-0 with version null of type io.confluent.connect.jdbc.sink.JdbcSinkTask (org.apache.kafka.connect.runtime.Worker:411)
+[2019-01-14 09:37:55,077] INFO Instantiated task postgresql_sink_MCS_VST_STAT-0 with version null of type io.confluent.connect.jdbc.sink.JdbcSinkTask (org.apache.kafka.connect.runtime.Worker:411)
+[2019-01-14 09:37:55,084] INFO AvroConverterConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.connect.avro.AvroConverterConfig:179)
+[2019-01-14 09:37:55,084] INFO StringConverterConfig values: 
+	converter.encoding = UTF8
+	converter.type = key
+ (org.apache.kafka.connect.storage.StringConverterConfig:279)
+[2019-01-14 09:37:55,084] INFO StringConverterConfig values: 
+	converter.encoding = UTF8
+	converter.type = key
+ (org.apache.kafka.connect.storage.StringConverterConfig:279)
+[2019-01-14 09:37:55,089] INFO AvroConverterConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.connect.avro.AvroConverterConfig:179)
+[2019-01-14 09:37:55,088] INFO AvroConverterConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.connect.avro.AvroConverterConfig:179)
+[2019-01-14 09:37:55,092] INFO Cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.clients.Metadata:285)
+[2019-01-14 09:37:55,100] INFO ElasticsearchSinkConnectorConfig values: 
+	batch.size = 2000
+	behavior.on.malformed.documents = fail
+	behavior.on.null.values = ignore
+	compact.map.entries = true
+	connection.password = null
+	connection.timeout.ms = 1000
+	connection.url = [http://10.132.37.201:9200, http://10.132.37.202:9200, http://10.132.37.203:9200]
+	connection.username = null
+	drop.invalid.message = false
+	flush.timeout.ms = 10000
+	key.ignore = true
+	linger.ms = 1
+	max.buffered.records = 20000
+	max.in.flight.requests = 5
+	max.retries = 5
+	read.timeout.ms = 3000
+	retry.backoff.ms = 100
+	schema.ignore = true
+	topic.index.map = []
+	topic.key.ignore = []
+	topic.schema.ignore = []
+	type.name = type.name=kafkaconnect
+ (io.confluent.connect.elasticsearch.ElasticsearchSinkConnectorConfig:279)
+[2019-01-14 09:37:55,113] INFO Finished creating connector pg_sink_HOP_SDK_INTERFACE_ELOG (org.apache.kafka.connect.runtime.Worker:257)
+[2019-01-14 09:37:55,114] INFO SinkConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_HOP_SDK_INTERFACE_ELOG
+	tasks.max = 1
+	topics = [HOP_SDK_INTERFACE_ELOG]
+	topics.regex = 
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:279)
+[2019-01-14 09:37:55,114] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_HOP_SDK_INTERFACE_ELOG
+	tasks.max = 1
+	topics = [HOP_SDK_INTERFACE_ELOG]
+	topics.regex = 
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,115] INFO Setting task configurations for 1 workers. (io.confluent.connect.jdbc.JdbcSinkConnector:45)
+[2019-01-14 09:37:55,117] INFO Finished creating connector elasticsearch_sink_logi_pimp_protal (org.apache.kafka.connect.runtime.Worker:257)
+[2019-01-14 09:37:55,117] INFO Finished creating connector postgresql_sink_HOP_SDK_APM_STAT_AVRO (org.apache.kafka.connect.runtime.Worker:257)
+[2019-01-14 09:37:55,117] INFO SinkConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = elasticsearch_sink_logi_pimp_protal
+	tasks.max = 1
+	topics = [logi_pimp_protal]
+	topics.regex = 
+	transforms = [routeTS]
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:279)
+[2019-01-14 09:37:55,119] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.elasticsearch.ElasticsearchSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = elasticsearch_sink_logi_pimp_protal
+	tasks.max = 1
+	topics = [logi_pimp_protal]
+	topics.regex = 
+	transforms = [routeTS]
+	transforms.routeTS.timestamp.format = YYYYMM
+	transforms.routeTS.topic.format = monitor-${timestamp}
+	transforms.routeTS.type = class org.apache.kafka.connect.transforms.TimestampRouter
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,125] INFO SinkConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = postgresql_sink_HOP_SDK_APM_STAT_AVRO
+	tasks.max = 1
+	topics = [HOP_SDK_APM_STAT_AVRO]
+	topics.regex = 
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:279)
+[2019-01-14 09:37:55,125] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = postgresql_sink_HOP_SDK_APM_STAT_AVRO
+	tasks.max = 1
+	topics = [HOP_SDK_APM_STAT_AVRO]
+	topics.regex = 
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,125] INFO Setting task configurations for 1 workers. (io.confluent.connect.jdbc.JdbcSinkConnector:45)
+[2019-01-14 09:37:55,238] INFO KafkaAvroSerializerConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.kafka.serializers.KafkaAvroSerializerConfig:179)
+[2019-01-14 09:37:55,238] INFO KafkaAvroSerializerConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.kafka.serializers.KafkaAvroSerializerConfig:179)
+[2019-01-14 09:37:55,238] INFO KafkaAvroSerializerConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.kafka.serializers.KafkaAvroSerializerConfig:179)
+[2019-01-14 09:37:55,242] INFO KafkaAvroDeserializerConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	specific.avro.reader = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.kafka.serializers.KafkaAvroDeserializerConfig:179)
+[2019-01-14 09:37:55,242] INFO KafkaAvroDeserializerConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	specific.avro.reader = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.kafka.serializers.KafkaAvroDeserializerConfig:179)
+[2019-01-14 09:37:55,242] INFO KafkaAvroDeserializerConfig values: 
+	schema.registry.url = [http://10.132.37.201:8081]
+	basic.auth.user.info = [hidden]
+	auto.register.schemas = true
+	max.schemas.per.subject = 1000
+	basic.auth.credentials.source = URL
+	schema.registry.basic.auth.user.info = [hidden]
+	specific.avro.reader = false
+	value.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+	key.subject.name.strategy = class io.confluent.kafka.serializers.subject.TopicNameStrategy
+ (io.confluent.kafka.serializers.KafkaAvroDeserializerConfig:179)
+[2019-01-14 09:37:55,277] INFO AvroDataConfig values: 
+	schemas.cache.config = 1000
+	enhanced.avro.schema.support = false
+	connect.meta.data = true
+ (io.confluent.connect.avro.AvroDataConfig:179)
+[2019-01-14 09:37:55,277] INFO AvroDataConfig values: 
+	schemas.cache.config = 1000
+	enhanced.avro.schema.support = false
+	connect.meta.data = true
+ (io.confluent.connect.avro.AvroDataConfig:179)
+[2019-01-14 09:37:55,277] INFO AvroDataConfig values: 
+	schemas.cache.config = 1000
+	enhanced.avro.schema.support = false
+	connect.meta.data = true
+ (io.confluent.connect.avro.AvroDataConfig:179)
+[2019-01-14 09:37:55,278] INFO Set up the key converter class org.apache.kafka.connect.storage.StringConverter for task postgresql_sink_MCS_VST_STAT-0 using the connector config (org.apache.kafka.connect.runtime.Worker:436)
+[2019-01-14 09:37:55,278] INFO Set up the key converter class org.apache.kafka.connect.storage.StringConverter for task pg_sink_HOP_SDK_EVT_DEVICE-0 using the connector config (org.apache.kafka.connect.runtime.Worker:436)
+[2019-01-14 09:37:55,278] INFO Set up the value converter class io.confluent.connect.avro.AvroConverter for task postgresql_sink_MCS_VST_STAT-0 using the connector config (org.apache.kafka.connect.runtime.Worker:442)
+[2019-01-14 09:37:55,278] INFO Set up the key converter class org.apache.kafka.connect.storage.StringConverter for task pg_sink_MCS_PAGE_STAT-0 using the connector config (org.apache.kafka.connect.runtime.Worker:436)
+[2019-01-14 09:37:55,278] INFO Set up the value converter class io.confluent.connect.avro.AvroConverter for task pg_sink_HOP_SDK_EVT_DEVICE-0 using the connector config (org.apache.kafka.connect.runtime.Worker:442)
+[2019-01-14 09:37:55,279] INFO Set up the value converter class io.confluent.connect.avro.AvroConverter for task pg_sink_MCS_PAGE_STAT-0 using the connector config (org.apache.kafka.connect.runtime.Worker:442)
+[2019-01-14 09:37:55,279] INFO Set up the header converter class org.apache.kafka.connect.storage.SimpleHeaderConverter for task pg_sink_HOP_SDK_EVT_DEVICE-0 using the worker config (org.apache.kafka.connect.runtime.Worker:446)
+[2019-01-14 09:37:55,279] INFO Set up the header converter class org.apache.kafka.connect.storage.SimpleHeaderConverter for task pg_sink_MCS_PAGE_STAT-0 using the worker config (org.apache.kafka.connect.runtime.Worker:446)
+[2019-01-14 09:37:55,279] INFO Set up the header converter class org.apache.kafka.connect.storage.SimpleHeaderConverter for task postgresql_sink_MCS_VST_STAT-0 using the worker config (org.apache.kafka.connect.runtime.Worker:446)
+[2019-01-14 09:37:55,285] INFO SinkConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_MCS_PAGE_STAT
+	tasks.max = 1
+	topics = [MCS_PAGE_STAT]
+	topics.regex = 
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:279)
+[2019-01-14 09:37:55,285] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_MCS_PAGE_STAT
+	tasks.max = 1
+	topics = [MCS_PAGE_STAT]
+	topics.regex = 
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,285] INFO SinkConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = postgresql_sink_MCS_VST_STAT
+	tasks.max = 1
+	topics = [MCS_VST_STAT]
+	topics.regex = 
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:279)
+[2019-01-14 09:37:55,285] INFO SinkConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_HOP_SDK_EVT_DEVICE
+	tasks.max = 1
+	topics = [HOP_SDK_EVT_DEVICE]
+	topics.regex = 
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:279)
+[2019-01-14 09:37:55,286] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = pg_sink_HOP_SDK_EVT_DEVICE
+	tasks.max = 1
+	topics = [HOP_SDK_EVT_DEVICE]
+	topics.regex = 
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,287] INFO EnrichedConnectorConfig values: 
+	config.action.reload = RESTART
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = class org.apache.kafka.connect.storage.StringConverter
+	name = postgresql_sink_MCS_VST_STAT
+	tasks.max = 1
+	topics = [MCS_VST_STAT]
+	topics.regex = 
+	transforms = []
+	value.converter = class io.confluent.connect.avro.AvroConverter
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:279)
+[2019-01-14 09:37:55,294] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-pg_sink_HOP_SDK_EVT_DEVICE
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:279)
+[2019-01-14 09:37:55,294] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-pg_sink_MCS_PAGE_STAT
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:279)
+[2019-01-14 09:37:55,294] INFO ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [10.132.37.201:9092, 10.132.37.202:9092, 10.132.37.203:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-postgresql_sink_MCS_VST_STAT
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:279)
+[2019-01-14 09:37:55,297] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:55,297] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:55,298] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:55,298] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:55,300] INFO Kafka version : 2.0.0-cp1 (org.apache.kafka.common.utils.AppInfoParser:109)
+[2019-01-14 09:37:55,300] INFO Kafka commitId : fc9a81e8d72f61be (org.apache.kafka.common.utils.AppInfoParser:110)
+[2019-01-14 09:37:55,306] INFO Starting task (io.confluent.connect.jdbc.sink.JdbcSinkTask:45)
+[2019-01-14 09:37:55,308] INFO Finished starting connectors and tasks (org.apache.kafka.connect.runtime.distributed.DistributedHerder:868)
+[2019-01-14 09:37:55,316] INFO Starting task (io.confluent.connect.jdbc.sink.JdbcSinkTask:45)
+[2019-01-14 09:37:55,316] INFO Starting task (io.confluent.connect.jdbc.sink.JdbcSinkTask:45)
+[2019-01-14 09:37:55,325] INFO JdbcSinkConfig values: 
+	auto.create = true
+	auto.evolve = false
+	batch.size = 1
+	connection.password = [hidden]
+	connection.url = jdbc:postgresql://10.132.37.201:5432/monitor
+	connection.user = monitor
+	dialect.name = 
+	fields.whitelist = []
+	insert.mode = upsert
+	max.retries = 10
+	pk.fields = [ROWKEY]
+	pk.mode = record_key
+	retry.backoff.ms = 3000
+	table.name.format = ${topic}
+ (io.confluent.connect.jdbc.sink.JdbcSinkConfig:279)
+[2019-01-14 09:37:55,326] INFO JdbcSinkConfig values: 
+	auto.create = true
+	auto.evolve = false
+	batch.size = 1
+	connection.password = [hidden]
+	connection.url = jdbc:postgresql://10.132.37.200:5432/monitor
+	connection.user = monitor
+	dialect.name = 
+	fields.whitelist = []
+	insert.mode = upsert
+	max.retries = 10
+	pk.fields = [ROWKEY]
+	pk.mode = record_key
+	retry.backoff.ms = 3000
+	table.name.format = ${topic}
+ (io.confluent.connect.jdbc.sink.JdbcSinkConfig:279)
+[2019-01-14 09:37:55,326] INFO JdbcSinkConfig values: 
+	auto.create = true
+	auto.evolve = false
+	batch.size = 1
+	connection.password = [hidden]
+	connection.url = jdbc:postgresql://10.132.37.200:5432/monitor
+	connection.user = monitor
+	dialect.name = 
+	fields.whitelist = []
+	insert.mode = upsert
+	max.retries = 10
+	pk.fields = [ROWKEY]
+	pk.mode = record_key
+	retry.backoff.ms = 3000
+	table.name.format = ${topic}
+ (io.confluent.connect.jdbc.sink.JdbcSinkConfig:279)
+[2019-01-14 09:37:55,334] INFO Initializing writer using SQL dialect: PostgreSqlDatabaseDialect (io.confluent.connect.jdbc.sink.JdbcSinkTask:58)
+[2019-01-14 09:37:55,334] INFO Initializing writer using SQL dialect: PostgreSqlDatabaseDialect (io.confluent.connect.jdbc.sink.JdbcSinkTask:58)
+[2019-01-14 09:37:55,334] INFO Initializing writer using SQL dialect: PostgreSqlDatabaseDialect (io.confluent.connect.jdbc.sink.JdbcSinkTask:58)
+[2019-01-14 09:37:55,336] INFO WorkerSinkTask{id=postgresql_sink_MCS_VST_STAT-0} Sink task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSinkTask:302)
+[2019-01-14 09:37:55,336] INFO WorkerSinkTask{id=pg_sink_HOP_SDK_EVT_DEVICE-0} Sink task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSinkTask:302)
+[2019-01-14 09:37:55,336] INFO WorkerSinkTask{id=pg_sink_MCS_PAGE_STAT-0} Sink task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSinkTask:302)
+[2019-01-14 09:37:55,344] INFO Cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.clients.Metadata:285)
+[2019-01-14 09:37:55,344] INFO [Consumer clientId=consumer-5, groupId=connect-pg_sink_MCS_PAGE_STAT] Discovered group coordinator 10.132.37.201:9092 (id: 2147483446 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:677)
+[2019-01-14 09:37:55,345] INFO [Consumer clientId=consumer-5, groupId=connect-pg_sink_MCS_PAGE_STAT] Revoking previously assigned partitions [] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:472)
+[2019-01-14 09:37:55,345] INFO [Consumer clientId=consumer-5, groupId=connect-pg_sink_MCS_PAGE_STAT] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:509)
+[2019-01-14 09:37:55,345] INFO Cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.clients.Metadata:285)
+[2019-01-14 09:37:55,345] INFO [Consumer clientId=consumer-6, groupId=connect-postgresql_sink_MCS_VST_STAT] Discovered group coordinator 10.132.37.202:9092 (id: 2147483445 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:677)
+[2019-01-14 09:37:55,347] INFO [Consumer clientId=consumer-6, groupId=connect-postgresql_sink_MCS_VST_STAT] Revoking previously assigned partitions [] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:472)
+[2019-01-14 09:37:55,347] INFO [Consumer clientId=consumer-6, groupId=connect-postgresql_sink_MCS_VST_STAT] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:509)
+[2019-01-14 09:37:55,350] INFO Cluster ID: 3yTi9hW-RYOwdKGmmc-SYQ (org.apache.kafka.clients.Metadata:285)
+[2019-01-14 09:37:55,351] INFO [Consumer clientId=consumer-4, groupId=connect-pg_sink_HOP_SDK_EVT_DEVICE] Discovered group coordinator 10.132.37.202:9092 (id: 2147483445 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:677)
+[2019-01-14 09:37:55,354] INFO [Consumer clientId=consumer-4, groupId=connect-pg_sink_HOP_SDK_EVT_DEVICE] Revoking previously assigned partitions [] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:472)
+[2019-01-14 09:37:55,355] INFO [Consumer clientId=consumer-4, groupId=connect-pg_sink_HOP_SDK_EVT_DEVICE] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:509)
+[2019-01-14 09:37:58,352] INFO [Consumer clientId=consumer-6, groupId=connect-postgresql_sink_MCS_VST_STAT] Successfully joined group with generation 67 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:473)
+[2019-01-14 09:37:58,353] INFO [Consumer clientId=consumer-5, groupId=connect-pg_sink_MCS_PAGE_STAT] Successfully joined group with generation 56 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:473)
+[2019-01-14 09:37:58,353] INFO [Consumer clientId=consumer-6, groupId=connect-postgresql_sink_MCS_VST_STAT] Setting newly assigned partitions [MCS_VST_STAT-2, MCS_VST_STAT-3, MCS_VST_STAT-0, MCS_VST_STAT-1] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:280)
+[2019-01-14 09:37:58,353] INFO [Consumer clientId=consumer-5, groupId=connect-pg_sink_MCS_PAGE_STAT] Setting newly assigned partitions [MCS_PAGE_STAT-0, MCS_PAGE_STAT-1, MCS_PAGE_STAT-2, MCS_PAGE_STAT-3] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:280)
+[2019-01-14 09:37:58,362] INFO [Consumer clientId=consumer-4, groupId=connect-pg_sink_HOP_SDK_EVT_DEVICE] Successfully joined group with generation 21 (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:473)
+[2019-01-14 09:37:58,362] INFO [Consumer clientId=consumer-4, groupId=connect-pg_sink_HOP_SDK_EVT_DEVICE] Setting newly assigned partitions [HOP_SDK_EVT_DEVICE-0, HOP_SDK_EVT_DEVICE-2, HOP_SDK_EVT_DEVICE-1, HOP_SDK_EVT_DEVICE-3] (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:280)
+^C[2019-01-14 09:39:38,520] INFO Kafka Connect stopping (org.apache.kafka.connect.runtime.Connect:65)
+[2019-01-14 09:39:38,521] INFO Stopping REST server (org.apache.kafka.connect.runtime.rest.RestServer:223)
+[2019-01-14 09:39:38,523] INFO Stopped http_8083@188598ad{HTTP/1.1,[http/1.1]}{0.0.0.0:8083} (org.eclipse.jetty.server.AbstractConnector:332)
+[2019-01-14 09:39:38,524] INFO node0 Stopped scavenging (org.eclipse.jetty.server.session:167)
+[2019-01-14 09:39:38,542] INFO Stopped o.e.j.s.ServletContextHandler@3e4e8fdf{/,null,UNAVAILABLE} (org.eclipse.jetty.server.handler.ContextHandler:1020)
+[2019-01-14 09:39:38,544] INFO REST server stopped (org.apache.kafka.connect.runtime.rest.RestServer:241)
+[2019-01-14 09:39:38,544] INFO Herder stopping (org.apache.kafka.connect.runtime.distributed.DistributedHerder:399)
+[2019-01-14 09:39:38,544] INFO Stopping connectors and tasks that are still assigned to this worker. (org.apache.kafka.connect.runtime.distributed.DistributedHerder:373)
+[2019-01-14 09:39:38,545] INFO Stopping connector elasticsearch_sink_logi_pimp_protal (org.apache.kafka.connect.runtime.Worker:338)
+[2019-01-14 09:39:38,545] INFO Stopping connector postgresql_sink_HOP_SDK_APM_STAT_AVRO (org.apache.kafka.connect.runtime.Worker:338)
+[2019-01-14 09:39:38,545] INFO Stopping task pg_sink_HOP_SDK_EVT_DEVICE-0 (org.apache.kafka.connect.runtime.Worker:557)
+[2019-01-14 09:39:38,545] INFO Stopping connector pg_sink_HOP_SDK_INTERFACE_ELOG (org.apache.kafka.connect.runtime.Worker:338)
+[2019-01-14 09:39:38,546] INFO Stopping task postgresql_sink_MCS_VST_STAT-0 (org.apache.kafka.connect.runtime.Worker:557)
+[2019-01-14 09:39:38,546] INFO Stopping task pg_sink_MCS_PAGE_STAT-0 (org.apache.kafka.connect.runtime.Worker:557)
+[2019-01-14 09:39:38,546] INFO Stopped connector pg_sink_HOP_SDK_INTERFACE_ELOG (org.apache.kafka.connect.runtime.Worker:354)
+[2019-01-14 09:39:38,548] INFO Stopped connector postgresql_sink_HOP_SDK_APM_STAT_AVRO (org.apache.kafka.connect.runtime.Worker:354)
+[2019-01-14 09:39:38,548] INFO Stopping task (io.confluent.connect.jdbc.sink.JdbcSinkTask:106)
+[2019-01-14 09:39:38,549] INFO Stopped connector elasticsearch_sink_logi_pimp_protal (org.apache.kafka.connect.runtime.Worker:354)
+[2019-01-14 09:39:38,549] INFO Stopping task (io.confluent.connect.jdbc.sink.JdbcSinkTask:106)
+[2019-01-14 09:39:38,551] INFO Stopping task (io.confluent.connect.jdbc.sink.JdbcSinkTask:106)
+[2019-01-14 09:39:38,556] WARN [Worker clientId=connect-1, groupId=monitor_kafka_connect] Close timed out with 1 pending requests to coordinator, terminating client connections (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:793)
+[2019-01-14 09:39:38,558] INFO Stopping KafkaBasedLog for topic connect-statuses (org.apache.kafka.connect.util.KafkaBasedLog:159)
+[2019-01-14 09:39:38,560] INFO [Producer clientId=producer-2] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms. (org.apache.kafka.clients.producer.KafkaProducer:1103)
+[2019-01-14 09:39:38,565] INFO Stopped KafkaBasedLog for topic connect-statuses (org.apache.kafka.connect.util.KafkaBasedLog:185)
+[2019-01-14 09:39:38,565] INFO Closing KafkaConfigBackingStore (org.apache.kafka.connect.storage.KafkaConfigBackingStore:258)
+[2019-01-14 09:39:38,565] INFO Stopping KafkaBasedLog for topic connect-configs (org.apache.kafka.connect.util.KafkaBasedLog:159)
+[2019-01-14 09:39:38,565] INFO [Producer clientId=producer-3] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms. (org.apache.kafka.clients.producer.KafkaProducer:1103)
+[2019-01-14 09:39:38,569] INFO Stopped KafkaBasedLog for topic connect-configs (org.apache.kafka.connect.util.KafkaBasedLog:185)
+[2019-01-14 09:39:38,569] INFO Closed KafkaConfigBackingStore (org.apache.kafka.connect.storage.KafkaConfigBackingStore:260)
+[2019-01-14 09:39:38,569] INFO Worker stopping (org.apache.kafka.connect.runtime.Worker:184)
+[2019-01-14 09:39:38,569] INFO Stopping KafkaOffsetBackingStore (org.apache.kafka.connect.storage.KafkaOffsetBackingStore:115)
+[2019-01-14 09:39:38,569] INFO Stopping KafkaBasedLog for topic connect-offsets (org.apache.kafka.connect.util.KafkaBasedLog:159)
+[2019-01-14 09:39:38,569] INFO [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms. (org.apache.kafka.clients.producer.KafkaProducer:1103)
+[2019-01-14 09:39:38,572] INFO Stopped KafkaBasedLog for topic connect-offsets (org.apache.kafka.connect.util.KafkaBasedLog:185)
+[2019-01-14 09:39:38,572] INFO Stopped KafkaOffsetBackingStore (org.apache.kafka.connect.storage.KafkaOffsetBackingStore:117)
+[2019-01-14 09:39:38,572] INFO Worker stopped (org.apache.kafka.connect.runtime.Worker:205)
+[2019-01-14 09:39:38,572] INFO Herder stopped (org.apache.kafka.connect.runtime.distributed.DistributedHerder:225)
+[2019-01-14 09:39:38,582] INFO Herder stopped (org.apache.kafka.connect.runtime.distributed.DistributedHerder:419)
+[2019-01-14 09:39:38,582] INFO Kafka Connect stopped (org.apache.kafka.connect.runtime.Connect:70)
